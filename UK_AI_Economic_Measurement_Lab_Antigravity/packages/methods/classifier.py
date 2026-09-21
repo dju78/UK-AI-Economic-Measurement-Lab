@@ -76,7 +76,7 @@ TAXONOMY_RULES = {
 
 HARD_NEGATIVE_PATTERNS = [
     re.compile(r"\b(office 365|printer maintenance|managed services|residential real estate|stone ovens|wood-fired|sourdough|baking|cleaning detergents|general cleaning|haulage|refrigerated|stone masonry|lithographic offset|fuse board|cask ales|builders' carpentry|timber staircases|keyholding response)\b", re.IGNORECASE),
-    re.compile(r"\b((using|uses|utilises?|leveraging)\s+(an?\s+)?(chatgpt|ai|generative ai|copilot|accounting package)|ai[\s\-]ready\s+(cloud\s+hosting|colocation)|reselling\s+(generic\s+)?cloud\s+hosting|smart\s+technology\s+and\s+toner)\b", re.IGNORECASE)
+    re.compile(r"\b((using|uses|utilises?|leveraging)\s+(an?\s+)?(chatgpt|ai|generative\s+ai|copilot|accounting\s+package)(\s+(tools?|software|systems?|solutions?|platforms?|packages?))?|ai[\s\-]ready\s+(cloud\s+hosting|colocation)|reselling\s+(generic\s+)?cloud\s+hosting|smart\s+technology\s+and\s+toner)\b", re.IGNORECASE)
 ]
 
 TFIDF_LOGISTIC_WEIGHTS = {
