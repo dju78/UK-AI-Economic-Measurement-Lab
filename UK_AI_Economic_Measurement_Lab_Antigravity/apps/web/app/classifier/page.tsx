@@ -445,15 +445,15 @@ export default function ClassifierPage() {
               </div>
               <div className="bg-white p-2 rounded border border-blue-200">
                 <span className="text-[10px] text-slate-500 block font-sans">Precision</span>
-                <span className="font-bold text-sm text-emerald-700">{formatPercent(cvMetrics.precision * 100, 1)}</span>
+                <span className="font-bold text-sm text-emerald-700">{formatPercent(cvMetrics.mean_precision * 100, 1)}</span>
               </div>
               <div className="bg-white p-2 rounded border border-blue-200">
                 <span className="text-[10px] text-slate-500 block font-sans">Recall</span>
-                <span className="font-bold text-sm text-blue-700">{formatPercent(cvMetrics.recall * 100, 1)}</span>
+                <span className="font-bold text-sm text-blue-700">{formatPercent(cvMetrics.mean_recall * 100, 1)}</span>
               </div>
               <div className="bg-white p-2 rounded border border-blue-200">
                 <span className="text-[10px] text-slate-500 block font-sans">F1-Score</span>
-                <span className="font-bold text-sm text-purple-700">{formatPercent(cvMetrics.f1_score * 100, 1)}</span>
+                <span className="font-bold text-sm text-purple-700">{formatPercent(cvMetrics.mean_f1 * 100, 1)}</span>
               </div>
             </div>
           </div>

@@ -5,12 +5,14 @@ import { CompanyClassificationRecord } from '../../../../../packages/schemas';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+    const textContent = body.text || body.description || body.business_description || body.input_text || '';
+    
     const record: CompanyClassificationRecord = {
-      business_id: body.business_id || 'API-USER',
-      company_name: body.company_name || 'Anonymous Submission',
-      sic_code: body.sic_code || '62.01',
+      business_id: body.business_id || body.id || 'API-USER',
+      company_name: body.company_name || body.name || body.business_name || 'Anonymous Submission',
+      sic_code: body.sic_code || body.sic || '62.01',
       sic_description: body.sic_description || 'Computer programming',
-      text: body.text || ''
+      text: textContent
     };
 
     const modelType = body.model_type === 'rule_baseline' ? 'rule_baseline' : 'tfidf_logistic';

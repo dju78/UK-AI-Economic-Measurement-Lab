@@ -1,10 +1,11 @@
 # Validation & Release Hardening Report — UK AI Economic Measurement Lab
 
 **Product Name:** UK AI Economic Measurement Lab  
-**Version:** 0.2.0-experimental  
+**Version:** `v0.2.0-experimental`  
 **Audit Date:** 21 September 2026  
 **Auditor:** Principal Statistical Methodology & QA Validation Lead  
-**Overall Determination:** PASSED — READY FOR PUBLIC RESEARCH PROTOTYPE RELEASE  
+**Live Production URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
+**Overall Determination:** **PASSED — READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH**
 
 ---
 
@@ -17,6 +18,7 @@
 | **SNA Decision Support** | Clear disclaimer on accounting scenarios | All outputs from the SNA decision tree are explicitly prefaced with *"Indicative treatment for investigation — not an official classification"*. Case studies clearly separate own-account GFCF from intermediate consumption and cross-border service imports. | **PASS** |
 | **Adoption vs Output Separation** | Adoption rates must not be confused with GVA | ONS BICS adoption rates are displayed with dedicated pedagogical guidance explaining why business adoption prevalence does not equal economic output or gross value added. | **PASS** |
 | **Independent Product Identity** | No misleading ONS logo or claim of official status | Prominent "Independent Research Prototype" banner displayed globally; creator (Daramola Omoyele) and independent research status clearly identified. | **PASS** |
+| **DS05 Benchmark Caveat** | Explicit non-official and non-representative disclaimer | Labelled on every screen and API as *"Curated experimental benchmark dataset — not official statistics and not a representative sample of UK businesses."* | **PASS** |
 
 ---
 
@@ -34,90 +36,55 @@
 
 ---
 
-## 3. Automated Software & Statistical Test Results
+## 3. Classifier Parity & Hardening Audit
 
-The automated test suite in `tests/` contains **33 tests** executed across 5 test modules with **100% pass rate**:
+### Root Cause Analysis of Live Classifier Anomaly
+During release validation, a test case (*"Developing enterprise large language models and neural generative architectures"*) produced $P = 22.3\%$ on `/api/classify`.
+Investigation revealed two contributing factors:
+1. **API Payload Property Mapping:** `/api/classify/route.ts` mapped `record.text = body.text || ''` without checking `body.description` or `body.business_description`, evaluating description payloads as empty text (`''`) which returned the default prior probability (22.3%).
+2. **Plural & Hyphen Inflection Normalization:** Taxonomy regex patterns and token matchers lacked plural inflections (`models`, `transformers`, `databases`) and hyphen normalization (`deep-learning`, `machine-learning`), causing specific multi-label categories to fail pattern matching.
 
-- **`test_data_integrity.py` (5 tests):**
-  - SHA-256 cryptographic manifest verification against files on disk: **PASS**
-  - CPA 23 products completeness, positive bounds, and time series (2020–2023): **PASS**
-  - BICS adoption trajectories, industry breakdown, and size bands: **PASS**
-  - DSIT benchmark study turnover and employment constraints: **PASS**
-  - Data centres capacity and capital formation constraints: **PASS**
-  - DS05 60-company benchmark corpus balance (40 positive covering all 13 taxonomy categories, 20 negative/hard-negative): **PASS**
-
-- **`test_disaggregation.py` (9 tests):**
-  - Direct allocation method and bounds clamping: **PASS**
-  - Proportional allocation method with product defaults and overrides: **PASS**
-  - Modelled allocation method ($p_{\text{AI}} \times r_{\text{AI}}$): **PASS**
-  - Hybrid 3-tier cascading residual allocation: **PASS**
-  - Extreme boundary tests (0% share, 100% share): **PASS**
-  - All 23 CPA product groups batch execution: **PASS**
-  - Strict identity reconciliation ($V_{\text{AI}} + V_{\text{Non-AI}} = V_{\text{Broad}}$): **PASS**
-
-- **`test_classifier.py` (6 tests):**
-  - Dedicated AI classification and high-confidence probability: **PASS**
-  - Hard negative buzzword suppression (e.g. "AI-ready cloud", "printer maintenance"): **PASS**
-  - Completely non-AI business identification: **PASS**
-  - Rule-based dictionary baseline execution: **PASS**
-  - 60-company corpus evaluation metrics: **PASS**
-  - Empty text and noise robustness: **PASS**
-
-- **`test_sna_decision.py` (10 tests):**
-  - Case Study 1 (Bank fine-tuning Llama-3): Own-Account GFCF resolved: **PASS**
-  - Case Study 2 (NHS US SaaS subscription): Service Import / Intermediate Consumption resolved: **PASS**
-  - Case Study 3 (Robotics GPU import): Hardware GFCF / Goods Import resolved: **PASS**
-  - Case Study 4 (Law firm custom AI software): Purchased IP GFCF resolved: **PASS**
-  - Case Study 5 (Retailer monthly SaaS copy tool): Intermediate Consumption resolved: **PASS**
-  - Case Study 6 (Biotech proprietary database): Database GFCF resolved: **PASS**
-  - Incomplete path and invalid option handling: **PASS**
-  - Case study schema and definition integrity: **PASS**
-
-- **`test_api_contracts.py` (3 tests):**
-  - Disaggregation mathematical determinism: **PASS**
-  - Classifier determinism: **PASS**
-  - JSON serialization of result models: **PASS**
+### Parity Resolution & Golden Suite
+1. **Normalized Preprocessing:** Implemented identical token and hyphen normalisation (`replace(/[\-_/]/g, ' ')`) in both Python (`packages/methods/classifier.py`) and TypeScript (`packages/methods/classifier.ts`).
+2. **Regex Pluralization:** Added full plural and inflection coverage (`foundation(al)?\s+models?`, `large\s+language\s+models?`, `generative\s+ai|generative\s+models?`, `deep[\s\-]learning\s+cybersecurity`).
+3. **AI Producer vs AI User Distinction:** Hard negative patterns were hardened to detect pure AI adopters (e.g. *"bakery using an AI accounting package"*, *"estate agent using ChatGPT"*, *"AI-ready cloud hosting"*) without penalising core AI engineering developers.
+4. **Cross-Language Golden Verification:** 60/60 DS05 benchmark profiles and 15 targeted sanity cases were evaluated across both engines, verifying **100% exact parity** between Python and TypeScript.
 
 ---
 
-## 4. NLP Classifier Evaluation Metrics (DS05 60-Company Benchmark Corpus)
+## 4. Benchmark Performance Metrics
 
-| Metric | Measured Value | Quality Gate Target | Status |
-|---|---|---|---|
-| **Sample Size ($N$)** | 60 businesses (40 Pos / 20 Neg) | $\ge 50$ businesses | **PASS** |
-| **Accuracy** | **98.3%** (59 / 60 correct) | $\ge 85.0\%$ | **PASS** |
-| **Precision** | **100.0%** ($TP=39, FP=0$) | $\ge 80.0\%$ | **PASS** |
-| **Recall** | **97.5%** ($TP=39, FN=1$) | $\ge 80.0\%$ | **PASS** |
-| **F1-Score** | **98.7%** | $\ge 80.0\%$ | **PASS** |
-| **ROC-AUC** | **98.8%** | $\ge 85.0\%$ | **PASS** |
-
-### Confusion Matrix
-$$\begin{pmatrix} TP & FP \\ FN & TN \end{pmatrix} = \begin{pmatrix} 39 & 0 \\ 1 & 20 \end{pmatrix}$$
-
-*Note: The classifier is an illustrative research baseline for keyword extraction and feature attribution. As per Rule 9, model outputs propose candidate classifications but require human review before becoming statistical inputs.*
+- **In-Sample Developmental Fit ($N=60$):**
+  - Accuracy: **98.3%**
+  - Precision: **100.0%**
+  - Recall: **97.5%**
+  - F1-Score: **98.7%**
+  - Confusion Matrix: $TP=39, FP=0, TN=20, FN=1$ (UK-AI-006 preserved as genuine false negative)
+- **Stratified 5-Fold Cross-Validation:**
+  - Mean Accuracy: **98.3%** ($\sigma = 3.30\%$)
+  - Mean Precision: **100.0%**
+  - Mean Recall: **97.5%**
+  - Mean F1-Score: **98.7%**
 
 ---
 
-## 5. Accessibility & UX Audit
+## 5. Automated Software & Statistical Test Results
 
-- **Standard:** Designed and tested against **WCAG 2.2 AA accessibility principles**.
-- **Keyboard Navigation:** Full focus management with visible 3px focus rings and skip-to-content links.
-- **Accessible Alternatives:** Every data chart provides an accessible data table alternative for screen readers.
-- **Color Independence:** Badges and charts use text and icon indicators alongside color encoding.
+The automated test suite in `tests/` contains **38 tests** executed across 5 test modules with **100% pass rate**:
 
----
-
-## 6. Build and Runtime Status
-
-- **Web Application:** Next.js 14.2.15 App Router (`apps/web`).
-- **Production Build:** `npm run build` completed with **code 0** across all 18 static and dynamic routes.
-- **Critical Defects:** 0
-- **High Severity Defects:** 0
+- **`test_data_integrity.py` (5 tests):** Data layer schemas, SHA-256 manifest, constraints.
+- **`test_disaggregation.py` (9 tests):** 4 disaggregation engines, bounds, accounting reconciliation.
+- **`test_classifier.py` (10 tests):** Dedicated AI, rule baseline, hard negatives, obvious positives, AI-user distinction, 60-firm metrics, 5-fold CV, noise handling, and automated cross-language parity assertions.
+- **`test_sna_decision.py` (5 tests):** SNA 2008 / ESA 2010 asset boundary decision tree.
+- **`test_api_contracts.py` (9 tests):** API schemas, payload validation, and HTTP error handling.
 
 ---
 
-## 7. Sign-Off & Release Recommendation
+## 6. Final Determination
 
-The UK AI Economic Measurement Lab (`v0.2.0-experimental`) satisfies all requirements for research transparency, data provenance, calculation reproducibility, accessibility, and National Accounts conceptual rigor.
-
-**Determination:** **APPROVED FOR PUBLIC RESEARCH PROTOTYPE RELEASE**
+```
+================================================================================
+FINAL VERIFICATION DETERMINATION:
+PASSED — READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH
+================================================================================
+```
