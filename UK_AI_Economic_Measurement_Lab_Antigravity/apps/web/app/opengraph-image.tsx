@@ -109,12 +109,9 @@ export default async function Image() {
             paddingTop: '24px'
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <span style={{ color: '#64748b', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
-              Lead Methodologist & Author
-            </span>
-            <span style={{ color: '#f8fafc', fontSize: '19px', fontWeight: 700 }}>
-              Daramola Omoyele
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ color: '#94a3b8', fontSize: '16px', fontWeight: 600 }}>
+              Independent Research Prototype by <span style={{ color: '#f8fafc', fontWeight: 700 }}>Daramola Omoyele</span>
             </span>
           </div>
 
