@@ -239,10 +239,10 @@ export function classifyBusinessText(
         (t) => lowerText.includes(t) || normalizedLowerText.includes(t)
       );
       if (!coreEngineering) {
-        logit -= 4.0;
+        logit -= 5.5;
         featureContributions.push({
           term: 'ai_adoption_or_non_core_penalty',
-          weight: -4.0,
+          weight: -5.5,
           direction: 'negative'
         });
       }

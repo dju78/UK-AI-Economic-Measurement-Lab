@@ -220,10 +220,10 @@ def classify_business_text(
         if has_hard_negative:
             core_engineering = any(t in lower_text or t in normalized_lower_text for t in ["foundation model", "deep learning", "neural network", "transformer", "reinforcement learning", "vector database", "diffusion model"])
             if not core_engineering:
-                logit -= 4.0
+                logit -= 5.5
                 feature_contributions.append({
                     "term": "ai_adoption_or_non_core_penalty",
-                    "weight": -4.0,
+                    "weight": -5.5,
                     "direction": "negative"
                 })
 
