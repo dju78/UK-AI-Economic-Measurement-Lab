@@ -5,7 +5,8 @@ Validates:
 2. Multi-label taxonomy classification across all 13 categories
 3. Hard negative filtering (buzzword suppression without technical substance)
 4. Evaluation metrics (Precision, Recall, F1, Confusion Matrix) on 60-company corpus
-5. Robustness against empty, short, or noisy business descriptions
+5. Stratified 5-fold cross-validation on held-out splits
+6. Robustness against empty, short, or noisy business descriptions
 """
 import os
 import json
@@ -13,6 +14,7 @@ import unittest
 from packages.methods.classifier import (
     classify_business_text,
     evaluate_classifier_on_corpus,
+    evaluate_classifier_cross_validation,
     TAXONOMY_RULES
 )
 
@@ -92,6 +94,14 @@ class TestClassifier(unittest.TestCase):
         self.assertEqual(cm["tp"] + cm["fp"] + cm["tn"] + cm["fn"], 60)
         self.assertEqual(cm["tp"] + cm["fn"], 40, "Total actual positives must equal 40")
         self.assertEqual(cm["tn"] + cm["fp"], 20, "Total actual negatives must equal 20")
+
+    def test_stratified_cross_validation(self):
+        cv = evaluate_classifier_cross_validation(self.corpus, 5, "tfidf_logistic")
+        self.assertEqual(cv["k_folds"], 5)
+        self.assertEqual(cv["total_samples"], 60)
+        self.assertEqual(len(cv["fold_accuracies"]), 5)
+        self.assertGreaterEqual(cv["mean_accuracy"], 0.85, "Cross-validated accuracy should be >= 85%")
+        self.assertGreaterEqual(cv["f1_score"], 0.85, "Cross-validated F1 should be >= 85%")
 
     def test_empty_and_noise_handling(self):
         empty_sample = {"business_id": "TEST-EMPTY", "company_name": "Empty Ltd", "text": ""}

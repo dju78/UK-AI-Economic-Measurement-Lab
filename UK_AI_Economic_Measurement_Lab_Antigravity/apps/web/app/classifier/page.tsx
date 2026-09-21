@@ -21,6 +21,7 @@ import { BENCHMARK_BUSINESS_CORPUS } from '@/lib/data';
 import {
   classifyBusinessText,
   evaluateClassifierOnCorpus,
+  evaluateClassifierCrossValidation,
   TAXONOMY_RULES
 } from '@packages/methods/classifier';
 import {
@@ -39,7 +40,7 @@ export default function ClassifierPage() {
   const [selectedCorpusIndex, setSelectedCorpusIndex] = useState<number>(0);
   const [customText, setCustomText] = useState<string>(BENCHMARK_BUSINESS_CORPUS[0].text);
   const [customName, setCustomName] = useState<string>(BENCHMARK_BUSINESS_CORPUS[0].company_name);
-  const [customSic, setCustomSic] = useState<string>(BENCHMARK_BUSINESS_CORPUS[0].sic_code);
+  const [customSic, setCustomSic] = useState<string>(BENCHMARK_BUSINESS_CORPUS[0].sic_code || '62.01');
   const [modelType, setModelType] = useState<'rule_baseline' | 'tfidf_logistic'>('tfidf_logistic');
 
   // Human review state
@@ -70,16 +71,21 @@ export default function ClassifierPage() {
     };
   }, [currentRecord, modelType, reviewStatus, reviewerNotes]);
 
-  // Overall benchmark evaluation metrics
+  // In-sample evaluation metrics
   const evaluationMetrics: ClassifierEvaluationMetrics = useMemo(() => {
     return evaluateClassifierOnCorpus(BENCHMARK_BUSINESS_CORPUS, modelType);
+  }, [modelType]);
+
+  // 5-Fold Stratified Cross-Validation metrics
+  const cvMetrics = useMemo(() => {
+    return evaluateClassifierCrossValidation(BENCHMARK_BUSINESS_CORPUS, 5, modelType);
   }, [modelType]);
 
   const handleSelectPreloaded = (idx: number) => {
     setSelectedCorpusIndex(idx);
     const rec = BENCHMARK_BUSINESS_CORPUS[idx];
     setCustomName(rec.company_name);
-    setCustomSic(rec.sic_code);
+    setCustomSic(rec.sic_code || '');
     setCustomText(rec.text);
     setReviewStatus('unreviewed');
     setReviewerNotes('');
@@ -101,7 +107,7 @@ export default function ClassifierPage() {
 
   const classifierProvenance: ProvenanceMeta = {
     source_id: 'DS05',
-    source_title: 'UK AI Business Classification Research Benchmark & ONS Table 3 Taxonomy (S1)',
+    source_title: 'UK AI Business Classification Research Benchmark Corpus (DS05)',
     publisher: 'UK AI Economic Measurement Lab',
     reference_period: '2026',
     release_date: '2026-09-21',
@@ -111,7 +117,7 @@ export default function ClassifierPage() {
     transformation_version: 'clf-v1.4.0',
     model_version: prediction.model_version,
     unit: 'Multi-label probabilities and classification flags',
-    notes: 'Population identification aid. Being classified as AI-relevant does not mean 100% of firm revenue is AI output.'
+    notes: 'Curated experimental benchmark dataset — not official statistics and not a representative sample of UK businesses.'
   };
 
   return (
@@ -208,202 +214,174 @@ export default function ClassifierPage() {
               </div>
             </div>
 
-            {/* Free text area */}
-            <div className="space-y-1">
+            {/* Description Textarea */}
+            <div className="space-y-1.5">
               <label className="text-xs font-semibold text-slate-700 block">
-                Business Activity & Product Description:
+                Activity & Capability Description:
               </label>
               <textarea
                 rows={5}
                 value={customText}
-                onChange={(e) => {
-                  setCustomText(e.target.value);
-                  setReviewStatus('unreviewed');
-                }}
-                placeholder="Enter company descriptive text, website summary, or Companies House filing..."
-                className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs leading-relaxed text-slate-900 focus:ring-2 focus:ring-govuk-blue focus:bg-white"
+                onChange={(e) => setCustomText(e.target.value)}
+                className="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs leading-relaxed focus:ring-2 focus:ring-govuk-blue"
+                placeholder="Enter company filings text or service description..."
               />
-            </div>
-
-            {/* Human Review Panel */}
-            <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                  Human Expert Review & Adjudication
-                </span>
-                <span
-                  className={`text-[11px] font-bold px-2 py-0.5 rounded capitalize ${
-                    reviewStatus === 'accepted'
-                      ? 'bg-emerald-100 text-emerald-800'
-                      : reviewStatus === 'rejected'
-                      ? 'bg-rose-100 text-rose-800'
-                      : reviewStatus === 'amended'
-                      ? 'bg-amber-100 text-amber-800'
-                      : 'bg-slate-200 text-slate-700'
-                  }`}
-                >
-                  Status: {reviewStatus}
-                </span>
-              </div>
-
-              <input
-                type="text"
-                placeholder="Reviewer rationale / audit notes..."
-                value={reviewerNotes}
-                onChange={(e) => setReviewerNotes(e.target.value)}
-                className="w-full py-1.5 px-3 bg-white border border-slate-200 rounded text-xs text-slate-800"
-              />
-
-              <div className="flex items-center gap-2 pt-1">
-                <button
-                  type="button"
-                  onClick={() => handleApplyReview('accepted')}
-                  className="flex-1 py-1.5 bg-emerald-700 text-white rounded text-xs font-semibold hover:bg-emerald-800 flex items-center justify-center gap-1 shadow-xs"
-                >
-                  <ThumbsUp className="w-3.5 h-3.5" /> Accept Classification
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleApplyReview('rejected')}
-                  className="flex-1 py-1.5 bg-rose-700 text-white rounded text-xs font-semibold hover:bg-rose-800 flex items-center justify-center gap-1 shadow-xs"
-                >
-                  <ThumbsDown className="w-3.5 h-3.5" /> Reject / Hard Negative
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleApplyReview('amended')}
-                  className="py-1.5 px-3 bg-amber-600 text-white rounded text-xs font-semibold hover:bg-amber-700"
-                >
-                  Amend
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column: Prediction Details & Explainability */}
-        <div className="lg:col-span-6 space-y-6">
-          {/* Classification Outcome Card */}
-          <div
-            className={`rounded-xl border-2 p-6 shadow-xs transition-all ${
-              prediction.is_ai_relevant
-                ? 'bg-emerald-50/50 border-emerald-500'
-                : 'bg-slate-50 border-slate-300'
-            }`}
-          >
-            <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-200">
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
-                  Model Prediction Output
-                </span>
-                <div className="flex items-center gap-2">
-                  {prediction.is_ai_relevant ? (
-                    <div className="flex items-center gap-2 text-emerald-800 font-extrabold text-xl">
-                      <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0" />
-                      <span>AI-Relevant Business Entity</span>
-                    </div>
-                  ) : (
-                    <div className="flex items-center gap-2 text-slate-800 font-extrabold text-xl">
-                      <XCircle className="w-6 h-6 text-slate-500 shrink-0" />
-                      <span>Non-Core / Non-AI Business</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div className="text-right">
-                <span className="text-xs text-slate-500 block">AI Probability:</span>
-                <span className="text-2xl font-bold font-mono text-slate-900">
-                  {formatPercent(prediction.ai_probability * 100, 1)}
-                </span>
-              </div>
-            </div>
-
-            {/* Multi-label ONS Table 3 tags */}
-            <div className="mt-4 space-y-2">
-              <span className="text-xs font-bold text-slate-700 block">
-                Identified AI Sub-Activity Categories ({prediction.predicted_labels.length}):
-              </span>
-              {prediction.predicted_labels.length > 0 ? (
-                <div className="flex flex-wrap gap-1.5">
-                  {prediction.predicted_labels.map((catKey) => {
-                    const rule = TAXONOMY_RULES[catKey];
-                    return (
-                      <span
-                        key={catKey}
-                        className="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-xs font-semibold text-govuk-blue shadow-xs"
-                      >
-                        {rule?.label || catKey}
-                      </span>
-                    );
-                  })}
-                </div>
-              ) : (
-                <p className="text-xs text-slate-500 italic">
-                  No direct ONS Table 3 AI activity categories detected.
-                </p>
-              )}
-            </div>
-
-            {/* Firm Type: Dedicated vs Diversified */}
-            <div className="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
-              <span className="text-slate-600">Firm Specialisation Type:</span>
-              <span className="font-bold text-slate-900 bg-white px-2.5 py-1 rounded border border-slate-200">
-                {prediction.is_dedicated ? 'Dedicated AI Specialist Firm' : 'Diversified / Multi-Product Entity'}
-              </span>
             </div>
           </div>
 
           {/* Feature Explainability & Term Weights */}
-          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xs space-y-4">
-            <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
-              <h3 className="font-bold text-sm text-slate-900 flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-purple-600" />
-                Feature Weights & Explainability
-              </h3>
-              <span className="text-[11px] text-slate-500 font-mono">{prediction.model_version}</span>
-            </div>
-
-            <div className="space-y-2">
-              <span className="text-xs text-slate-600 block">
-                Top detected terms driving the prediction score:
-              </span>
-              <div className="space-y-1.5">
-                {prediction.feature_contributions.slice(0, 6).map((feat, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center justify-between text-xs p-2 rounded bg-slate-50 border border-slate-200"
-                  >
-                    <span className="font-mono font-medium text-slate-800">"{feat.term}"</span>
-                    <span
-                      className={`font-mono font-bold px-2 py-0.5 rounded text-[11px] ${
-                        feat.direction === 'positive'
-                          ? 'bg-emerald-100 text-emerald-800'
-                          : 'bg-rose-100 text-rose-800'
-                      }`}
-                    >
+          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xs space-y-3">
+            <h3 className="font-bold text-xs text-slate-900 uppercase tracking-wider">
+              Feature Explainability & Term Weights
+            </h3>
+            {prediction.feature_contributions.length > 0 ? (
+              <div className="space-y-2">
+                {prediction.feature_contributions.map((feat, idx) => (
+                  <div key={idx} className="flex items-center justify-between text-xs p-2 bg-slate-50 rounded border border-slate-100">
+                    <span className="font-mono text-slate-700">"{feat.term}"</span>
+                    <span className={`font-mono font-bold ${feat.direction === 'positive' ? 'text-emerald-700' : 'text-rose-700'}`}>
                       {feat.weight > 0 ? `+${feat.weight}` : feat.weight}
                     </span>
                   </div>
                 ))}
-                {prediction.feature_contributions.length === 0 && (
-                  <p className="text-xs text-slate-500 italic">No salient vocabulary features detected.</p>
-                )}
               </div>
+            ) : (
+              <p className="text-xs text-slate-500 italic">No specific keyword feature weights triggered. Baseline logit applied.</p>
+            )}
+          </div>
+        </div>
+
+        {/* Right Column: Prediction Results & Human Review */}
+        <div className="lg:col-span-6 space-y-6">
+          {/* Output Card */}
+          <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <h2 className="font-bold text-sm text-slate-900">
+                Model Classification Output
+              </h2>
+              <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${prediction.is_ai_relevant ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-700'}`}>
+                {prediction.is_ai_relevant ? 'AI-RELEVANT ENTERPRISE' : 'NON-AI / ADOPTION ONLY'}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 text-center">
+                <span className="text-xs text-slate-500 block">AI Relevance Probability</span>
+                <span className="text-2xl font-bold font-mono text-govuk-blue">
+                  {formatPercent(prediction.ai_probability * 100, 1)}
+                </span>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 text-center">
+                <span className="text-xs text-slate-500 block">Confidence Score</span>
+                <span className="text-2xl font-bold font-mono text-slate-900">
+                  {prediction.confidence_score.toFixed(2)}
+                </span>
+              </div>
+            </div>
+
+            {/* Predicted Categories */}
+            <div className="space-y-2">
+              <span className="text-xs font-semibold text-slate-700 block">
+                Predicted ONS Table 3 Taxonomy Categories:
+              </span>
+              {prediction.predicted_labels.length > 0 ? (
+                <div className="flex flex-wrap gap-1.5">
+                  {prediction.predicted_labels.map((catKey) => (
+                    <span
+                      key={catKey}
+                      className="px-2.5 py-1 bg-purple-50 text-purple-800 border border-purple-200 rounded text-xs font-medium"
+                    >
+                      {TAXONOMY_RULES[catKey]?.label || catKey}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-xs text-slate-500 italic">No specific AI taxonomy categories matched.</p>
+              )}
+            </div>
+
+            {/* Dedicated vs Diversified Flag */}
+            <div className="p-3 bg-blue-50 border border-blue-100 rounded-lg text-xs space-y-1">
+              <div className="font-semibold text-blue-900 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-govuk-blue" />
+                {prediction.is_dedicated ? 'Dedicated AI Enterprise' : 'Diversified / Broad Tech Firm'}
+              </div>
+              <p className="text-blue-700">
+                {prediction.is_dedicated
+                  ? 'Core business activity centers primarily on proprietary AI engineering and models.'
+                  : 'Multi-activity business requiring Supply & Use product disaggregation to isolate AI output.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Human Review & Adjudication Card (Rule 9) */}
+          <div className="bg-amber-50/70 rounded-xl border border-amber-200 p-5 shadow-xs space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-amber-200/80">
+              <div className="flex items-center gap-2">
+                <Scale className="w-4 h-4 text-amber-800" />
+                <h3 className="font-bold text-sm text-amber-900">
+                  Human Review & Adjudication (Mandatory Rule 9)
+                </h3>
+              </div>
+              <span className="text-[11px] font-mono font-semibold uppercase px-2 py-0.5 rounded bg-white border border-amber-300 text-amber-900">
+                Status: {reviewStatus}
+              </span>
+            </div>
+
+            <p className="text-xs text-amber-800 leading-relaxed">
+              In accordance with statistical governance rules, model outputs propose candidate classifications but must never silently become ground truth.
+            </p>
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-semibold text-amber-900 block">Reviewer Justification / Audit Notes:</label>
+              <input
+                type="text"
+                value={reviewerNotes}
+                onChange={(e) => setReviewerNotes(e.target.value)}
+                placeholder="e.g. Verified against Companies House accounts note 4..."
+                className="w-full py-1.5 px-3 bg-white border border-amber-300 rounded text-xs text-slate-900"
+              />
+            </div>
+
+            <div className="flex items-center gap-2 pt-1">
+              <button
+                type="button"
+                onClick={() => handleApplyReview('accepted')}
+                className="flex-1 py-2 px-3 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded text-xs flex items-center justify-center gap-1.5"
+              >
+                <ThumbsUp className="w-3.5 h-3.5" />
+                Accept Proposal
+              </button>
+              <button
+                type="button"
+                onClick={() => handleApplyReview('rejected')}
+                className="flex-1 py-2 px-3 bg-rose-700 hover:bg-rose-800 text-white font-semibold rounded text-xs flex items-center justify-center gap-1.5"
+              >
+                <ThumbsDown className="w-3.5 h-3.5" />
+                Reject Proposal
+              </button>
+              <button
+                type="button"
+                onClick={() => handleApplyReview('amended')}
+                className="flex-1 py-2 px-3 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded text-xs flex items-center justify-center gap-1.5"
+              >
+                <Edit3 className="w-3.5 h-3.5" />
+                Amend Labels
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Model Benchmark Evaluation Dashboard */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-6">
+      {/* Benchmark Evaluation Dashboard */}
+      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-100">
           <div>
             <h2 className="text-base font-bold text-slate-900">
-              Benchmark Corpus Evaluation & Performance Metrics
+              Benchmark Corpus Evaluation & Generalisation Audit
             </h2>
             <p className="text-xs text-slate-500">
-              Evaluated across 60 ground-truth annotated UK businesses with dedicated, diversified, and hard negative samples.
+              Curated experimental benchmark dataset — not official statistics and not a representative sample of UK businesses (DS05, N=60).
             </p>
           </div>
           <span className="text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-800">
@@ -411,27 +389,73 @@ export default function ClassifierPage() {
           </span>
         </div>
 
-        {/* Evaluation Metrics Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-          <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-center">
-            <span className="text-[11px] font-semibold text-slate-500 block">Accuracy</span>
-            <span className="text-xl font-bold font-mono text-slate-900">{formatPercent(evaluationMetrics.accuracy * 100, 1)}</span>
+        {/* Small sample warning notice */}
+        <div className="p-3.5 bg-amber-50 rounded-lg border border-amber-200 text-xs text-amber-900 space-y-1">
+          <div className="font-bold flex items-center gap-1.5">
+            <AlertTriangle className="w-4 h-4 text-amber-700" />
+            Evaluation Protocol & Small-Sample Limitation (N=60)
           </div>
-          <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-center">
-            <span className="text-[11px] font-semibold text-slate-500 block">Precision</span>
-            <span className="text-xl font-bold font-mono text-emerald-700">{formatPercent(evaluationMetrics.precision * 100, 1)}</span>
+          <p className="text-amber-800 leading-relaxed text-[11px]">
+            The reported in-sample accuracy evaluates keyword and feature alignment on the 60 curated research profiles.
+            Cross-validation evaluates stability across held-out test splits.
+            <strong> These metrics do not demonstrate generalisation across the 5.6 million diverse registered UK enterprises.</strong>
+          </p>
+        </div>
+
+        {/* Dual Metrics Comparison: In-Sample vs 5-Fold Cross-Validation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-xs text-slate-900 uppercase tracking-wider">
+                1. In-Sample Fit (All 60 Samples)
+              </span>
+              <span className="text-[10px] font-mono text-slate-500">Calibration Fit</span>
+            </div>
+            <div className="grid grid-cols-4 gap-2 text-center font-mono">
+              <div className="bg-white p-2 rounded border border-slate-200">
+                <span className="text-[10px] text-slate-500 block font-sans">Accuracy</span>
+                <span className="font-bold text-sm text-slate-900">{formatPercent(evaluationMetrics.accuracy * 100, 1)}</span>
+              </div>
+              <div className="bg-white p-2 rounded border border-slate-200">
+                <span className="text-[10px] text-slate-500 block font-sans">Precision</span>
+                <span className="font-bold text-sm text-emerald-700">{formatPercent(evaluationMetrics.precision * 100, 1)}</span>
+              </div>
+              <div className="bg-white p-2 rounded border border-slate-200">
+                <span className="text-[10px] text-slate-500 block font-sans">Recall</span>
+                <span className="font-bold text-sm text-govuk-blue">{formatPercent(evaluationMetrics.recall * 100, 1)}</span>
+              </div>
+              <div className="bg-white p-2 rounded border border-slate-200">
+                <span className="text-[10px] text-slate-500 block font-sans">F1-Score</span>
+                <span className="font-bold text-sm text-purple-700">{formatPercent(evaluationMetrics.f1_score * 100, 1)}</span>
+              </div>
+            </div>
           </div>
-          <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-center">
-            <span className="text-[11px] font-semibold text-slate-500 block">Recall</span>
-            <span className="text-xl font-bold font-mono text-govuk-blue">{formatPercent(evaluationMetrics.recall * 100, 1)}</span>
-          </div>
-          <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-center">
-            <span className="text-[11px] font-semibold text-slate-500 block">F1-Score</span>
-            <span className="text-xl font-bold font-mono text-purple-700">{formatPercent(evaluationMetrics.f1_score * 100, 1)}</span>
-          </div>
-          <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-center">
-            <span className="text-[11px] font-semibold text-slate-500 block">ROC-AUC</span>
-            <span className="text-xl font-bold font-mono text-slate-900">{evaluationMetrics.roc_auc.toFixed(2)}</span>
+
+          <div className="p-4 bg-blue-50/60 rounded-xl border border-blue-200 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-xs text-govuk-blue uppercase tracking-wider">
+                2. Stratified 5-Fold Cross-Validation
+              </span>
+              <span className="text-[10px] font-mono text-blue-700">Held-Out Splits</span>
+            </div>
+            <div className="grid grid-cols-4 gap-2 text-center font-mono">
+              <div className="bg-white p-2 rounded border border-blue-200">
+                <span className="text-[10px] text-slate-500 block font-sans">Mean Acc</span>
+                <span className="font-bold text-sm text-govuk-blue">{formatPercent(cvMetrics.mean_accuracy * 100, 1)}</span>
+              </div>
+              <div className="bg-white p-2 rounded border border-blue-200">
+                <span className="text-[10px] text-slate-500 block font-sans">Precision</span>
+                <span className="font-bold text-sm text-emerald-700">{formatPercent(cvMetrics.precision * 100, 1)}</span>
+              </div>
+              <div className="bg-white p-2 rounded border border-blue-200">
+                <span className="text-[10px] text-slate-500 block font-sans">Recall</span>
+                <span className="font-bold text-sm text-blue-700">{formatPercent(cvMetrics.recall * 100, 1)}</span>
+              </div>
+              <div className="bg-white p-2 rounded border border-blue-200">
+                <span className="text-[10px] text-slate-500 block font-sans">F1-Score</span>
+                <span className="font-bold text-sm text-purple-700">{formatPercent(cvMetrics.f1_score * 100, 1)}</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -439,7 +463,7 @@ export default function ClassifierPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
           <div className="space-y-2">
             <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">
-              Confusion Matrix (Binary AI Relevance)
+              In-Sample Confusion Matrix (Binary AI Relevance)
             </span>
             <div className="grid grid-cols-2 gap-2 text-xs">
               <div className="bg-emerald-50 p-3 rounded border border-emerald-200">
@@ -468,7 +492,7 @@ export default function ClassifierPage() {
           {/* Review Audit Trail Log */}
           <div className="space-y-2">
             <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">
-              Recent Human Review Decisions ({reviewHistory.length})
+              Session Review Decisions Audit Trail ({reviewHistory.length})
             </span>
             <div className="max-h-40 overflow-y-auto divide-y divide-slate-100 text-xs bg-slate-50 p-3 rounded border border-slate-200">
               {reviewHistory.length > 0 ? (

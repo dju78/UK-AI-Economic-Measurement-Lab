@@ -1190,12 +1190,12 @@ with open(raw_corpus_path, "w", encoding="utf-8") as f:
     json.dump({
         "source_id": "DS05",
         "source_title": "UK AI Business Classification Research Benchmark Corpus",
-        "publisher": "UK AI Economic Measurement Lab (Synthetic & Curated Research Benchmark)",
+        "publisher": "UK AI Economic Measurement Lab (Curated Research Benchmark)",
         "reference_period": "2026",
         "release_date": "2026-09-21",
         "retrieved_at": "2026-09-21T12:00:00Z",
         "licence": "Open Government Licence v3.0 / Research Use",
-        "statistical_status": "Curated benchmark dataset with hard negatives and ground truth annotations",
+        "statistical_status": "Curated experimental benchmark dataset — not official statistics and not a representative sample of UK businesses.",
         "sample_size": len(business_corpus),
         "data": business_corpus
     }, f, indent=2)

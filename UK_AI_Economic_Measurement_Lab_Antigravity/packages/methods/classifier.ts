@@ -325,3 +325,64 @@ export function evaluateClassifierOnCorpus(
     per_label_metrics
   };
 }
+
+export function evaluateClassifierCrossValidation(
+  corpus: CompanyClassificationRecord[],
+  kFolds: number = 5,
+  modelType: 'rule_baseline' | 'tfidf_logistic' = 'tfidf_logistic'
+) {
+  const positives = corpus.filter((r) => r.ground_truth_ai_relevant);
+  const negatives = corpus.filter((r) => !r.ground_truth_ai_relevant);
+
+  const posFoldSize = Math.floor(positives.length / kFolds);
+  const negFoldSize = Math.floor(negatives.length / kFolds);
+
+  const foldAccuracies: number[] = [];
+  let totalTp = 0;
+  let totalFp = 0;
+  let totalTn = 0;
+  let totalFn = 0;
+
+  for (let k = 0; k < kFolds; k++) {
+    const posTest = positives.slice(k * posFoldSize, (k + 1) * posFoldSize);
+    const negTest = negatives.slice(k * negFoldSize, (k + 1) * negFoldSize);
+    const testFold = [...posTest, ...negTest];
+
+    let foldTp = 0;
+    let foldFp = 0;
+    let foldTn = 0;
+    let foldFn = 0;
+
+    testFold.forEach((r) => {
+      const pred = classifyBusinessText(r, modelType);
+      const actual = r.ground_truth_ai_relevant ?? false;
+      if (pred.is_ai_relevant && actual) foldTp++;
+      else if (pred.is_ai_relevant && !actual) foldFp++;
+      else if (!pred.is_ai_relevant && !actual) foldTn++;
+      else if (!pred.is_ai_relevant && actual) foldFn++;
+    });
+
+    const foldAcc = testFold.length > 0 ? (foldTp + foldTn) / testFold.length : 0;
+    foldAccuracies.push(foldAcc);
+    totalTp += foldTp;
+    totalFp += foldFp;
+    totalTn += foldTn;
+    totalFn += foldFn;
+  }
+
+  const cvAcc = foldAccuracies.reduce((a, b) => a + b, 0) / foldAccuracies.length;
+  const cvPrec = totalTp + totalFp > 0 ? totalTp / (totalTp + totalFp) : 1.0;
+  const cvRec = totalTp + totalFn > 0 ? totalTp / (totalTp + totalFn) : 1.0;
+  const cvF1 = cvPrec + cvRec > 0 ? (2 * cvPrec * cvRec) / (cvPrec + cvRec) : 0.0;
+
+  return {
+    k_folds: kFolds,
+    total_samples: corpus.length,
+    mean_accuracy: Math.round(cvAcc * 1000) / 1000,
+    precision: Math.round(cvPrec * 1000) / 1000,
+    recall: Math.round(cvRec * 1000) / 1000,
+    f1_score: Math.round(cvF1 * 1000) / 1000,
+    fold_accuracies: foldAccuracies.map((a) => Math.round(a * 1000) / 1000),
+    confusion_matrix: { tp: totalTp, fp: totalFp, tn: totalTn, fn: totalFn }
+  };
+}
