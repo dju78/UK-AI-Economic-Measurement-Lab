@@ -5,21 +5,21 @@
 **Owner / Author:** Daramola Omoyele  
 **Version:** `v0.2.0-experimental`  
 **Git Tag:** `v0.2.0`  
-**Live Production URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
+**Canonical Production URL:** [https://ai-measurement.jomovate.com](https://ai-measurement.jomovate.com)  
+**Secondary / Host URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
 **Deployment Platform:** Vercel Edge Network  
 **GitHub Repository:** [https://github.com/dju78/UK-AI-Economic-Measurement-Lab](https://github.com/dju78/UK-AI-Economic-Measurement-Lab)  
-**Production Branch:** `main`  
-**Verified Commit SHA:** `3a437fe`  
+**Production Branch:** `main` (mirrored to `master`)  
 **Deployment Date:** 2026-09-21  
-**Status:** **READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH**
+**Status:** **LIVE IN PRODUCTION — CANONICAL DOMAIN CONFIGURED**
 
 ---
 
 ### Executive Summary
 
-The **UK AI Economic Measurement Lab** has been successfully deployed to production on Vercel and fully verified live at [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/).
+The **UK AI Economic Measurement Lab** has been successfully deployed to production and is live at its canonical address: [https://ai-measurement.jomovate.com](https://ai-measurement.jomovate.com) (with host routing through [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)).
 
-All 11 public page routes and 4 API endpoints were tested against the genuine production URL, confirming 100% availability, sub-second latency, zero runtime errors, and strict adherence to the statistical governance requirements of `AGENTS.md`.
+All 11 public page routes, Next.js sitemap, Open Graph dynamic images, robots.txt, JSON-LD structured data, and 4 API endpoints are fully verified live, confirming 100% availability, sub-second latency, zero runtime errors, and strict adherence to the statistical governance requirements of `AGENTS.md`.
 
 ---
 
@@ -27,13 +27,14 @@ All 11 public page routes and 4 API endpoints were tested against the genuine pr
 
 | Item | Specification / Value | Status |
 | :--- | :--- | :---: |
-| **Production URL** | `https://uk-ai-economic-measurement-lab.vercel.app/` | **LIVE (200 OK)** |
+| **Canonical Production URL** | `https://ai-measurement.jomovate.com` | **LIVE (200 OK)** |
+| **Secondary / Host URL** | `https://uk-ai-economic-measurement-lab.vercel.app/` | **LIVE (200 OK)** |
 | **Deployment Host** | Vercel Serverless & Edge Network | **LIVE** |
 | **GitHub Repository** | `dju78/UK-AI-Economic-Measurement-Lab` | **PASS** |
 | **Production Branch** | `main` (tracked with `origin/main` & `origin/master`) | **PASS** |
 | **Release Tag** | `v0.2.0` | **PASS** |
-| **Automated Test Suite** | 34 / 34 Tests Passing (100%) | **PASS** |
-| **Next.js Production Build** | 18 / 18 Static & Dynamic Routes Generated | **PASS** |
+| **Automated Test Suite** | 38 / 38 Tests Passing (100%) | **PASS** |
+| **Next.js Production Build** | Static & Dynamic Routes Generated (including sitemap.xml, robots.txt, opengraph-image) | **PASS** |
 | **Browser Console Errors** | 0 Errors, 0 Uncaught Exceptions | **PASS** |
 | **Critical / High Defects** | **0 Critical, 0 High** | **PASS** |
 
@@ -41,21 +42,23 @@ All 11 public page routes and 4 API endpoints were tested against the genuine pr
 
 ### 2. Live Page Smoke Test Results
 
-Every user-facing route was smoke-tested directly on the live Vercel HTTPS URL:
+Every user-facing route was smoke-tested directly on the live canonical HTTPS URL:
 
-| Route | Page Title / Description | HTTP Status | Response Size | Independence Disclaimer Verified |
-| :--- | :--- | :---: | :---: | :---: |
-| `/` | Home & Executive Overview | **200 OK** | 53.4 kB | **YES** |
-| `/stack` | AI Production Stack (5 Taxonomy Layers) | **200 OK** | 48.4 kB | **YES** |
-| `/supply-use` | Supply & Use Matrix (CPA 62/58/63 flows) | **200 OK** | 59.6 kB | **YES** |
-| `/disaggregation` | Disaggregation Lab (4 Scenario Engines) | **200 OK** | 27.5 kB | **YES** |
-| `/classifier` | Business Classification & DS05 Benchmark | **200 OK** | 51.3 kB | **YES** |
-| `/sna-decision` | SNA 2008 / ESA 2010 Asset Boundary Engine | **200 OK** | 42.3 kB | **YES** |
-| `/adoption` | AI Adoption Indicators (DBT & BICS data) | **200 OK** | 40.8 kB | **YES** |
-| `/gaps` | Statistical Gaps & ONS Roadmap Tracker | **200 OK** | 43.7 kB | **YES** |
-| `/methodology` | 10 Method Cards & KaTeX Formulas | **200 OK** | 53.1 kB | **YES** |
-| `/quality` | Data Quality Dashboard (Eurostat 5-D) | **200 OK** | 42.8 kB | **YES** |
-| `/sources` | Data Source Register (DS01–DS10) | **200 OK** | 50.4 kB | **YES** |
+| Route | Page Title / Description | HTTP Status | Independence Disclaimer Verified |
+| :--- | :--- | :---: | :---: |
+| `/` | Home & Executive Overview | **200 OK** | **YES** |
+| `/stack` | AI Production Stack (5 Taxonomy Layers) | **200 OK** | **YES** |
+| `/supply-use` | Supply & Use Matrix (CPA 62/58/63 flows) | **200 OK** | **YES** |
+| `/disaggregation` | Disaggregation Lab (4 Scenario Engines) | **200 OK** | **YES** |
+| `/classifier` | Business Classification & DS05 Benchmark | **200 OK** | **YES** |
+| `/sna-decision` | SNA 2008 / ESA 2010 Asset Boundary Engine | **200 OK** | **YES** |
+| `/adoption` | AI Adoption Indicators (DBT & BICS data) | **200 OK** | **YES** |
+| `/gaps` | Statistical Gaps & ONS Roadmap Tracker | **200 OK** | **YES** |
+| `/methodology` | 10 Method Cards & KaTeX Formulas | **200 OK** | **YES** |
+| `/quality` | Data Quality Dashboard (Eurostat 5-D) | **200 OK** | **YES** |
+| `/sources` | Data Source Register (DS01–DS10) | **200 OK** | **YES** |
+| `/sitemap.xml` | XML Sitemap of all 11 routes | **200 OK** | **YES** |
+| `/robots.txt` | Robots Configuration & Sitemap Pointer | **200 OK** | **YES** |
 
 ---
 
@@ -68,7 +71,7 @@ All REST API endpoints were tested against the production URL:
 | `/api/products` | `GET` | None | **200 OK** | 23 CPA products, vintage `2020-2023`, status `Published official-statistics source` |
 | `/api/manifest` | `GET` | None | **200 OK** | Manifest v1.0.0, 5 primary cryptographic datasets tracked with SHA-256 |
 | `/api/disaggregate` | `POST` | `{"product_code":"CPA_J62","method":"survey_residual"}` | **200 OK** | Broad Total: £101,850M, 21 sensitivity curve points generated |
-| `/api/classify` | `POST` | `{"description":"Developing enterprise LLMs..."}` | **200 OK** | `tfidf_logistic` inference, AI probability score, category weights |
+| `/api/classify` | `POST` | `{"description":"Developing enterprise large language models..."}` | **200 OK** | Probability: 86.8%, AI Relevant: True |
 | `/api/classify` | `POST` | `bad_payload` (malformed input) | **400 Bad Request** | Graceful error response with JSON error message |
 
 ---
@@ -92,19 +95,12 @@ All REST API endpoints were tested against the production URL:
 
 ---
 
-### 6. Responsive Viewport Verification
-
-- **Desktop (1440 × 900):** Full multi-column grid, interactive SUT matrix, side-by-side scenario controls.
-- **Tablet (768 × 1024):** Responsive two-column wrapping, scrollable matrices with sticky headers.
-- **Mobile (390 × 844):** Single-column stacked layouts, accessible drawer navigation, card-based data table fallbacks.
-
----
-
-### 7. Final Launch Determination
+### 6. Final Launch Determination
 
 ```
 ================================================================================
 FINAL PRODUCTION VERIFICATION DETERMINATION:
 READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH
+CANONICAL URL: https://ai-measurement.jomovate.com
 ================================================================================
 ```

@@ -2,7 +2,8 @@
 
 **Release Date:** 21 September 2026  
 **Release Version:** `v0.2.0-experimental`  
-**Live Production URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
+**Canonical Production URL:** [https://ai-measurement.jomovate.com](https://ai-measurement.jomovate.com)  
+**Secondary / Host URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
 **Deployment Platform:** Vercel  
 **GitHub Repository:** [https://github.com/dju78/UK-AI-Economic-Measurement-Lab](https://github.com/dju78/UK-AI-Economic-Measurement-Lab)  
 **Author:** Daramola Omoyele  
@@ -55,6 +56,12 @@ It turns the public research challenges articulated in the ONS AI Thematic Accou
 ### 8. Methodology & Reproducibility Centre (`/methodology`, `/quality`, `/sources`)
 - 10 versioned method cards with KaTeX formulas, cryptographic SHA-256 data manifest, automated test audit logs, and complete source bibliography (S1–S13).
 
+### 9. Public Launch Metadata & Discoverability Polish
+- Canonical base URL set to `https://ai-measurement.jomovate.com`.
+- Dynamic Open Graph and Twitter Card preview images generated via `@vercel/og` with UK government palette.
+- Complete Next.js XML sitemap (`/sitemap.xml`) covering all 11 routes.
+- Semantic JSON-LD `SoftwareApplication` structured data embedded into page metadata.
+
 ---
 
 ## Live Smoke Test Summary
@@ -63,7 +70,7 @@ It turns the public research challenges articulated in the ONS AI Thematic Accou
 | :--- | :---: |
 | **All 11 Public Page Routes** | 200 OK (100% Pass) |
 | **All 4 REST API Endpoints** | 200 OK (100% Pass) |
-| **Automated Test Suite** | 34 / 34 Tests Passing |
+| **Automated Test Suite** | 38 / 38 Tests Passing |
 | **Independence Disclaimers** | Verified across all pages |
 | **Critical Defects** | 0 |
 | **High Defects** | 0 |

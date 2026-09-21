@@ -3,7 +3,8 @@
 > **Independent Research Prototype**  
 > **Author & Lead:** Daramola Omoyele  
 > **Version:** `v0.2.0-experimental`  
-> **Live Production URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
+> **Canonical Production URL:** [https://ai-measurement.jomovate.com](https://ai-measurement.jomovate.com)  
+> **Secondary / Host URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
 > **Status:** **LIVE IN PRODUCTION (VERIFIED)**
 
 ---
@@ -19,7 +20,8 @@ It is **not an ONS product**, is **not endorsed by ONS**, and does **not produce
 ## Live Application
 
 The complete interactive research platform is hosted live at:  
-👉 **[https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)**
+👉 **[https://ai-measurement.jomovate.com](https://ai-measurement.jomovate.com)**  
+*(Host mirror: [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/))*
 
 ---
 
@@ -47,7 +49,7 @@ The complete interactive research platform is hosted live at:
 python scripts/build_data_layer.py
 ```
 
-### 2. Run Automated Statistical Test Suite
+### 2. Run Automated Statistical Test Suite (38 tests)
 ```bash
 python -m unittest discover tests
 ```

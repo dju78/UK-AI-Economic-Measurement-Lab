@@ -3,7 +3,8 @@
 > **Independent Statistical Research Prototype**  
 > **Author & Lead:** Daramola Omoyele  
 > **Version:** `v0.2.0-experimental`  
-> **Live Production URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
+> **Canonical Production URL:** [https://ai-measurement.jomovate.com](https://ai-measurement.jomovate.com)  
+> **Secondary / Host URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
 > **Status:** **LIVE IN PRODUCTION (VERIFIED)**
 
 ---
@@ -19,7 +20,8 @@ It is **not an ONS product**, is **not endorsed by ONS**, and does **not produce
 ## Live Application
 
 The complete interactive research platform is hosted live at:  
-👉 **[https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)**
+👉 **[https://ai-measurement.jomovate.com](https://ai-measurement.jomovate.com)**  
+*(Host mirror: [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/))*
 
 ### Core Modules:
 - **AI Production Stack Explorer (`/stack`):** 5-layer economic value chain mapping.
@@ -41,7 +43,7 @@ cd UK_AI_Economic_Measurement_Lab_Antigravity
 # 1. Build and verify data layer
 python scripts/build_data_layer.py
 
-# 2. Run automated statistical test suite (34 tests)
+# 2. Run automated statistical test suite (38 tests)
 python -m unittest discover tests
 
 # 3. Launch Web Application locally
