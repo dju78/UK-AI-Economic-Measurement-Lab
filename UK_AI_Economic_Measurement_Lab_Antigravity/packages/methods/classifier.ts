@@ -234,6 +234,20 @@ export function classifyBusinessText(
       logit += 1.80;
     }
 
+    if (hasHardNegativeIndicator) {
+      const coreEngineering = ['foundation model', 'deep learning', 'neural network', 'transformer', 'reinforcement learning', 'vector database', 'diffusion model'].some(
+        (t) => lowerText.includes(t) || normalizedLowerText.includes(t)
+      );
+      if (!coreEngineering) {
+        logit -= 4.0;
+        featureContributions.push({
+          term: 'ai_adoption_or_non_core_penalty',
+          weight: -4.0,
+          direction: 'negative'
+        });
+      }
+    }
+
     // Sigmoid function
     aiProbability = 1.0 / (1.0 + Math.exp(-logit));
     aiProbability = Math.round(aiProbability * 1000) / 1000;

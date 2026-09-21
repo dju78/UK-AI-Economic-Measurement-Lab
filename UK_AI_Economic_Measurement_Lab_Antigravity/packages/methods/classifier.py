@@ -217,6 +217,16 @@ def classify_business_text(
         if len(predicted_labels) > 0 and matched_pos_terms == 0 and not has_hard_negative:
             logit += 1.80
 
+        if has_hard_negative:
+            core_engineering = any(t in lower_text or t in normalized_lower_text for t in ["foundation model", "deep learning", "neural network", "transformer", "reinforcement learning", "vector database", "diffusion model"])
+            if not core_engineering:
+                logit -= 4.0
+                feature_contributions.append({
+                    "term": "ai_adoption_or_non_core_penalty",
+                    "weight": -4.0,
+                    "direction": "negative"
+                })
+
         ai_probability = 1.0 / (1.0 + math.exp(-logit))
         ai_probability = round(ai_probability, 3)
         is_ai_relevant = ai_probability >= 0.50
