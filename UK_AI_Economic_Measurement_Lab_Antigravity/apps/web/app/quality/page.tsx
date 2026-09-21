@@ -12,8 +12,7 @@ import {
   Copy,
   Check,
   Layers,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 import { DATA_MANIFEST } from '@/lib/data';
 import { CaveatBanner } from '@/components/provenance/CaveatBanner';

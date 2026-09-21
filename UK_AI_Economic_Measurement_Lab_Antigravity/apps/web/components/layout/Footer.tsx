@@ -1,15 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck, Scale, ExternalLink, HelpCircle, FileText } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-slate-200 bg-slate-900 text-slate-300 text-xs font-sans mt-20">
+    <footer className="border-t border-slate-200 bg-slate-900 text-slate-300 text-xs font-sans mt-24">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-800">
           <div className="md:col-span-2 space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded bg-govuk-blue text-white font-mono font-bold flex items-center justify-center text-xs">
+            <div className="flex items-center gap-2.5">
+              <div className="w-7 h-7 rounded bg-slate-800 border border-slate-700 text-white font-mono font-bold flex items-center justify-center text-xs">
                 AI
               </div>
               <span className="font-bold text-white text-sm">UK AI Economic Measurement Lab</span>

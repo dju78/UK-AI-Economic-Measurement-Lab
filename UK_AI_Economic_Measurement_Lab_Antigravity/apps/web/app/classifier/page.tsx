@@ -13,7 +13,7 @@ import {
   ThumbsUp,
   ThumbsDown,
   Layers,
-  Sparkles,
+  Building2,
   Search,
   Scale
 } from 'lucide-react';
@@ -303,7 +303,7 @@ export default function ClassifierPage() {
             {/* Dedicated vs Diversified Flag */}
             <div className="p-3 bg-blue-50 border border-blue-100 rounded-lg text-xs space-y-1">
               <div className="font-semibold text-blue-900 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-govuk-blue" />
+                <Building2 className="w-3.5 h-3.5 text-govuk-blue" />
                 {prediction.is_dedicated ? 'Dedicated AI Enterprise' : 'Diversified / Broad Tech Firm'}
               </div>
               <p className="text-blue-700">

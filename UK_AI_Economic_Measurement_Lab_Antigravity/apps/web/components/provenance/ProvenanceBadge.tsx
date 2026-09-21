@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatisticalStatus } from '@packages/schemas';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, BookOpen, FlaskConical, Sparkles } from 'lucide-react';
+import { ShieldCheck, BookOpen, FlaskConical } from 'lucide-react';
 
 interface ProvenanceBadgeProps {
   status: StatisticalStatus;
@@ -16,7 +16,7 @@ export const ProvenanceBadge: React.FC<ProvenanceBadgeProps> = ({
   className,
   onClick
 }) => {
-  let badgeStyle = 'bg-blue-50 text-blue-800 border-blue-200';
+  let badgeStyle = 'bg-slate-100 text-slate-800 border-slate-300';
   let Icon = BookOpen;
 
   if (status === 'Published official-statistics source') {
@@ -45,7 +45,7 @@ export const ProvenanceBadge: React.FC<ProvenanceBadgeProps> = ({
       <Icon className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
       <span>{status}</span>
       {sourceId && (
-        <span className="font-mono font-semibold bg-white/70 px-1 py-0.5 rounded text-[10px] ml-0.5">
+        <span className="font-mono font-semibold bg-white/80 px-1 py-0.5 rounded text-[10px] ml-0.5">
           {sourceId}
         </span>
       )}

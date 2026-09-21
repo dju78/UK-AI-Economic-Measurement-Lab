@@ -3,35 +3,21 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  Layers,
-  Table,
-  Sliders,
-  Cpu,
-  HelpCircle,
-  TrendingUp,
-  AlertCircle,
-  FileCode2,
-  CheckCircle2,
-  Database,
-  Menu,
-  X,
-  Compass
-} from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const NAV_ITEMS = [
-  { href: '/', label: 'Overview', icon: Compass },
-  { href: '/stack', label: 'AI Production Stack', icon: Layers },
-  { href: '/supply-use', label: 'Supply & Use Explorer', icon: Table },
-  { href: '/disaggregation', label: 'Disaggregation Lab', icon: Sliders },
-  { href: '/classifier', label: 'Business Classifier', icon: Cpu },
-  { href: '/sna-decision', label: 'SNA Decision Engine', icon: HelpCircle },
-  { href: '/adoption', label: 'Adoption Context', icon: TrendingUp },
-  { href: '/gaps', label: 'Measurement Gaps', icon: AlertCircle },
-  { href: '/methodology', label: 'Methodology', icon: FileCode2 },
-  { href: '/quality', label: 'QA & Reproducibility', icon: CheckCircle2 },
-  { href: '/sources', label: 'Sources', icon: Database }
+  { href: '/', label: 'Overview' },
+  { href: '/stack', label: 'AI Production Stack' },
+  { href: '/supply-use', label: 'Supply & Use' },
+  { href: '/disaggregation', label: 'Disaggregation' },
+  { href: '/classifier', label: 'Classifier' },
+  { href: '/sna-decision', label: 'SNA Decision' },
+  { href: '/adoption', label: 'Adoption' },
+  { href: '/gaps', label: 'Measurement Gaps' },
+  { href: '/methodology', label: 'Methodology' },
+  { href: '/quality', label: 'QA & Validation' },
+  { href: '/sources', label: 'Sources' }
 ];
 
 export const Header: React.FC = () => {
@@ -40,7 +26,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className="border-b border-slate-200 bg-white sticky top-0 z-40">
-      {/* Official Independent Prototype Phase Banner */}
+      {/* Prototype Phase Header Banner */}
       <div className="bg-slate-900 text-white text-xs px-4 py-1.5 flex items-center justify-between font-sans">
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -61,12 +47,12 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Main Masthead */}
-      <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 py-3.5 sm:py-4 flex items-center justify-between">
         <Link
           href="/"
           className="group flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-govuk-blue rounded p-1"
         >
-          <div className="w-9 h-9 rounded bg-govuk-blue flex items-center justify-center text-white font-bold text-lg font-mono shadow-xs group-hover:bg-govuk-darkBlue transition-colors">
+          <div className="w-8 h-8 rounded bg-slate-900 flex items-center justify-center text-white font-bold text-xs font-mono tracking-wider shadow-xs group-hover:bg-govuk-blue transition-colors">
             AI
           </div>
           <div>
@@ -93,27 +79,25 @@ export const Header: React.FC = () => {
 
       {/* Desktop Navigation Bar */}
       <nav
-        className="hidden lg:block border-t border-slate-100 bg-slate-50/70"
+        className="hidden lg:block border-t border-slate-100 bg-slate-50/80"
         aria-label="Primary Navigation"
       >
-        <div className="max-w-7xl mx-auto px-4 flex items-center gap-1 overflow-x-auto py-1">
+        <div className="max-w-7xl mx-auto px-4 flex items-center gap-1 overflow-x-auto py-1.5">
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.href;
-            const Icon = item.icon;
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-govuk-blue',
+                  'px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-govuk-blue',
                   isActive
                     ? 'bg-govuk-blue text-white shadow-xs'
                     : 'text-slate-700 hover:text-slate-900 hover:bg-slate-200/60'
                 )}
                 aria-current={isActive ? 'page' : undefined}
               >
-                <Icon className="w-3.5 h-3.5" aria-hidden="true" />
-                <span>{item.label}</span>
+                {item.label}
               </Link>
             );
           })}
@@ -128,22 +112,20 @@ export const Header: React.FC = () => {
         >
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.href;
-            const Icon = item.icon;
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  'flex items-center gap-2.5 px-3 py-2.5 rounded text-sm font-medium transition-colors',
+                  'block px-3 py-2.5 rounded text-sm font-medium transition-colors',
                   isActive
                     ? 'bg-govuk-blue text-white font-semibold'
                     : 'text-slate-700 hover:bg-slate-100'
                 )}
                 aria-current={isActive ? 'page' : undefined}
               >
-                <Icon className="w-4 h-4" aria-hidden="true" />
-                <span>{item.label}</span>
+                {item.label}
               </Link>
             );
           })}

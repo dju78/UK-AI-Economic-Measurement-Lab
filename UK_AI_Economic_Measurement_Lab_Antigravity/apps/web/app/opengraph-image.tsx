@@ -17,148 +17,93 @@ export default async function Image() {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#0f172a',
-          padding: '60px 80px',
+          backgroundColor: '#0b1329',
+          padding: '70px 80px',
           justifyContent: 'space-between',
           fontFamily: 'sans-serif'
         }}
       >
-        {/* Top Header Bar */}
+        {/* Top Header Label */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              backgroundColor: '#1e293b',
-              padding: '10px 20px',
-              borderRadius: '8px',
-              border: '1px solid #334155'
-            }}
-          >
-            <div
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span
               style={{
-                width: '12px',
-                height: '12px',
-                borderRadius: '50%',
-                backgroundColor: '#10b981',
-                marginRight: '12px'
+                color: '#94a3b8',
+                fontSize: '15px',
+                fontWeight: 700,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase'
               }}
-            />
-            <span style={{ color: '#94a3b8', fontSize: '18px', fontWeight: 600, letterSpacing: '0.05em' }}>
-              RESEARCH PROTOTYPE • NATIONAL ACCOUNTS
+            >
+              UK National Accounts • Statistical Research Prototype
             </span>
           </div>
           <div
             style={{
-              display: 'flex',
-              backgroundColor: '#f59e0b',
-              color: '#0f172a',
-              padding: '8px 16px',
-              borderRadius: '6px',
-              fontSize: '16px',
-              fontWeight: 700
+              color: '#94a3b8',
+              fontSize: '14px',
+              fontWeight: 600,
+              letterSpacing: '0.05em',
+              border: '1px solid #1e293b',
+              padding: '6px 14px',
+              borderRadius: '4px'
             }}
           >
-            INDEPENDENT RESEARCH
+            Independent Research
           </div>
         </div>
 
-        {/* Main Center Content */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        {/* Center Title & Summary */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <h1
             style={{
-              fontSize: '56px',
+              fontSize: '54px',
               fontWeight: 800,
               color: '#ffffff',
-              lineHeight: 1.1,
+              lineHeight: 1.15,
               margin: 0,
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.025em'
             }}
           >
             UK AI Economic <br />
-            <span style={{ color: '#38bdf8' }}>Measurement Lab</span>
+            Measurement Lab
           </h1>
           <p
             style={{
-              fontSize: '24px',
-              color: '#cbd5e1',
-              maxWidth: '900px',
-              lineHeight: 1.4,
+              fontSize: '22px',
+              color: '#94a3b8',
+              maxWidth: '920px',
+              lineHeight: 1.45,
               margin: 0
             }}
           >
-            Measuring Artificial Intelligence in the UK Economy through Supply & Use Tables, SNA 2008 Asset Boundaries & Disaggregation Methods.
+            Measuring Artificial Intelligence in the UK Economy through Supply & Use Tables, SNA 2008 Asset Boundaries, and Disaggregation Methods.
           </p>
         </div>
 
-        {/* Bottom Metadata & Badges */}
+        {/* Bottom Author & Metadata */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            borderTop: '1px solid #334155',
-            paddingTop: '30px'
+            borderTop: '1px solid #1e293b',
+            paddingTop: '28px'
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ color: '#64748b', fontSize: '15px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Principal Author & Lead
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <span style={{ color: '#64748b', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              Author & Principal Lead
             </span>
-            <span style={{ color: '#f8fafc', fontSize: '22px', fontWeight: 700 }}>
+            <span style={{ color: '#f1f5f9', fontSize: '20px', fontWeight: 700 }}>
               Daramola Omoyele
             </span>
           </div>
 
-          <div style={{ display: 'flex', gap: '16px' }}>
-            <div
-              style={{
-                backgroundColor: '#1e293b',
-                color: '#e2e8f0',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                fontSize: '16px',
-                border: '1px solid #334155'
-              }}
-            >
-              Supply & Use
-            </div>
-            <div
-              style={{
-                backgroundColor: '#1e293b',
-                color: '#e2e8f0',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                fontSize: '16px',
-                border: '1px solid #334155'
-              }}
-            >
-              Disaggregation
-            </div>
-            <div
-              style={{
-                backgroundColor: '#1e293b',
-                color: '#e2e8f0',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                fontSize: '16px',
-                border: '1px solid #334155'
-              }}
-            >
-              SNA 2008 Engine
-            </div>
-            <div
-              style={{
-                backgroundColor: '#1e293b',
-                color: '#e2e8f0',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                fontSize: '16px',
-                border: '1px solid #334155'
-              }}
-            >
-              ML Classification
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ color: '#64748b', fontSize: '15px', fontFamily: 'monospace' }}>
+              ai-measurement.jomovate.com
+            </span>
           </div>
         </div>
       </div>

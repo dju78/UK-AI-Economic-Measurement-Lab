@@ -18,12 +18,20 @@ All notable changes to this project are documented in this file in accordance wi
 - **Methodology & Reproducibility Centre (`/methodology`, `/quality`, `/sources`):** 10 mathematical method cards with KaTeX formulas, cryptographic SHA-256 data manifest, automated test audit logs, and complete source bibliography (S1–S13).
 - **Expanded Automated Test Suite:** 38 unit and statistical tests in `tests/` verifying data integrity, mathematical identities ($V_{\text{AI}} + V_{\text{Non-AI}} \equiv V_{\text{Broad}}$), classifier metrics, SNA decision paths, and cross-language parity.
 - **Dual-Language Analytical Parity:** Native Python and TypeScript implementations with 100% verified parity across all 60 DS05 benchmark records and edge cases.
+- **SEO & Canonical Domain Integration:** Configured `https://ai-measurement.jomovate.com`, dynamic XML sitemap, Open Graph / Twitter previews, robots.txt, and Schema.org JSON-LD structured data.
+
+### Refined & Polished (UI & Visual Identity)
+- **Restrained Editorial Aesthetic:** Refined visual presentation to a clean, typographic, and whitespace-heavy research standard suitable for national statistical and economic researchers.
+- **Iconography Audit & De-cluttering:** Removed all decorative, synthetic, and AI-trope icons (`Sparkles`, pastel multicolour card icon boxes, redundant navigation tab icons).
+- **Clean Typographic Mark:** Replaced styled logo boxes with an understated dark-slate typographic mark (`AI`).
+- **Minimalist Social Previews:** Replaced decorative elements with a clean, high-contrast editorial Open Graph and Twitter card layout.
+- **Favicon Polish:** Implemented a crisp, high-contrast 32×32 typographic icon.
 
 ### Fixed & Hardened
 - **Classifier Production Parity:** Resolved missing payload field alias `body.description` in `/api/classify/route.ts` and added plural/hyphen inflections across technical terms in both Python and TypeScript.
 - **AI Producer vs AI User Distinction:** Hardened negative patterns to filter pure AI adopters without suppressing core AI model developers.
 - **Cross-Language Golden Test Suite:** Added automated node subprocess execution in `tests/test_classifier.py` guaranteeing Python and TypeScript parity cannot silently diverge.
-- **Verified Production Deployment:** Deployed to Vercel at `https://uk-ai-economic-measurement-lab.vercel.app/` with all 11 routes and 4 APIs verified.
+- **Verified Production Deployment:** Deployed to production at `https://ai-measurement.jomovate.com` with all 11 routes, sitemap, and 4 APIs verified.
 
 ---
 

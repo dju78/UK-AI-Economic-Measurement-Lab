@@ -12,17 +12,18 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 18,
-          background: '#0f172a',
+          fontSize: 15,
+          background: '#0b1329',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#38bdf8',
+          color: '#ffffff',
           fontWeight: 800,
-          borderRadius: '6px',
-          border: '1px solid #1e293b'
+          fontFamily: 'sans-serif',
+          letterSpacing: '-0.02em',
+          borderRadius: '5px'
         }}
       >
         AI
