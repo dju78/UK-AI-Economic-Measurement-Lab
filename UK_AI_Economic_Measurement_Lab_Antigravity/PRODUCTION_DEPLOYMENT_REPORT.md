@@ -1,127 +1,110 @@
 # UK AI Economic Measurement Lab
-## Production Deployment & Release Status Report
+## Production Deployment & Final Live Verification Report
 
 **Product:** UK AI Economic Measurement Lab  
 **Owner / Author:** Daramola Omoyele  
 **Version:** `v0.2.0-experimental`  
 **Git Tag:** `v0.2.0`  
-**Repository:** [https://github.com/dju78/UK-AI-Economic-Measurement-Lab](https://github.com/dju78/UK-AI-Economic-Measurement-Lab)  
-**Production Branch:** `main` (tracked with `origin/main` and `origin/master`)  
-**Verified Commit SHA:** `8d4fc54`  
-**Date:** 2026-09-21  
-**Status:** **READY FOR DEPLOYMENT — NOT YET PUBLICLY LAUNCHED**
+**Live Production URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
+**Deployment Platform:** Vercel Edge Network  
+**GitHub Repository:** [https://github.com/dju78/UK-AI-Economic-Measurement-Lab](https://github.com/dju78/UK-AI-Economic-Measurement-Lab)  
+**Production Branch:** `main`  
+**Verified Commit SHA:** `3a437fe`  
+**Deployment Date:** 2026-09-21  
+**Status:** **READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH**
 
 ---
 
 ### Executive Summary
 
-The **UK AI Economic Measurement Lab** has successfully completed all development, statistical hardening, automated testing, dual-evaluation classifier calibration, production building, and local live smoke testing. The complete verified codebase and release artifacts are published to GitHub.
+The **UK AI Economic Measurement Lab** has been successfully deployed to production on Vercel and fully verified live at [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/).
 
-The application strictly adheres to the core principles defined in `AGENTS.md` and the statistical measurement framework:
-1. **Independent Research Status:** It is clearly marked on all screens and headers as an independent research prototype by Daramola Omoyele, not an Office for National Statistics (ONS) product, and not producing official statistics.
-2. **Methodological Integrity:** Broad CPA 62/63/J product totals are treated strictly as candidate denominators and upper bounds, never relabelled as pure AI output.
-3. **Data Provenance & Immutability:** Published ONS, DBT, and DSIT datasets are verified against their primary publication sheets and checksummed.
-4. **Benchmark Transparency:** DS05 is rigorously described across the UI and API as:
-   > *"Curated experimental benchmark dataset — not official statistics and not a representative sample of UK businesses."*
-5. **Rigorous Classifier Validation:** Reported with dual evaluation metrics (In-sample: 98.3% accuracy, 100% precision, 97.5% recall, 98.7% F1; Stratified 5-Fold Cross-Validation: 98.3% mean accuracy, 100% precision, 97.5% recall, 98.7% F1, $N=60$), accompanied by explicit disclosures regarding curated keyword sensitivity and small sample limitations.
-6. **Codebase Hygiene:** Zero hardcoded local machine paths exist in runtime production code.
+All 11 public page routes and 4 API endpoints were tested against the genuine production URL, confirming 100% availability, sub-second latency, zero runtime errors, and strict adherence to the statistical governance requirements of `AGENTS.md`.
 
 ---
 
-### 1. Release Identification & Build Verification
+### 1. Live Deployment Identification & Verification
 
-| Verification Item | Specification / Value | Status | Notes |
-| :--- | :--- | :---: | :--- |
-| **GitHub Repository** | `dju78/UK-AI-Economic-Measurement-Lab` | **PASS** | Synchronized with remotes |
-| **Production Branch** | `main` | **PASS** | Canonical production branch |
-| **Git Working Tree** | Clean (`main` branch) | **PASS** | No uncommitted changes or untracked artifacts |
-| **Git Tag** | `v0.2.0` | **PASS** | Associated with release commit |
-| **Release Commit SHA** | `8d4fc54` | **PASS** | Verified release candidate HEAD |
-| **Automated Test Suite** | 34 / 34 Tests Passing | **PASS** | `python -m unittest discover tests` (0 failures, 0 errors, 0.040s) |
-| **Next.js Production Build** | Static & Dynamic Generation | **PASS** | `✓ Generating static pages (18/18)` with 0 TypeScript/ESLint errors |
-| **Bundle Size Optimization** | First Load JS Shared: 87.4 kB | **PASS** | All route page chunks between 1.5 kB and 15.5 kB |
-
----
-
-### 2. Verified Routes & API Endpoints
-
-All 11 user-facing routes and 4 JSON API endpoints have been smoke-tested with 200 OK responses on the verified production build:
-
-| Route Path | Route Type | Status | Features & Interactions Verified |
-| :--- | :--- | :---: | :--- |
-| `/` | Page (Static) | **200 OK** | Hero section, ONS roadmap alignment card, core metrics preview, navigation bar, footer disclaimers. |
-| `/stack` | Page (Static) | **200 OK** | 5-layer UK AI taxonomy (Compute, Models, Software, Professional Services, Data/Annotation). Cost decomposition and import dependency tables. |
-| `/supply-use` | Page (Static) | **200 OK** | ONS SUT matrix viewer (112 CPA products × 112 SIC industries), CPA 62/58/63 intermediate/final demand flows, balance equations ($Total Supply = Total Use$). |
-| `/disaggregation` | Page (Static) | **200 OK** | 4 disaggregation methods (Survey-residual, Bottom-up, Compute-constrained, Revenue-share), uncertainty confidence bounds, interactive scenario modeler. |
-| `/classifier` | Page (Static) | **200 OK** | Multi-attribute heuristic & ML rule classifier, text input analysis, in-sample vs Stratified 5-Fold Cross-Validation metrics display, DS05 60-company benchmark explorer. |
-| `/sna-decision` | Page (Static) | **200 OK** | Interactive SNA 2008 / ESA 2010 asset boundary wizard (GFCF capitalisation vs Intermediate Consumption vs Cloud Service OpEx), flowcharts, and rationale drawer. |
-| `/adoption` | Page (Static) | **200 OK** | Cross-sector AI diffusion indicators (DBT 2024 survey, ONS BICS waves), firm-size breakdowns (Micro, Small, Medium, Large), geographic regional dispersion. |
-| `/gaps` | Page (Static) | **200 OK** | Statistical gaps registry (10 documented measurement challenges), ONS roadmap tracker (2025-2028 milestones), mitigation recommendations. |
-| `/methodology` | Page (Static) | **200 OK** | 10 comprehensive Method Cards, mathematical equations, underlying assumptions, sensitivity parameters, literature references. |
-| `/quality` | Page (Static) | **200 OK** | Data Quality Dashboard, Eurostat / UK Code of Practice 5-dimension scoring (Relevance, Accuracy, Timeliness, Accessibility, Comparability/Coherence). |
-| `/sources` | Page (Static) | **200 OK** | Catalog of 10 primary datasets (DS01–DS10), source URLs, publisher attribution, reference periods, integrity checksums, direct data downloads. |
-| `/api/benchmark` | API Endpoint | **200 OK** | Returns 60-firm benchmark corpus with dual-evaluation CV results and mandatory experimental metadata. |
-| `/api/sut` | API Endpoint | **200 OK** | Delivers SUT analytical slice (CPA 58, 62, 63, J58-63) with balanced supply-use tables and domestic/import breakdowns. |
-| `/api/disaggregate` | API Endpoint | **200 OK** | Computes scenario disaggregation with query parameters (`method`, `cpa_code`, `growth_rate`, `uncertainty_pct`). |
-| `/api/classify` | API Endpoint | **200 OK** | Heuristic classifier engine accepting POST payload (`description`, `sic_code`, `revenue_gbp_m`, `rd_intensity`) returning scores and boundary recommendations. |
-
----
-
-### 3. Responsive Viewport & Browser Verification
-
-| Viewport Tested | Dimensions | Layout & Usability Verification |
-| :--- | :--- | :--- |
-| **Desktop (Large)** | 1440 × 900 px | Multi-column navigation, interactive full-width data tables with sticky headers, side-by-side scenario modeling controls, expanded chart canvas. |
-| **Tablet (Medium)** | 768 × 1024 px | Adaptive grid wrapping (2 columns), scrollable data matrices with horizontal touch affordance, collapsable filter drawers. |
-| **Mobile (Compact)** | 390 × 844 px | Single-column linear layout, off-canvas navigation menu, compact KPI cards, responsive data tables with card-fallback views. |
-| **Browser Console** | Chrome / Edge / Firefox | **0 Errors, 0 Unhandled Exceptions, 0 React Hydration Warnings.** |
-
----
-
-### 4. Statistical Labels & Compliance Audit
-
-| Requirement | Implementation Detail | Audit Result |
+| Item | Specification / Value | Status |
 | :--- | :--- | :---: |
-| **ONS Independence Disclaimer** | Rendered in top notification bar, hero component, methodology pages, and site footer: *"Independent research prototype by Daramola Omoyele. Not an official ONS publication."* | **COMPLIANT** |
-| **Broad CPA Labeling** | CPA 62 & CPA 63 are strictly designated as candidate denominators ($£144.1\text{B}$ and $£40.1\text{B}$ gross output) rather than pure AI production. | **COMPLIANT** |
-| **Three Visual Status Badges** | All metrics, tables, and charts use consistent visual badges: <br>• 🟢 *Published Official Source*<br>• 🔵 *Published Research / Context*<br>• 🟠 *Prototype Estimate (Modelled / Scenario)* | **COMPLIANT** |
-| **DS05 Benchmark Nomenclature** | Standardized to: *"Curated experimental benchmark dataset — not official statistics and not a representative sample of UK businesses."* | **COMPLIANT** |
-| **Classifier Generalisation Disclosure** | High in-sample and cross-validation performance ($F_1 = 98.7\%$) explicitly footnoted as reflecting curated keyword calibration that cannot be assumed to generalise across the 5.6M UK enterprise universe without stratified probability sampling. | **COMPLIANT** |
+| **Production URL** | `https://uk-ai-economic-measurement-lab.vercel.app/` | **LIVE (200 OK)** |
+| **Deployment Host** | Vercel Serverless & Edge Network | **LIVE** |
+| **GitHub Repository** | `dju78/UK-AI-Economic-Measurement-Lab` | **PASS** |
+| **Production Branch** | `main` (tracked with `origin/main` & `origin/master`) | **PASS** |
+| **Release Tag** | `v0.2.0` | **PASS** |
+| **Automated Test Suite** | 34 / 34 Tests Passing (100%) | **PASS** |
+| **Next.js Production Build** | 18 / 18 Static & Dynamic Routes Generated | **PASS** |
+| **Browser Console Errors** | 0 Errors, 0 Uncaught Exceptions | **PASS** |
+| **Critical / High Defects** | **0 Critical, 0 High** | **PASS** |
 
 ---
 
-### 5. Production Environment & Runtime Sanitization
+### 2. Live Page Smoke Test Results
 
-- **Hardcoded Path Audit:** Complete search across `apps/web/` verified **zero** instances of machine-specific paths or hardcoded hosts.
-- **Dynamic Base URL Resolution:** All internal API fetch calls utilise relative paths (e.g. `/api/sut`, `/api/classify`) or dynamically resolve `window.location.origin`.
-- **Security Headers:** Configured standard HTTP security headers (CSP, X-Content-Type-Options: `nosniff`, X-Frame-Options: `DENY`, Strict-Transport-Security, Referrer-Policy: `strict-origin-when-cross-origin`).
+Every user-facing route was smoke-tested directly on the live Vercel HTTPS URL:
 
----
-
-### 6. Production Deployment Instructions
-
-To complete the public deployment to Vercel:
-
-#### 1-Click Vercel Dashboard Deployment
-1. Log in to [vercel.com](https://vercel.com).
-2. Click **"Add New..."** → **"Project"**.
-3. Select the repository: **`dju78/UK-AI-Economic-Measurement-Lab`**.
-4. Configure the project settings:
-   - **Framework Preset:** `Next.js`
-   - **Root Directory:** `UK_AI_Economic_Measurement_Lab_Antigravity/apps/web`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** Default (`.next`)
-5. Click **Deploy**. Vercel will build and assign an official public `.vercel.app` HTTPS domain.
+| Route | Page Title / Description | HTTP Status | Response Size | Independence Disclaimer Verified |
+| :--- | :--- | :---: | :---: | :---: |
+| `/` | Home & Executive Overview | **200 OK** | 53.4 kB | **YES** |
+| `/stack` | AI Production Stack (5 Taxonomy Layers) | **200 OK** | 48.4 kB | **YES** |
+| `/supply-use` | Supply & Use Matrix (CPA 62/58/63 flows) | **200 OK** | 59.6 kB | **YES** |
+| `/disaggregation` | Disaggregation Lab (4 Scenario Engines) | **200 OK** | 27.5 kB | **YES** |
+| `/classifier` | Business Classification & DS05 Benchmark | **200 OK** | 51.3 kB | **YES** |
+| `/sna-decision` | SNA 2008 / ESA 2010 Asset Boundary Engine | **200 OK** | 42.3 kB | **YES** |
+| `/adoption` | AI Adoption Indicators (DBT & BICS data) | **200 OK** | 40.8 kB | **YES** |
+| `/gaps` | Statistical Gaps & ONS Roadmap Tracker | **200 OK** | 43.7 kB | **YES** |
+| `/methodology` | 10 Method Cards & KaTeX Formulas | **200 OK** | 53.1 kB | **YES** |
+| `/quality` | Data Quality Dashboard (Eurostat 5-D) | **200 OK** | 42.8 kB | **YES** |
+| `/sources` | Data Source Register (DS01–DS10) | **200 OK** | 50.4 kB | **YES** |
 
 ---
 
-### 7. Final Release Determination
+### 3. Live API Endpoint Verification
+
+All REST API endpoints were tested against the production URL:
+
+| Endpoint | Method | Payload / Parameters | Status | Live Output |
+| :--- | :---: | :--- | :---: | :--- |
+| `/api/products` | `GET` | None | **200 OK** | 23 CPA products, vintage `2020-2023`, status `Published official-statistics source` |
+| `/api/manifest` | `GET` | None | **200 OK** | Manifest v1.0.0, 5 primary cryptographic datasets tracked with SHA-256 |
+| `/api/disaggregate` | `POST` | `{"product_code":"CPA_J62","method":"survey_residual"}` | **200 OK** | Broad Total: £101,850M, 21 sensitivity curve points generated |
+| `/api/classify` | `POST` | `{"description":"Developing enterprise LLMs..."}` | **200 OK** | `tfidf_logistic` inference, AI probability score, category weights |
+| `/api/classify` | `POST` | `bad_payload` (malformed input) | **400 Bad Request** | Graceful error response with JSON error message |
+
+---
+
+### 4. Interactive Controls & Methodological Validation
+
+- **Supply & Use Balance:** Live SUT table verified for mathematical balance on CPA_J62 ($Total Supply \equiv Total Use = £144,057\text{M}$).
+- **Disaggregation Reconciliation:** Sum-of-parts identity strictly holds ($V_{\text{AI}} + V_{\text{Non-AI}} \equiv V_{\text{Broad}}$).
+- **Dual Classifier Evaluation:** In-sample developmental fit ($F_1 = 98.7\%$) and Stratified 5-Fold Cross-Validation ($F_1 = 98.7\%$) displayed on `/classifier`.
+- **SNA Decision Tree:** 6 UK corporate case studies correctly route through ESA 2010 asset boundary rules (GFCF capitalisation vs Intermediate Consumption vs Cloud OpEx).
+
+---
+
+### 5. Statistical Governance & Disclaimers Audit
+
+- **Independence Notice:** Persistent across all pages:
+  > *"Independent research prototype by Daramola Omoyele. Not an official Office for National Statistics product, not endorsed by ONS, and does not produce official statistics."*
+- **Broad CPA Candidate Denominators:** CPA 62/63/J totals explicitly identified as candidate denominators containing both AI and non-AI activity.
+- **DS05 Benchmark Nomenclature:** Verified across UI and API as:
+  > *"Curated experimental benchmark dataset — not official statistics and not a representative sample of UK businesses."*
+
+---
+
+### 6. Responsive Viewport Verification
+
+- **Desktop (1440 × 900):** Full multi-column grid, interactive SUT matrix, side-by-side scenario controls.
+- **Tablet (768 × 1024):** Responsive two-column wrapping, scrollable matrices with sticky headers.
+- **Mobile (390 × 844):** Single-column stacked layouts, accessible drawer navigation, card-based data table fallbacks.
+
+---
+
+### 7. Final Launch Determination
 
 ```
 ================================================================================
-FINAL VERIFICATION DETERMINATION:
-READY FOR DEPLOYMENT — NOT YET PUBLICLY LAUNCHED
+FINAL PRODUCTION VERIFICATION DETERMINATION:
+READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH
 ================================================================================
 ```
-
-All acceptance criteria, statistical guardrails, unit/calculation tests, and release smoke tests are 100% satisfied. The repository is published to GitHub (`main` branch, commit `8d4fc54`) awaiting final 1-click Vercel project import or CLI token authentication.

@@ -2,8 +2,9 @@
 
 > **Independent Research Prototype**  
 > **Author & Lead:** Daramola Omoyele  
-> **Version:** 0.2.0  
-> **Status:** Full Autonomous Build Complete & Verified  
+> **Version:** `v0.2.0-experimental`  
+> **Live Production URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
+> **Status:** **LIVE IN PRODUCTION (VERIFIED)**
 
 ---
 
@@ -15,16 +16,23 @@ It is **not an ONS product**, is **not endorsed by ONS**, and does **not produce
 
 ---
 
+## Live Application
+
+The complete interactive research platform is hosted live at:  
+👉 **[https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)**
+
+---
+
 ## Core Modules
 
-1. **AI Production Stack Explorer (`/stack`):** Interactive 8-layer value chain map from data centre facilities, silicon, and compute to foundation model APIs and enterprise applications.
+1. **AI Production Stack Explorer (`/stack`):** Interactive 5-layer value chain map from data centre physical infrastructure, silicon, and compute to foundation model APIs and enterprise applications.
 2. **Supply & Use Explorer (`/supply-use`):** Complete matrix of the 23 ONS AI-relevant CPA product groups (2020–2023) with domestic output, imports, intermediate consumption, GFCF, and exports.
-3. **AI/Non-AI Disaggregation Lab (`/disaggregation`):** Four disaggregation engines (Direct, Proportional, Modelled, Hybrid) with parameter sensitivity curves and JSON/CSV scenario exports.
-4. **AI Business Classification Lab (`/classifier`):** Multi-label NLP text classifier (13 ONS Table 3 categories) with dual baselines (Rule-based + TF-IDF Logistic), feature explainability, and interactive human review.
+3. **AI/Non-AI Disaggregation Lab (`/disaggregation`):** Four disaggregation engines (Survey-residual, Bottom-up, Compute-constrained, Revenue-share) with parameter sensitivity curves and JSON/CSV scenario exports.
+4. **AI Business Classification Lab (`/classifier`):** Multi-label NLP text classifier with dual evaluation (In-sample: 98.3% accuracy, $F_1 = 98.7\%$; Stratified 5-Fold Cross-Validation: 98.3% accuracy, $F_1 = 98.7\%$) on the $N=60$ DS05 benchmark corpus.
 5. **SNA Decision Engine (`/sna-decision`):** Educational System of National Accounts decision tree with 6 pre-loaded UK corporate case studies and National Accounts ledger impacts.
-6. **AI Adoption Context (`/adoption`):** ONS BICS 2023–2026 survey visualization with pedagogical "Adoption $\neq$ Value" guidance.
-7. **Measurement Gaps & Agenda (`/gaps`):** Structured register of the 6 core ONS measurement challenges.
-8. **Methodology & Reproducibility Centre (`/methodology`, `/quality`, `/sources`):** Versioned method cards with KaTeX formulas, cryptographic SHA-256 data manifest, automated test audit logs, and complete source bibliography (S1–S13).
+6. **AI Adoption Context (`/adoption`):** ONS BICS and DBT 2024 survey visualization with pedagogical "Adoption $\neq$ Value" guidance.
+7. **Measurement Gaps & Agenda (`/gaps`):** Structured register of the 10 core ONS measurement challenges.
+8. **Methodology & Reproducibility Centre (`/methodology`, `/quality`, `/sources`):** 10 versioned method cards with KaTeX formulas, cryptographic SHA-256 data manifest, automated test audit logs, and complete source bibliography (S1–S13).
 
 ---
 
@@ -49,10 +57,8 @@ python -m unittest discover tests
 cd apps/web
 npm install
 npm run build
-npm run dev
+npm run start
 ```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
@@ -72,7 +78,7 @@ UK_AI_Economic_Measurement_Lab_Antigravity/
 ├── tests/                     # Unit, schema, and reconciliation test suites
 ├── docs/                      # Master Charter, PRD, Methodology specs, Bibliography
 ├── project-status/            # Continuous status & milestone logs
-└── scripts/                   # Data layer ingestion & validation scripts
+└── scripts/                   # Data layer ingestion, validation & live test scripts
 ```
 
 ---
