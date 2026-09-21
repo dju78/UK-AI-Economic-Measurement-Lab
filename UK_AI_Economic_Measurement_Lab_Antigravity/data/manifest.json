@@ -1,0 +1,57 @@
+{
+  "manifest_version": "1.0.0",
+  "updated_at": "2026-09-21T11:32:35.439045Z",
+  "project": "UK AI Economic Measurement Lab",
+  "datasets": [
+    {
+      "source_id": "DS01",
+      "title": "ONS Thematic CPA Supply & Use Tables 2020-2023",
+      "relative_path": "data/raw/ds01_ons_thematic_cpa_sut_2020_2023.json",
+      "sha256": "1efa8479bed1b6b568142f8c99a7b621470822fb6d4864620c46457fd8100051",
+      "size_bytes": 37557,
+      "format": "JSON",
+      "licence": "Open Government Licence v3.0",
+      "verified": true
+    },
+    {
+      "source_id": "DS02",
+      "title": "ONS BICS AI Adoption in UK Businesses 2023-2026",
+      "relative_path": "data/raw/ds02_ons_bics_ai_adoption_2023_2026.json",
+      "sha256": "dd4e762cd3d6d195bd802082c429c6067f9416f804077984703935e0f67dfe39",
+      "size_bytes": 3413,
+      "format": "JSON",
+      "licence": "Open Government Licence v3.0",
+      "verified": true
+    },
+    {
+      "source_id": "DS03",
+      "title": "DSIT AI Sector Study 2024 Benchmark",
+      "relative_path": "data/raw/ds03_dsit_ai_sector_study_2024.json",
+      "sha256": "7d3e2764dac857bb7497db718b1ca69119856b6833d074ca2349849049911374",
+      "size_bytes": 988,
+      "format": "JSON",
+      "licence": "Open Government Licence v3.0",
+      "verified": true
+    },
+    {
+      "source_id": "DS04",
+      "title": "ONS Data Centres & Digital Infrastructure 2026",
+      "relative_path": "data/raw/ds04_ons_datacentres_digital_infra_2026.json",
+      "sha256": "3ec98ca205105bf70b1fa75ebf927708bc9be35352a7a1abe053a5ea1195b725",
+      "size_bytes": 1013,
+      "format": "JSON",
+      "licence": "Open Government Licence v3.0",
+      "verified": true
+    },
+    {
+      "source_id": "DS05",
+      "title": "UK AI Business Classification Benchmark Corpus",
+      "relative_path": "data/raw/ds05_uk_ai_business_corpus.json",
+      "sha256": "360c3f41fe53a8bbc6baa32ca0621150a398397d757d29a32d6c16906f25db8b",
+      "size_bytes": 12624,
+      "format": "JSON",
+      "licence": "Open Government Licence v3.0",
+      "verified": true
+    }
+  ]
+}

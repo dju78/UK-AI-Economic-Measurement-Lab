@@ -1,0 +1,11 @@
+UK AI Economic Measurement Lab — Google Antigravity Edition
+
+1. Open this repository root as a Google Antigravity Project.
+2. Read START_ANTIGRAVITY_HERE.md first.
+3. Antigravity should load workspace Rules and Skills from .agents/.
+4. Start in Planning Mode.
+5. Paste prompts/00_FIRST_ANTIGRAVITY_PROMPT.md into a fresh Agent conversation.
+6. Review Antigravity's Implementation Plan artifact before clicking Proceed.
+7. Authorise Phase 0/1 only. Stop at the validation gate before Phase 2.
+
+Status: Independent prototype; not an ONS product.

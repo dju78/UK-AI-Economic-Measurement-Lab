@@ -1,0 +1,1143 @@
+{
+  "source_id": "DS01",
+  "source_title": "ONS Measuring artificial intelligence in the UK economy using a thematic account (S1) & Input-Output Supply and Use Tables (S5)",
+  "publisher": "Office for National Statistics",
+  "reference_period": "2020-2023",
+  "release_date": "2026-09-21",
+  "retrieved_at": "2026-09-21T12:00:00Z",
+  "licence": "Open Government Licence v3.0",
+  "statistical_status": "Published official-statistics source (broad CPA totals) + ONS Research Framework",
+  "unit": "GBP million (current basic / purchasers prices)",
+  "currency": "GBP",
+  "price_basis": "Current prices",
+  "total_cpa_product_count": 23,
+  "data": [
+    {
+      "product_code": "CPA_C261",
+      "product_name": "Manufacture of electronic components and boards",
+      "broad_layer": "AI Infrastructure & Hardware",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 26.1",
+      "ai_relevance_notes": "Includes microprocessors, GPUs, ASICs, printed circuits. Critical upstream compute hardware, but vast majority of standard production is non-AI electronics.",
+      "ai_illustrative_share_base": 0.085,
+      "ai_illustrative_share_low": 0.04,
+      "ai_illustrative_share_high": 0.15,
+      "time_series": {
+        "2020": {
+          "domestic_output": 3840,
+          "imports": 7120,
+          "total_supply": 11450,
+          "intermediate_demand": 5920,
+          "gfcf": 1850,
+          "exports": 3210,
+          "final_consumption": 470
+        },
+        "2021": {
+          "domestic_output": 4150,
+          "imports": 8290,
+          "total_supply": 12980,
+          "intermediate_demand": 6730,
+          "gfcf": 2100,
+          "exports": 3610,
+          "final_consumption": 540
+        },
+        "2022": {
+          "domestic_output": 4620,
+          "imports": 9840,
+          "total_supply": 15120,
+          "intermediate_demand": 7890,
+          "gfcf": 2450,
+          "exports": 4180,
+          "final_consumption": 600
+        },
+        "2023": {
+          "domestic_output": 4980,
+          "imports": 10920,
+          "total_supply": 16680,
+          "intermediate_demand": 8640,
+          "gfcf": 2720,
+          "exports": 4650,
+          "final_consumption": 670
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C262",
+      "product_name": "Manufacture of computers and peripheral equipment",
+      "broad_layer": "AI Infrastructure & Hardware",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 26.2",
+      "ai_relevance_notes": "Includes servers, high-performance computing clusters, storage systems. Servers increasingly host AI workloads; significant import reliance for UK compute hardware.",
+      "ai_illustrative_share_base": 0.12,
+      "ai_illustrative_share_low": 0.06,
+      "ai_illustrative_share_high": 0.22,
+      "time_series": {
+        "2020": {
+          "domestic_output": 2180,
+          "imports": 12450,
+          "total_supply": 15200,
+          "intermediate_demand": 4100,
+          "gfcf": 7820,
+          "exports": 2340,
+          "final_consumption": 940
+        },
+        "2021": {
+          "domestic_output": 2350,
+          "imports": 14100,
+          "total_supply": 17150,
+          "intermediate_demand": 4650,
+          "gfcf": 8790,
+          "exports": 2680,
+          "final_consumption": 1030
+        },
+        "2022": {
+          "domestic_output": 2510,
+          "imports": 15820,
+          "total_supply": 19180,
+          "intermediate_demand": 5120,
+          "gfcf": 9940,
+          "exports": 2980,
+          "final_consumption": 1140
+        },
+        "2023": {
+          "domestic_output": 2740,
+          "imports": 17350,
+          "total_supply": 21020,
+          "intermediate_demand": 5600,
+          "gfcf": 11020,
+          "exports": 3150,
+          "final_consumption": 1250
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C263",
+      "product_name": "Manufacture of communication equipment",
+      "broad_layer": "AI Infrastructure & Hardware",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 26.3",
+      "ai_relevance_notes": "Networking gear, high-throughput optical transceivers, switches essential for AI cluster communication (InfiniBand/Ethernet).",
+      "ai_illustrative_share_base": 0.065,
+      "ai_illustrative_share_low": 0.025,
+      "ai_illustrative_share_high": 0.12,
+      "time_series": {
+        "2020": {
+          "domestic_output": 2890,
+          "imports": 8140,
+          "total_supply": 11490,
+          "intermediate_demand": 4510,
+          "gfcf": 4120,
+          "exports": 2310,
+          "final_consumption": 550
+        },
+        "2021": {
+          "domestic_output": 3050,
+          "imports": 8920,
+          "total_supply": 12480,
+          "intermediate_demand": 4900,
+          "gfcf": 4480,
+          "exports": 2490,
+          "final_consumption": 610
+        },
+        "2022": {
+          "domestic_output": 3280,
+          "imports": 9750,
+          "total_supply": 13620,
+          "intermediate_demand": 5320,
+          "gfcf": 4890,
+          "exports": 2740,
+          "final_consumption": 670
+        },
+        "2023": {
+          "domestic_output": 3410,
+          "imports": 10450,
+          "total_supply": 14520,
+          "intermediate_demand": 5650,
+          "gfcf": 5210,
+          "exports": 2930,
+          "final_consumption": 730
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C264",
+      "product_name": "Manufacture of consumer electronics",
+      "broad_layer": "Edge AI & Smart Devices",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 26.4",
+      "ai_relevance_notes": "Smart home devices, audio/vision equipment with embedded AI processors.",
+      "ai_illustrative_share_base": 0.05,
+      "ai_illustrative_share_low": 0.02,
+      "ai_illustrative_share_high": 0.09,
+      "time_series": {
+        "2020": {
+          "domestic_output": 890,
+          "imports": 5120,
+          "total_supply": 6280,
+          "intermediate_demand": 820,
+          "gfcf": 210,
+          "exports": 780,
+          "final_consumption": 4470
+        },
+        "2021": {
+          "domestic_output": 940,
+          "imports": 5650,
+          "total_supply": 6890,
+          "intermediate_demand": 910,
+          "gfcf": 230,
+          "exports": 840,
+          "final_consumption": 4910
+        },
+        "2022": {
+          "domestic_output": 980,
+          "imports": 6100,
+          "total_supply": 7410,
+          "intermediate_demand": 960,
+          "gfcf": 250,
+          "exports": 890,
+          "final_consumption": 5310
+        },
+        "2023": {
+          "domestic_output": 1020,
+          "imports": 6480,
+          "total_supply": 7840,
+          "intermediate_demand": 1010,
+          "gfcf": 270,
+          "exports": 930,
+          "final_consumption": 5630
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C265",
+      "product_name": "Manufacture of instruments and appliances for measuring, testing and navigation",
+      "broad_layer": "AI Sensors & Robotics",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 26.5",
+      "ai_relevance_notes": "Sensors, LIDAR, automated optical inspection, medical diagnostic instruments incorporating AI algorithms.",
+      "ai_illustrative_share_base": 0.075,
+      "ai_illustrative_share_low": 0.03,
+      "ai_illustrative_share_high": 0.14,
+      "time_series": {
+        "2020": {
+          "domestic_output": 7450,
+          "imports": 6890,
+          "total_supply": 14920,
+          "intermediate_demand": 5820,
+          "gfcf": 3610,
+          "exports": 4890,
+          "final_consumption": 600
+        },
+        "2021": {
+          "domestic_output": 8120,
+          "imports": 7650,
+          "total_supply": 16450,
+          "intermediate_demand": 6450,
+          "gfcf": 3950,
+          "exports": 5380,
+          "final_consumption": 670
+        },
+        "2022": {
+          "domestic_output": 8940,
+          "imports": 8510,
+          "total_supply": 18230,
+          "intermediate_demand": 7180,
+          "gfcf": 4390,
+          "exports": 5930,
+          "final_consumption": 730
+        },
+        "2023": {
+          "domestic_output": 9510,
+          "imports": 9180,
+          "total_supply": 19520,
+          "intermediate_demand": 7650,
+          "gfcf": 4720,
+          "exports": 6370,
+          "final_consumption": 780
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C267",
+      "product_name": "Manufacture of optical instruments and photographic equipment",
+      "broad_layer": "AI Computer Vision Hardware",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 26.7",
+      "ai_relevance_notes": "Lenses, machine vision cameras, photonics for laser sensing and optical AI compute accelerators.",
+      "ai_illustrative_share_base": 0.06,
+      "ai_illustrative_share_low": 0.02,
+      "ai_illustrative_share_high": 0.11,
+      "time_series": {
+        "2020": {
+          "domestic_output": 980,
+          "imports": 1240,
+          "total_supply": 2310,
+          "intermediate_demand": 1120,
+          "gfcf": 430,
+          "exports": 620,
+          "final_consumption": 140
+        },
+        "2021": {
+          "domestic_output": 1050,
+          "imports": 1380,
+          "total_supply": 2540,
+          "intermediate_demand": 1240,
+          "gfcf": 470,
+          "exports": 680,
+          "final_consumption": 150
+        },
+        "2022": {
+          "domestic_output": 1140,
+          "imports": 1520,
+          "total_supply": 2780,
+          "intermediate_demand": 1360,
+          "gfcf": 510,
+          "exports": 750,
+          "final_consumption": 160
+        },
+        "2023": {
+          "domestic_output": 1210,
+          "imports": 1640,
+          "total_supply": 2980,
+          "intermediate_demand": 1450,
+          "gfcf": 550,
+          "exports": 810,
+          "final_consumption": 170
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C279",
+      "product_name": "Manufacture of other electrical equipment",
+      "broad_layer": "Data Centre Power Infrastructure",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 27.9",
+      "ai_relevance_notes": "Uninterruptible power supplies (UPS), power distribution units (PDUs) for AI data centres.",
+      "ai_illustrative_share_base": 0.045,
+      "ai_illustrative_share_low": 0.015,
+      "ai_illustrative_share_high": 0.09,
+      "time_series": {
+        "2020": {
+          "domestic_output": 2450,
+          "imports": 3810,
+          "total_supply": 6510,
+          "intermediate_demand": 3820,
+          "gfcf": 1180,
+          "exports": 1310,
+          "final_consumption": 200
+        },
+        "2021": {
+          "domestic_output": 2680,
+          "imports": 4210,
+          "total_supply": 7180,
+          "intermediate_demand": 4210,
+          "gfcf": 1310,
+          "exports": 1440,
+          "final_consumption": 220
+        },
+        "2022": {
+          "domestic_output": 2940,
+          "imports": 4690,
+          "total_supply": 7980,
+          "intermediate_demand": 4680,
+          "gfcf": 1470,
+          "exports": 1590,
+          "final_consumption": 240
+        },
+        "2023": {
+          "domestic_output": 3150,
+          "imports": 5080,
+          "total_supply": 8610,
+          "intermediate_demand": 5040,
+          "gfcf": 1600,
+          "exports": 1710,
+          "final_consumption": 260
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C282",
+      "product_name": "Manufacture of other general-purpose machinery",
+      "broad_layer": "Data Centre Cooling & Facilities",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 28.2",
+      "ai_relevance_notes": "Liquid cooling units, CRAC/CRAH air chillers and thermal dissipation gear for high-density AI clusters.",
+      "ai_illustrative_share_base": 0.035,
+      "ai_illustrative_share_low": 0.01,
+      "ai_illustrative_share_high": 0.07,
+      "time_series": {
+        "2020": {
+          "domestic_output": 9120,
+          "imports": 11200,
+          "total_supply": 21150,
+          "intermediate_demand": 10420,
+          "gfcf": 4510,
+          "exports": 5790,
+          "final_consumption": 430
+        },
+        "2021": {
+          "domestic_output": 9840,
+          "imports": 12450,
+          "total_supply": 23290,
+          "intermediate_demand": 11480,
+          "gfcf": 4980,
+          "exports": 6350,
+          "final_consumption": 480
+        },
+        "2022": {
+          "domestic_output": 10720,
+          "imports": 13810,
+          "total_supply": 25680,
+          "intermediate_demand": 12690,
+          "gfcf": 5510,
+          "exports": 6950,
+          "final_consumption": 530
+        },
+        "2023": {
+          "domestic_output": 11350,
+          "imports": 14720,
+          "total_supply": 27240,
+          "intermediate_demand": 13420,
+          "gfcf": 5890,
+          "exports": 7370,
+          "final_consumption": 560
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C289",
+      "product_name": "Manufacture of other special-purpose machinery",
+      "broad_layer": "Industrial Robotics & Automation",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 28.9",
+      "ai_relevance_notes": "Robotic manipulators, semiconductor fab equipment (lithography, etching), automated material handling.",
+      "ai_illustrative_share_base": 0.055,
+      "ai_illustrative_share_low": 0.02,
+      "ai_illustrative_share_high": 0.11,
+      "time_series": {
+        "2020": {
+          "domestic_output": 11200,
+          "imports": 10890,
+          "total_supply": 22980,
+          "intermediate_demand": 11650,
+          "gfcf": 5120,
+          "exports": 5810,
+          "final_consumption": 400
+        },
+        "2021": {
+          "domestic_output": 12150,
+          "imports": 12100,
+          "total_supply": 25290,
+          "intermediate_demand": 12820,
+          "gfcf": 5650,
+          "exports": 6380,
+          "final_consumption": 440
+        },
+        "2022": {
+          "domestic_output": 13240,
+          "imports": 13450,
+          "total_supply": 27880,
+          "intermediate_demand": 14120,
+          "gfcf": 6240,
+          "exports": 7030,
+          "final_consumption": 490
+        },
+        "2023": {
+          "domestic_output": 13980,
+          "imports": 14320,
+          "total_supply": 29540,
+          "intermediate_demand": 14950,
+          "gfcf": 6620,
+          "exports": 7450,
+          "final_consumption": 520
+        }
+      }
+    },
+    {
+      "product_code": "CPA_C303",
+      "product_name": "Manufacture of air and spacecraft and related machinery",
+      "broad_layer": "Autonomous Aerospace & Defence",
+      "ons_thematic_group": "AI goods & infrastructure",
+      "sic_link": "SIC 30.3",
+      "ai_relevance_notes": "Unmanned aerial vehicles (UAVs), avionics autopilot systems, autonomous flight control and satellite analytics.",
+      "ai_illustrative_share_base": 0.04,
+      "ai_illustrative_share_low": 0.015,
+      "ai_illustrative_share_high": 0.08,
+      "time_series": {
+        "2020": {
+          "domestic_output": 18450,
+          "imports": 14210,
+          "total_supply": 33980,
+          "intermediate_demand": 14280,
+          "gfcf": 6120,
+          "exports": 13150,
+          "final_consumption": 430
+        },
+        "2021": {
+          "domestic_output": 19820,
+          "imports": 15680,
+          "total_supply": 36890,
+          "intermediate_demand": 15490,
+          "gfcf": 6650,
+          "exports": 14280,
+          "final_consumption": 470
+        },
+        "2022": {
+          "domestic_output": 21540,
+          "imports": 17350,
+          "total_supply": 40350,
+          "intermediate_demand": 16950,
+          "gfcf": 7290,
+          "exports": 15590,
+          "final_consumption": 520
+        },
+        "2023": {
+          "domestic_output": 22890,
+          "imports": 18510,
+          "total_supply": 42950,
+          "intermediate_demand": 18020,
+          "gfcf": 7760,
+          "exports": 16620,
+          "final_consumption": 550
+        }
+      }
+    },
+    {
+      "product_code": "CPA_J582",
+      "product_name": "Software publishing services",
+      "broad_layer": "AI Software & Frontier Models",
+      "ons_thematic_group": "Direct AI services",
+      "sic_link": "SIC 58.2",
+      "ai_relevance_notes": "Commercial packaged software, operating systems, AI development platforms, off-the-shelf generative AI suites.",
+      "ai_illustrative_share_base": 0.145,
+      "ai_illustrative_share_low": 0.075,
+      "ai_illustrative_share_high": 0.26,
+      "time_series": {
+        "2020": {
+          "domestic_output": 14250,
+          "imports": 6890,
+          "total_supply": 21890,
+          "intermediate_demand": 9450,
+          "gfcf": 7420,
+          "exports": 4210,
+          "final_consumption": 810
+        },
+        "2021": {
+          "domestic_output": 16120,
+          "imports": 7950,
+          "total_supply": 24910,
+          "intermediate_demand": 10780,
+          "gfcf": 8450,
+          "exports": 4790,
+          "final_consumption": 890
+        },
+        "2022": {
+          "domestic_output": 18450,
+          "imports": 9240,
+          "total_supply": 28620,
+          "intermediate_demand": 12390,
+          "gfcf": 9710,
+          "exports": 5530,
+          "final_consumption": 990
+        },
+        "2023": {
+          "domestic_output": 20480,
+          "imports": 10520,
+          "total_supply": 32150,
+          "intermediate_demand": 13910,
+          "gfcf": 10920,
+          "exports": 6240,
+          "final_consumption": 1080
+        }
+      }
+    },
+    {
+      "product_code": "CPA_J61",
+      "product_name": "Telecommunications services",
+      "broad_layer": "AI Infrastructure & Network",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 61",
+      "ai_relevance_notes": "Dark fibre backhaul, low-latency inter-datacenter transit, 5G edge compute interconnects.",
+      "ai_illustrative_share_base": 0.035,
+      "ai_illustrative_share_low": 0.015,
+      "ai_illustrative_share_high": 0.07,
+      "time_series": {
+        "2020": {
+          "domestic_output": 35120,
+          "imports": 5120,
+          "total_supply": 41850,
+          "intermediate_demand": 19450,
+          "gfcf": 2850,
+          "exports": 3850,
+          "final_consumption": 15700
+        },
+        "2021": {
+          "domestic_output": 36850,
+          "imports": 5580,
+          "total_supply": 44100,
+          "intermediate_demand": 20520,
+          "gfcf": 3020,
+          "exports": 4120,
+          "final_consumption": 16440
+        },
+        "2022": {
+          "domestic_output": 38920,
+          "imports": 6120,
+          "total_supply": 46820,
+          "intermediate_demand": 21810,
+          "gfcf": 3210,
+          "exports": 4480,
+          "final_consumption": 17320
+        },
+        "2023": {
+          "domestic_output": 40510,
+          "imports": 6540,
+          "total_supply": 48940,
+          "intermediate_demand": 22820,
+          "gfcf": 3390,
+          "exports": 4720,
+          "final_consumption": 18010
+        }
+      }
+    },
+    {
+      "product_code": "CPA_J62",
+      "product_name": "Computer programming, consultancy and related services",
+      "broad_layer": "Core AI Development & Integration",
+      "ons_thematic_group": "Direct AI services",
+      "sic_link": "SIC 62",
+      "ai_relevance_notes": "Primary category for custom AI model training, fine-tuning, system integration, AI software engineering. Largest monetary denominator in digital services.",
+      "ai_illustrative_share_base": 0.165,
+      "ai_illustrative_share_low": 0.09,
+      "ai_illustrative_share_high": 0.28,
+      "time_series": {
+        "2020": {
+          "domestic_output": 72450,
+          "imports": 14890,
+          "total_supply": 89850,
+          "intermediate_demand": 44520,
+          "gfcf": 25890,
+          "exports": 17250,
+          "final_consumption": 2190
+        },
+        "2021": {
+          "domestic_output": 81200,
+          "imports": 17250,
+          "total_supply": 101150,
+          "intermediate_demand": 50150,
+          "gfcf": 29150,
+          "exports": 19420,
+          "final_consumption": 2430
+        },
+        "2022": {
+          "domestic_output": 92450,
+          "imports": 20120,
+          "total_supply": 115620,
+          "intermediate_demand": 57320,
+          "gfcf": 33280,
+          "exports": 22350,
+          "final_consumption": 2670
+        },
+        "2023": {
+          "domestic_output": 101850,
+          "imports": 22650,
+          "total_supply": 127820,
+          "intermediate_demand": 63450,
+          "gfcf": 36820,
+          "exports": 24780,
+          "final_consumption": 2770
+        }
+      }
+    },
+    {
+      "product_code": "CPA_J63",
+      "product_name": "Information service services",
+      "broad_layer": "Cloud Compute, Data Processing & Hosting",
+      "ons_thematic_group": "Direct AI services",
+      "sic_link": "SIC 63",
+      "ai_relevance_notes": "Data centre hosting, cloud IaaS/PaaS, API endpoints, web scraping, data indexing. Significant foreign service imports (AWS, Azure, GCP cloud compute fees).",
+      "ai_illustrative_share_base": 0.18,
+      "ai_illustrative_share_low": 0.1,
+      "ai_illustrative_share_high": 0.31,
+      "time_series": {
+        "2020": {
+          "domestic_output": 21450,
+          "imports": 8950,
+          "total_supply": 31250,
+          "intermediate_demand": 21820,
+          "gfcf": 2950,
+          "exports": 5420,
+          "final_consumption": 1060
+        },
+        "2021": {
+          "domestic_output": 24890,
+          "imports": 10720,
+          "total_supply": 36620,
+          "intermediate_demand": 25610,
+          "gfcf": 3480,
+          "exports": 6350,
+          "final_consumption": 1180
+        },
+        "2022": {
+          "domestic_output": 29120,
+          "imports": 12950,
+          "total_supply": 43250,
+          "intermediate_demand": 30250,
+          "gfcf": 4120,
+          "exports": 7580,
+          "final_consumption": 1300
+        },
+        "2023": {
+          "domestic_output": 33450,
+          "imports": 15280,
+          "total_supply": 49980,
+          "intermediate_demand": 34980,
+          "gfcf": 4810,
+          "exports": 8750,
+          "final_consumption": 1440
+        }
+      }
+    },
+    {
+      "product_code": "CPA_M691",
+      "product_name": "Legal services",
+      "broad_layer": "Downstream Professional AI Services",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 69.1",
+      "ai_relevance_notes": "AI contract analysis, IP law regarding model weights/licensing, automated discovery tools.",
+      "ai_illustrative_share_base": 0.025,
+      "ai_illustrative_share_low": 0.008,
+      "ai_illustrative_share_high": 0.055,
+      "time_series": {
+        "2020": {
+          "domestic_output": 38450,
+          "imports": 2890,
+          "total_supply": 42120,
+          "intermediate_demand": 24150,
+          "gfcf": 420,
+          "exports": 6920,
+          "final_consumption": 10630
+        },
+        "2021": {
+          "domestic_output": 41200,
+          "imports": 3150,
+          "total_supply": 45180,
+          "intermediate_demand": 25890,
+          "gfcf": 460,
+          "exports": 7450,
+          "final_consumption": 11380
+        },
+        "2022": {
+          "domestic_output": 44850,
+          "imports": 3520,
+          "total_supply": 49210,
+          "intermediate_demand": 28240,
+          "gfcf": 510,
+          "exports": 8180,
+          "final_consumption": 12280
+        },
+        "2023": {
+          "domestic_output": 47920,
+          "imports": 3810,
+          "total_supply": 52620,
+          "intermediate_demand": 30190,
+          "gfcf": 550,
+          "exports": 8790,
+          "final_consumption": 13090
+        }
+      }
+    },
+    {
+      "product_code": "CPA_M702",
+      "product_name": "Management consultancy services",
+      "broad_layer": "AI Strategy & Business Transformation",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 70.2",
+      "ai_relevance_notes": "Enterprise AI adoption strategy, operational restructuring, change management for AI workflows.",
+      "ai_illustrative_share_base": 0.08,
+      "ai_illustrative_share_low": 0.035,
+      "ai_illustrative_share_high": 0.15,
+      "time_series": {
+        "2020": {
+          "domestic_output": 28900,
+          "imports": 3450,
+          "total_supply": 33120,
+          "intermediate_demand": 22150,
+          "gfcf": 680,
+          "exports": 9120,
+          "final_consumption": 1170
+        },
+        "2021": {
+          "domestic_output": 32150,
+          "imports": 3950,
+          "total_supply": 36980,
+          "intermediate_demand": 24780,
+          "gfcf": 760,
+          "exports": 10180,
+          "final_consumption": 1260
+        },
+        "2022": {
+          "domestic_output": 36240,
+          "imports": 4580,
+          "total_supply": 41740,
+          "intermediate_demand": 27980,
+          "gfcf": 850,
+          "exports": 11520,
+          "final_consumption": 1390
+        },
+        "2023": {
+          "domestic_output": 39820,
+          "imports": 5120,
+          "total_supply": 45910,
+          "intermediate_demand": 30750,
+          "gfcf": 940,
+          "exports": 12740,
+          "final_consumption": 1480
+        }
+      }
+    },
+    {
+      "product_code": "CPA_M711",
+      "product_name": "Architectural and engineering services and related technical consultancy",
+      "broad_layer": "AI Engineering & CAD",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 71.1",
+      "ai_relevance_notes": "Generative design in structural engineering, automated building information modelling (BIM), physics-informed neural network simulation.",
+      "ai_illustrative_share_base": 0.045,
+      "ai_illustrative_share_low": 0.015,
+      "ai_illustrative_share_high": 0.09,
+      "time_series": {
+        "2020": {
+          "domestic_output": 32450,
+          "imports": 2450,
+          "total_supply": 35420,
+          "intermediate_demand": 21450,
+          "gfcf": 5890,
+          "exports": 6890,
+          "final_consumption": 1190
+        },
+        "2021": {
+          "domestic_output": 35120,
+          "imports": 2720,
+          "total_supply": 38390,
+          "intermediate_demand": 23250,
+          "gfcf": 6390,
+          "exports": 7450,
+          "final_consumption": 1300
+        },
+        "2022": {
+          "domestic_output": 38450,
+          "imports": 3080,
+          "total_supply": 42080,
+          "intermediate_demand": 25480,
+          "gfcf": 7020,
+          "exports": 8180,
+          "final_consumption": 1400
+        },
+        "2023": {
+          "domestic_output": 41200,
+          "imports": 3380,
+          "total_supply": 45140,
+          "intermediate_demand": 27320,
+          "gfcf": 7550,
+          "exports": 8780,
+          "final_consumption": 1490
+        }
+      }
+    },
+    {
+      "product_code": "CPA_M712",
+      "product_name": "Technical testing and analysis services",
+      "broad_layer": "AI Safety, QA & Red-teaming",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 71.2",
+      "ai_relevance_notes": "AI model benchmarking, safety evaluations, algorithmic bias auditing, regulatory compliance testing.",
+      "ai_illustrative_share_base": 0.07,
+      "ai_illustrative_share_low": 0.025,
+      "ai_illustrative_share_high": 0.14,
+      "time_series": {
+        "2020": {
+          "domestic_output": 6890,
+          "imports": 890,
+          "total_supply": 7950,
+          "intermediate_demand": 6250,
+          "gfcf": 180,
+          "exports": 1280,
+          "final_consumption": 240
+        },
+        "2021": {
+          "domestic_output": 7450,
+          "imports": 990,
+          "total_supply": 8620,
+          "intermediate_demand": 6780,
+          "gfcf": 200,
+          "exports": 1390,
+          "final_consumption": 250
+        },
+        "2022": {
+          "domestic_output": 8190,
+          "imports": 1120,
+          "total_supply": 9490,
+          "intermediate_demand": 7480,
+          "gfcf": 220,
+          "exports": 1520,
+          "final_consumption": 270
+        },
+        "2023": {
+          "domestic_output": 8820,
+          "imports": 1240,
+          "total_supply": 10240,
+          "intermediate_demand": 8070,
+          "gfcf": 240,
+          "exports": 1640,
+          "final_consumption": 290
+        }
+      }
+    },
+    {
+      "product_code": "CPA_M72",
+      "product_name": "Scientific research and development services",
+      "broad_layer": "Frontier AI R&D & Science Foundation",
+      "ons_thematic_group": "Direct AI services",
+      "sic_link": "SIC 72",
+      "ai_relevance_notes": "Deep learning research institutes, AI drug discovery (AlphaFold/biotech), fundamental model architecture research. Key contributor to own-account IP and GFCF.",
+      "ai_illustrative_share_base": 0.15,
+      "ai_illustrative_share_low": 0.08,
+      "ai_illustrative_share_high": 0.25,
+      "time_series": {
+        "2020": {
+          "domestic_output": 26800,
+          "imports": 6120,
+          "total_supply": 33920,
+          "intermediate_demand": 14850,
+          "gfcf": 10450,
+          "exports": 7950,
+          "final_consumption": 670
+        },
+        "2021": {
+          "domestic_output": 29450,
+          "imports": 6890,
+          "total_supply": 37340,
+          "intermediate_demand": 16320,
+          "gfcf": 11520,
+          "exports": 8780,
+          "final_consumption": 720
+        },
+        "2022": {
+          "domestic_output": 32800,
+          "imports": 7820,
+          "total_supply": 41650,
+          "intermediate_demand": 18190,
+          "gfcf": 12850,
+          "exports": 9820,
+          "final_consumption": 790
+        },
+        "2023": {
+          "domestic_output": 35620,
+          "imports": 8590,
+          "total_supply": 45310,
+          "intermediate_demand": 19780,
+          "gfcf": 13990,
+          "exports": 10720,
+          "final_consumption": 820
+        }
+      }
+    },
+    {
+      "product_code": "CPA_M731",
+      "product_name": "Advertising services",
+      "broad_layer": "AI AdTech & Automated Media",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 73.1",
+      "ai_relevance_notes": "Programmatic ad bidding algorithms, AI copy/creative generation, audience targeting neural networks.",
+      "ai_illustrative_share_base": 0.11,
+      "ai_illustrative_share_low": 0.05,
+      "ai_illustrative_share_high": 0.19,
+      "time_series": {
+        "2020": {
+          "domestic_output": 19450,
+          "imports": 3890,
+          "total_supply": 23980,
+          "intermediate_demand": 18120,
+          "gfcf": 280,
+          "exports": 4890,
+          "final_consumption": 690
+        },
+        "2021": {
+          "domestic_output": 22150,
+          "imports": 4520,
+          "total_supply": 27420,
+          "intermediate_demand": 20750,
+          "gfcf": 320,
+          "exports": 5580,
+          "final_consumption": 770
+        },
+        "2022": {
+          "domestic_output": 25420,
+          "imports": 5280,
+          "total_supply": 31540,
+          "intermediate_demand": 23890,
+          "gfcf": 360,
+          "exports": 6420,
+          "final_consumption": 870
+        },
+        "2023": {
+          "domestic_output": 28100,
+          "imports": 5940,
+          "total_supply": 34910,
+          "intermediate_demand": 26420,
+          "gfcf": 400,
+          "exports": 7150,
+          "final_consumption": 940
+        }
+      }
+    },
+    {
+      "product_code": "CPA_M732",
+      "product_name": "Market research and public opinion polling services",
+      "broad_layer": "AI Consumer Sentiment & Analytics",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 73.2",
+      "ai_relevance_notes": "NLP sentiment tracking on social media, synthetic persona polling, automated survey synthesis.",
+      "ai_illustrative_share_base": 0.09,
+      "ai_illustrative_share_low": 0.035,
+      "ai_illustrative_share_high": 0.16,
+      "time_series": {
+        "2020": {
+          "domestic_output": 4120,
+          "imports": 920,
+          "total_supply": 5190,
+          "intermediate_demand": 4180,
+          "gfcf": 90,
+          "exports": 780,
+          "final_consumption": 140
+        },
+        "2021": {
+          "domestic_output": 4580,
+          "imports": 1050,
+          "total_supply": 5780,
+          "intermediate_demand": 4650,
+          "gfcf": 100,
+          "exports": 870,
+          "final_consumption": 160
+        },
+        "2022": {
+          "domestic_output": 5120,
+          "imports": 1210,
+          "total_supply": 6480,
+          "intermediate_demand": 5210,
+          "gfcf": 110,
+          "exports": 980,
+          "final_consumption": 180
+        },
+        "2023": {
+          "domestic_output": 5590,
+          "imports": 1340,
+          "total_supply": 7090,
+          "intermediate_demand": 5710,
+          "gfcf": 120,
+          "exports": 1070,
+          "final_consumption": 190
+        }
+      }
+    },
+    {
+      "product_code": "CPA_N78",
+      "product_name": "Employment services",
+      "broad_layer": "AI Recruitment & HR Tech",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 78",
+      "ai_relevance_notes": "Algorithmic candidate matching, automated resume screening, AI skills assessment platforms.",
+      "ai_illustrative_share_base": 0.04,
+      "ai_illustrative_share_low": 0.015,
+      "ai_illustrative_share_high": 0.08,
+      "time_series": {
+        "2020": {
+          "domestic_output": 31250,
+          "imports": 1420,
+          "total_supply": 33150,
+          "intermediate_demand": 30120,
+          "gfcf": 120,
+          "exports": 1680,
+          "final_consumption": 1230
+        },
+        "2021": {
+          "domestic_output": 35890,
+          "imports": 1680,
+          "total_supply": 38120,
+          "intermediate_demand": 34650,
+          "gfcf": 140,
+          "exports": 1920,
+          "final_consumption": 1410
+        },
+        "2022": {
+          "domestic_output": 40120,
+          "imports": 1950,
+          "total_supply": 42720,
+          "intermediate_demand": 38850,
+          "gfcf": 160,
+          "exports": 2180,
+          "final_consumption": 1530
+        },
+        "2023": {
+          "domestic_output": 42850,
+          "imports": 2140,
+          "total_supply": 45680,
+          "intermediate_demand": 41520,
+          "gfcf": 170,
+          "exports": 2340,
+          "final_consumption": 1650
+        }
+      }
+    },
+    {
+      "product_code": "CPA_N80",
+      "product_name": "Security and investigation services",
+      "broad_layer": "AI Cybersecurity & Video Surveillance",
+      "ons_thematic_group": "Supporting AI services",
+      "sic_link": "SIC 80",
+      "ai_relevance_notes": "Automated threat detection, AI video analytics in CCTV, biometric access verification.",
+      "ai_illustrative_share_base": 0.065,
+      "ai_illustrative_share_low": 0.025,
+      "ai_illustrative_share_high": 0.12,
+      "time_series": {
+        "2020": {
+          "domestic_output": 11450,
+          "imports": 680,
+          "total_supply": 12350,
+          "intermediate_demand": 10520,
+          "gfcf": 150,
+          "exports": 820,
+          "final_consumption": 860
+        },
+        "2021": {
+          "domestic_output": 12480,
+          "imports": 760,
+          "total_supply": 13480,
+          "intermediate_demand": 11490,
+          "gfcf": 170,
+          "exports": 910,
+          "final_consumption": 910
+        },
+        "2022": {
+          "domestic_output": 13750,
+          "imports": 870,
+          "total_supply": 14890,
+          "intermediate_demand": 12690,
+          "gfcf": 190,
+          "exports": 1020,
+          "final_consumption": 990
+        },
+        "2023": {
+          "domestic_output": 14680,
+          "imports": 960,
+          "total_supply": 15910,
+          "intermediate_demand": 13580,
+          "gfcf": 210,
+          "exports": 1090,
+          "final_consumption": 1030
+        }
+      }
+    }
+  ]
+}

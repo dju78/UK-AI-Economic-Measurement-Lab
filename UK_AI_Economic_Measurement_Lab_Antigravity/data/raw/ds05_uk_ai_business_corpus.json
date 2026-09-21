@@ -1,0 +1,280 @@
+{
+  "source_id": "DS05",
+  "source_title": "UK AI Business Classification Research Benchmark Corpus",
+  "publisher": "UK AI Economic Measurement Lab (Synthetic & Curated Research Benchmark)",
+  "reference_period": "2026",
+  "release_date": "2026-09-21",
+  "retrieved_at": "2026-09-21T12:00:00Z",
+  "licence": "Open Government Licence v3.0 / Research Use",
+  "statistical_status": "Curated benchmark dataset with hard negatives and ground truth annotations",
+  "sample_size": 20,
+  "data": [
+    {
+      "business_id": "UK-AI-001",
+      "company_name": "Synthetica Neural Systems Ltd",
+      "sic_code": "62.01",
+      "sic_description": "Computer programming activities",
+      "text": "Synthetica Neural Systems develops proprietary deep learning foundation models and large language model architectures for enterprise code synthesis, automated refactoring, and AI safety testing.",
+      "ground_truth_labels": [
+        "ai_platforms_models",
+        "cybersecurity_safety_governance"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-002",
+      "company_name": "Cambridge Bio-Informatics AI Ltd",
+      "sic_code": "72.11",
+      "sic_description": "Research and experimental development on biotechnology",
+      "text": "We apply generative diffusion models and transformer neural networks to protein folding, de novo antibody design, and high-throughput virtual screening of small molecule drug candidates.",
+      "ground_truth_labels": [
+        "healthcare_life_sciences",
+        "ai_platforms_models"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-003",
+      "company_name": "Apex Cloud & IT Solutions Ltd",
+      "sic_code": "62.02",
+      "sic_description": "Computer consultancy activities",
+      "text": "Apex provides standard IT managed services, Office 365 migrations, network firewall configuration, and printer maintenance. We offer AI-ready cloud hosting consultations.",
+      "ground_truth_labels": [
+        "ai_consulting_adoption"
+      ],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": true
+    },
+    {
+      "business_id": "UK-AI-004",
+      "company_name": "Visionary Robotics UK Ltd",
+      "sic_code": "28.99",
+      "sic_description": "Manufacture of other special-purpose machinery n.e.c.",
+      "text": "Manufacturer of autonomous mobile robots (AMRs) for warehouse logistics using real-time computer vision, SLAM navigation, and reinforcement learning for obstacle avoidance.",
+      "ground_truth_labels": [
+        "robotics_autonomous_systems",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-005",
+      "company_name": "OmniFin Fraud Intelligence Ltd",
+      "sic_code": "63.11",
+      "sic_description": "Data processing, hosting and related activities",
+      "text": "OmniFin provides real-time banking transaction monitoring, AML screening, and financial fraud anomaly detection using graph neural networks and ensemble machine learning algorithms.",
+      "ground_truth_labels": [
+        "finance_fintech_compliance",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-006",
+      "company_name": "GreenGrid Predictive Energy Ltd",
+      "sic_code": "71.12",
+      "sic_description": "Engineering activities and related technical consultancy",
+      "text": "AI-driven renewable energy forecasting, battery energy storage system (BESS) dispatch optimisation, and national grid load balancing using spatio-temporal deep neural networks.",
+      "ground_truth_labels": [
+        "energy_environment_infrastructure",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-007",
+      "company_name": "Hyperion Management Consultants LLP",
+      "sic_code": "70.22",
+      "sic_description": "Business and other management consultancy activities",
+      "text": "Strategy consultancy advising FTSE 100 executive boards on digital transformation, AI governance, operating model design, and AI vendor selection frameworks.",
+      "ground_truth_labels": [
+        "ai_consulting_adoption",
+        "cybersecurity_safety_governance"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-008",
+      "company_name": "Kensington Smart Estate Agents Ltd",
+      "sic_code": "68.31",
+      "sic_description": "Real estate agencies",
+      "text": "Premier residential real estate agency in Central London. Powered by next-generation AI property valuation algorithms and 3D virtual tour technology.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": true
+    },
+    {
+      "business_id": "UK-AI-009",
+      "company_name": "LexiDoc Legal Automation Ltd",
+      "sic_code": "69.10",
+      "sic_description": "Legal activities",
+      "text": "SaaS contract lifecycle intelligence platform utilising natural language processing (NLP) to extract clauses, perform automated compliance red-lining, and risk-score M&A agreements.",
+      "ground_truth_labels": [
+        "workflow_document_automation",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0010",
+      "company_name": "NeuralVoice Synthesis Ltd",
+      "sic_code": "58.29",
+      "sic_description": "Other software publishing",
+      "text": "Real-time multilingual neural speech synthesis, text-to-speech (TTS), and expressive voice cloning for gaming, virtual assistants, and automated customer contact centres.",
+      "ground_truth_labels": [
+        "computer_vision_speech",
+        "generative_ai_synthetic_content"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0011",
+      "company_name": "TalentMatch AI Recruitment Ltd",
+      "sic_code": "78.10",
+      "sic_description": "Activities of employment placement agencies",
+      "text": "Automated technical recruitment matching engine leveraging semantic candidate vector search, automated interview transcription, and skills gap prediction.",
+      "ground_truth_labels": [
+        "education_hr_workforce",
+        "workflow_document_automation"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0012",
+      "company_name": "CyberShield DeepDefend Ltd",
+      "sic_code": "62.09",
+      "sic_description": "Other information technology and computer service activities",
+      "text": "Autonomous endpoint threat hunting, automated security operations centre (SOC) triage, and zero-day malware detection using adversarial deep learning classifiers.",
+      "ground_truth_labels": [
+        "cybersecurity_safety_governance",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0013",
+      "company_name": "NorthStar Logistics & Haulage Ltd",
+      "sic_code": "49.41",
+      "sic_description": "Freight transport by road",
+      "text": "National road freight, warehousing, and refrigerated logistics across the UK. We operate an modern fleet of Euro 6 trucks with GPS telematics tracking.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0014",
+      "company_name": "AdGenius Creative AI Ltd",
+      "sic_code": "73.11",
+      "sic_description": "Advertising agencies",
+      "text": "Generative marketing platform creating multi-variant banner ad copy, video animations, and personalised brand imagery at scale using multi-modal diffusion models.",
+      "ground_truth_labels": [
+        "customer_engagement_sales_marketing",
+        "generative_ai_synthetic_content"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0015",
+      "company_name": "AeroDynamics Autonomous Systems Ltd",
+      "sic_code": "30.30",
+      "sic_description": "Manufacture of air and spacecraft and related machinery",
+      "text": "Designs and manufactures VTOL autonomous unmanned surveillance drones equipped with edge-AI object tracking, LiDAR mapping, and target classification.",
+      "ground_truth_labels": [
+        "robotics_autonomous_systems",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0016",
+      "company_name": "Tavistock Traditional Bakery Ltd",
+      "sic_code": "10.71",
+      "sic_description": "Manufacture of bread; manufacture of fresh pastry goods and cakes",
+      "text": "Artisan bakery producing sourdough loaves, pastries, and wedding cakes using traditional wood-fired stone ovens and locally sourced organic flour.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0017",
+      "company_name": "QuantEdge Market Signals Ltd",
+      "sic_code": "66.19",
+      "sic_description": "Activities auxiliary to financial intermediation n.e.c.",
+      "text": "Alternative data financial analytics firm deploying transformer models to analyze central bank speeches, SEC filings, and satellite imagery for algorithmic quantitative funds.",
+      "ground_truth_labels": [
+        "finance_fintech_compliance",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0018",
+      "company_name": "DataPipeline Operations Ltd",
+      "sic_code": "63.11",
+      "sic_description": "Data processing, hosting and related activities",
+      "text": "Managed data engineering and vector database hosting infrastructure supporting high-throughput retrieval-augmented generation (RAG) pipelines for enterprise AI systems.",
+      "ground_truth_labels": [
+        "ai_platforms_models",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-0019",
+      "company_name": "BrightSpark Cleaners Ltd",
+      "sic_code": "81.21",
+      "sic_description": "General cleaning of buildings",
+      "text": "Commercial cleaning services for offices, hospitals, and educational facilities. Using eco-friendly cleaning detergents and AI-powered scheduling dispatch.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": true
+    },
+    {
+      "business_id": "UK-AI-0020",
+      "company_name": "CognitiveCX Customer Service AI Ltd",
+      "sic_code": "62.01",
+      "sic_description": "Computer programming activities",
+      "text": "Conversational agent platform deploying fine-tuned LLMs with grounding guardrails to resolve customer support tickets, manage e-commerce returns, and automate call-centre interactions.",
+      "ground_truth_labels": [
+        "customer_engagement_sales_marketing",
+        "workflow_document_automation"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    }
+  ]
+}

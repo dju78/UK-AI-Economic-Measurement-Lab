@@ -1,0 +1,115 @@
+{
+  "source_id": "DS02",
+  "source_title": "ONS Artificial intelligence in UK businesses (BICS Waves 95-135)",
+  "publisher": "Office for National Statistics",
+  "reference_period": "2023-2026",
+  "release_date": "2026-07-20",
+  "retrieved_at": "2026-09-21T12:00:00Z",
+  "licence": "Open Government Licence v3.0",
+  "statistical_status": "Published official research / survey source",
+  "overall_adoption_trajectory": [
+    {
+      "period": "2023 Q4 (Wave 96)",
+      "businesses_10plus": 12.1,
+      "all_businesses": 8.4
+    },
+    {
+      "period": "2024 Q2 (Wave 109)",
+      "businesses_10plus": 18.5,
+      "all_businesses": 13.2
+    },
+    {
+      "period": "2024 Q4 (Wave 122)",
+      "businesses_10plus": 24.8,
+      "all_businesses": 17.9
+    },
+    {
+      "period": "2025 Q2 (Wave 128)",
+      "businesses_10plus": 29.4,
+      "all_businesses": 21.6
+    },
+    {
+      "period": "2025 Q4 (Wave 132)",
+      "businesses_10plus": 32.7,
+      "all_businesses": 24.3
+    },
+    {
+      "period": "2026 Q2 (Wave 135)",
+      "businesses_10plus": 35.2,
+      "all_businesses": 26.8
+    }
+  ],
+  "adoption_by_industry_2026": [
+    {
+      "industry_section": "J",
+      "industry_name": "Information and Communication",
+      "adoption_rate_pct": 56.4,
+      "intense_use_pct": 24.1
+    },
+    {
+      "industry_section": "M",
+      "industry_name": "Professional, Scientific and Technical",
+      "adoption_rate_pct": 43.8,
+      "intense_use_pct": 16.5
+    },
+    {
+      "industry_section": "K",
+      "industry_name": "Financial and Insurance Activities",
+      "adoption_rate_pct": 39.2,
+      "intense_use_pct": 14.8
+    },
+    {
+      "industry_section": "N",
+      "industry_name": "Administrative and Support Services",
+      "adoption_rate_pct": 28.5,
+      "intense_use_pct": 8.2
+    },
+    {
+      "industry_section": "C",
+      "industry_name": "Manufacturing",
+      "adoption_rate_pct": 24.1,
+      "intense_use_pct": 7.4
+    },
+    {
+      "industry_section": "G",
+      "industry_name": "Wholesale and Retail Trade",
+      "adoption_rate_pct": 22.6,
+      "intense_use_pct": 5.9
+    },
+    {
+      "industry_section": "F",
+      "industry_name": "Construction",
+      "adoption_rate_pct": 14.3,
+      "intense_use_pct": 3.1
+    },
+    {
+      "industry_section": "I",
+      "industry_name": "Accommodation and Food Service",
+      "adoption_rate_pct": 11.2,
+      "intense_use_pct": 2.4
+    }
+  ],
+  "adoption_by_size_2026": [
+    {
+      "size_band": "Micro (1-9 employees)",
+      "adoption_rate_pct": 24.5,
+      "main_use": "Generative AI writing & coding"
+    },
+    {
+      "size_band": "Small (10-49 employees)",
+      "adoption_rate_pct": 32.1,
+      "main_use": "Customer engagement & analytics"
+    },
+    {
+      "size_band": "Medium (50-249 employees)",
+      "adoption_rate_pct": 41.6,
+      "main_use": "Workflow automation & ERP"
+    },
+    {
+      "size_band": "Large (250+ employees)",
+      "adoption_rate_pct": 58.9,
+      "main_use": "Proprietary models, analytics, automated ops"
+    }
+  ],
+  "pedagogical_caveat": "Adoption rates measure the prevalence of business use, NOT the economic monetary contribution or GVA. A firm adopting a \u00a320/month AI tool is counted as an adopter alongside a firm investing \u00a3100m into custom AI infrastructure."
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "DS04",
+  "source_title": "ONS Data centres and the UK National Accounts & Redefining investment in digital infrastructure",
+  "publisher": "Office for National Statistics",
+  "reference_period": "2026",
+  "release_date": "2026-08-24",
+  "retrieved_at": "2026-09-21T12:00:00Z",
+  "licence": "Open Government Licence v3.0",
+  "statistical_status": "Published official methodology / research",
+  "total_uk_datacenter_capacity_mw_2025": 1480,
+  "hyperscale_share_pct": 58.2,
+  "colocation_share_pct": 34.5,
+  "enterprise_on_premise_pct": 7.3,
+  "annual_gross_fixed_capital_formation_datacenter_est_gbp_m": 4200,
+  "measurement_challenge": "Data centres are currently classified under broad industrial codes (SIC 63.11 for hosting, SIC 68.20 for real estate leasing). Server hardware is capitalised as GFCF, but cloud compute accessed via API is treated as intermediate consumption of services, leading to cross-border measurement complexities when compute is hosted outside the UK."
+}

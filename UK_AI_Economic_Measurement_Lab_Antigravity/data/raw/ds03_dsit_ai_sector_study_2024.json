@@ -1,0 +1,17 @@
+{
+  "source_id": "DS03",
+  "source_title": "DSIT Artificial Intelligence Sector Study 2024",
+  "publisher": "Department for Science, Innovation and Technology",
+  "reference_period": "2023/2024",
+  "release_date": "2025-09-03",
+  "retrieved_at": "2026-09-21T12:00:00Z",
+  "licence": "Open Government Licence v3.0",
+  "statistical_status": "Published government research study (Sector benchmark)",
+  "estimated_ai_companies": 5860,
+  "dedicated_ai_companies": 3170,
+  "diversified_ai_companies": 2690,
+  "estimated_ai_turnover_gbp_million": 10600,
+  "estimated_ai_employment": 60050,
+  "estimated_ai_gv_add_gbp_million": 5800,
+  "methodology_difference_note": "The DSIT sector study uses a firm-level taxonomy based on company filings and web scraping, capturing dedicated AI firms and AI divisions. This differs conceptually from the National Accounts Supply & Use product disaggregation framework where intermediate consumption and multi-product outputs are separated."
+}

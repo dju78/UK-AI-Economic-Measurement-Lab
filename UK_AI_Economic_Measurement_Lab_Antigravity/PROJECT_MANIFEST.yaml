@@ -1,0 +1,47 @@
+project: UK AI Economic Measurement Lab
+subtitle: Independent prototype for exploring the measurement of artificial intelligence
+  within the UK economy
+owner: Daramola Omoyele
+version: 0.2.0-antigravity-planning
+planning_date: 21 September 2026
+status: Google Antigravity planning baseline
+mandatory_first_file: START_ANTIGRAVITY_HERE.md
+core_modules:
+- AI Production Stack Explorer
+- Supply & Use Explorer
+- AI/Non-AI Disaggregation Lab
+- AI Business Classification Lab
+- SNA Decision Engine
+- Measurement Gaps & Uncertainty Centre
+- Methodology/QA/Reproducibility Centre
+non_goals:
+- Produce or claim official UK AI GDP
+- Imply ONS endorsement
+- Use confidential ONS microdata
+- Treat broad CPA totals as AI totals
+- Use opaque AI classification without validation
+source_ids:
+- S1
+- S2
+- S3
+- S4
+- S5
+- S6
+- S7
+- S8
+- S9
+- S10
+- S11
+- S12
+- S13
+release_gate: See docs/19_DEFINITION_OF_DONE.md and templates/validation_report_template.md
+
+build_environment: Google Antigravity
+antigravity:
+  rules_dir: .agents/rules
+  skills_dir: .agents/skills
+  agents_dir: .agents/agents
+  first_prompt: prompts/00_FIRST_ANTIGRAVITY_PROMPT.md
+  execute_prompt: prompts/01_EXECUTE_APPROVED_PHASE_0_1.md
+  independent_review_prompt: prompts/02_PHASE_0_1_INDEPENDENT_REVIEW.md
+  phase_gate: Phase 0/1 must be accepted before Phase 2
