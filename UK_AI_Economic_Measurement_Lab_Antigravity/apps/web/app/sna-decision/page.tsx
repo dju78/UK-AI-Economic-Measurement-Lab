@@ -90,9 +90,9 @@ export default function SNADecisionPage() {
       <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-sky-100 text-sky-800">
-                NATIONAL ACCOUNTS DECISION SUPPORT
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wide">
+                Decision Support
               </span>
               <ProvenanceBadge
                 status="Published research/context source"
@@ -100,8 +100,8 @@ export default function SNADecisionPage() {
                 onClick={() => setSelectedMeta(snaProvenance)}
               />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <HelpCircle className="w-6 h-6 text-govuk-blue" />
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+              <HelpCircle className="w-5 h-5 text-slate-800 stroke-[1.75]" />
               SNA National Accounts Decision Engine
             </h1>
           </div>
@@ -109,9 +109,9 @@ export default function SNADecisionPage() {
           <button
             type="button"
             onClick={handleReset}
-            className="px-3 py-2 bg-slate-100 text-slate-700 rounded text-xs font-semibold hover:bg-slate-200 transition-colors flex items-center gap-1.5 self-start"
+            className="px-3.5 py-2 bg-slate-100 text-slate-700 rounded text-xs font-semibold hover:bg-slate-200 transition-colors flex items-center gap-1.5 self-start border border-slate-200"
           >
-            <RotateCcw className="w-3.5 h-3.5" /> Start New Decision Tree
+            <RotateCcw className="w-3.5 h-3.5 stroke-[1.75]" /> Start New Decision Tree
           </button>
         </div>
 
@@ -123,13 +123,13 @@ export default function SNADecisionPage() {
       </div>
 
       {/* Case Study Quick Launcher */}
-      <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3">
-        <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+      <div className="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-xs space-y-3.5">
+        <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
           <h2 className="font-bold text-xs uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
-            <BookOpen className="w-4 h-4 text-govuk-blue" />
+            <BookOpen className="w-4 h-4 text-slate-700 stroke-[1.75]" />
             Pre-loaded UK Case Study Scenarios (Click to Load)
           </h2>
-          <span className="text-[11px] text-slate-500">6 Real-world Scenarios</span>
+          <span className="text-[11px] text-slate-500 font-mono">6 Scenarios</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -140,13 +140,13 @@ export default function SNADecisionPage() {
                 key={cs.id}
                 type="button"
                 onClick={() => handleLoadCaseStudy(cs)}
-                className={`text-left p-3 rounded-lg border transition-all cursor-pointer focus:ring-2 focus:ring-govuk-blue ${
+                className={`text-left p-3.5 rounded-lg border transition-all cursor-pointer focus:ring-2 focus:ring-slate-900 ${
                   isSelected
-                    ? 'bg-blue-50 border-govuk-blue shadow-xs'
-                    : 'bg-slate-50 border-slate-200 hover:bg-white hover:border-govuk-blue'
+                    ? 'bg-slate-100 border-slate-900 shadow-xs'
+                    : 'bg-slate-50/70 border-slate-200 hover:bg-white hover:border-slate-400'
                 }`}
               >
-                <span className="text-[10px] font-bold uppercase text-govuk-blue block mb-0.5 font-mono">
+                <span className="text-[10px] font-bold uppercase text-slate-700 block mb-1 font-mono">
                   {cs.id} · {cs.firm_type}
                 </span>
                 <h3 className="font-bold text-xs text-slate-900 leading-snug line-clamp-1">
@@ -245,12 +245,12 @@ export default function SNADecisionPage() {
         {/* Right Column: Detailed Accounting Impact & Ledger */}
         <div className="lg:col-span-5">
           {activeOutcome ? (
-            <div className="bg-white rounded-xl border-2 border-govuk-blue p-6 shadow-md sticky top-24 space-y-5 animate-in fade-in duration-200">
+            <div className="bg-white rounded-xl border-2 border-slate-900 p-6 shadow-sm sticky top-24 space-y-5 animate-in fade-in duration-200">
               <div className="pb-3 border-b border-slate-100">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-govuk-blue block mb-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-700 block mb-1">
                   Indicative Accounting Classification
                 </span>
-                <h2 className="text-xl font-extrabold text-slate-900 leading-tight">
+                <h2 className="text-xl font-bold text-slate-900 leading-tight">
                   {activeOutcome.national_accounts_category}
                 </h2>
                 <span className="text-xs text-slate-500 font-mono block mt-1">
@@ -279,7 +279,7 @@ export default function SNADecisionPage() {
                   {activeOutcome.rationale}
                 </p>
                 <div className="text-[11px] text-slate-500 pt-1 flex items-center gap-1 font-mono">
-                  <Scale className="w-3.5 h-3.5 text-slate-400" /> Standard Citation: {activeOutcome.sna_citation}
+                  <Scale className="w-3.5 h-3.5 text-slate-400 stroke-[1.75]" /> Standard Citation: {activeOutcome.sna_citation}
                 </div>
               </div>
 
@@ -288,7 +288,7 @@ export default function SNADecisionPage() {
                 <span className="font-bold text-slate-900 uppercase tracking-wider block">
                   National Accounts Ledger Entry
                 </span>
-                <div className="bg-slate-900 text-slate-200 p-3 rounded font-mono text-[11px] space-y-1">
+                <div className="bg-slate-950 text-slate-200 p-3 rounded font-mono text-[11px] space-y-1 border border-slate-800">
                   <div className="text-emerald-400">
                     Debit: {activeOutcome.asset_boundary ? 'GFCF Capital Account (P.51g)' : 'Intermediate Consumption (P.2)'}
                   </div>
@@ -300,7 +300,7 @@ export default function SNADecisionPage() {
             </div>
           ) : (
             <div className="bg-slate-50 rounded-xl border border-slate-200 p-8 text-center text-slate-500 text-xs space-y-3">
-              <FileCheck2 className="w-8 h-8 text-slate-400 mx-auto" />
+              <FileCheck2 className="w-8 h-8 text-slate-400 mx-auto stroke-[1.5]" />
               <p className="font-semibold text-slate-700">Decision Outcome Inspector</p>
               <p className="max-w-xs mx-auto">
                 Step through the questions on the left or select a pre-loaded UK case study to generate the System of National Accounts treatment.

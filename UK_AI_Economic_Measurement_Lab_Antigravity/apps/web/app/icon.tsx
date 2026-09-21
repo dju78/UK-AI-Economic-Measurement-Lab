@@ -12,21 +12,24 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 15,
-          background: '#0b1329',
+          fontSize: 12,
+          background: '#090d16',
           width: '100%',
           height: '100%',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           color: '#ffffff',
-          fontWeight: 800,
+          fontWeight: 700,
           fontFamily: 'sans-serif',
-          letterSpacing: '-0.02em',
-          borderRadius: '5px'
+          letterSpacing: '0.04em',
+          border: '1px solid #1e293b',
+          borderRadius: '4px'
         }}
       >
-        AI
+        <span style={{ fontSize: '10px', lineHeight: 1, color: '#f8fafc', fontWeight: 800 }}>UK</span>
+        <span style={{ fontSize: '8px', lineHeight: 1, color: '#94a3b8', fontWeight: 600, marginTop: '2px' }}>LAB</span>
       </div>
     ),
     {
@@ -34,3 +37,4 @@ export default function Icon() {
     }
   );
 }
+

@@ -59,9 +59,9 @@ export default function AdoptionPage() {
       <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 text-emerald-800">
-                OFFICIAL SURVEY CONTEXT
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wide">
+                Official Survey Context
               </span>
               <ProvenanceBadge
                 status="Published research/context source"
@@ -69,12 +69,12 @@ export default function AdoptionPage() {
                 onClick={() => setSelectedMeta(bicsProvenance)}
               />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <TrendingUp className="w-6 h-6 text-govuk-blue" />
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+              <TrendingUp className="w-5 h-5 text-slate-800 stroke-[1.75]" />
               AI Adoption in UK Businesses (BICS 2023–2026)
             </h1>
           </div>
-          <span className="text-xs font-mono text-slate-500 bg-slate-100 px-3 py-1.5 rounded-md self-start">
+          <span className="text-xs font-mono text-slate-500 bg-slate-100 px-3 py-1.5 rounded border border-slate-200 self-start">
             Latest Survey Wave: June 2026 (35.2%)
           </span>
         </div>
@@ -111,23 +111,23 @@ export default function AdoptionPage() {
               />
               <Tooltip
                 formatter={(value: any) => [`${value}%`, '']}
-                contentStyle={{ backgroundColor: '#ffffff', borderColor: '#cbd5e1', borderRadius: '8px', fontSize: '12px' }}
+                contentStyle={{ backgroundColor: '#ffffff', borderColor: '#cbd5e1', borderRadius: '6px', fontSize: '12px' }}
               />
               <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
               <Line
                 type="monotone"
                 dataKey="businesses_10plus"
                 name="Businesses with 10+ Employees"
-                stroke="#1d70b8"
-                strokeWidth={3}
-                dot={{ r: 4, fill: '#1d70b8' }}
+                stroke="#0f172a"
+                strokeWidth={2.5}
+                dot={{ r: 3.5, fill: '#0f172a' }}
               />
               <Line
                 type="monotone"
                 dataKey="all_businesses"
                 name="All Businesses (including Micro)"
                 stroke="#64748b"
-                strokeWidth={2}
+                strokeWidth={1.75}
                 strokeDasharray="4 4"
                 dot={{ r: 3, fill: '#64748b' }}
               />
@@ -170,11 +170,11 @@ export default function AdoptionPage() {
                   />
                   <Tooltip
                     formatter={(value: any) => [`${value}%`, '']}
-                    contentStyle={{ backgroundColor: '#ffffff', borderColor: '#cbd5e1', borderRadius: '8px', fontSize: '12px' }}
+                    contentStyle={{ backgroundColor: '#ffffff', borderColor: '#cbd5e1', borderRadius: '6px', fontSize: '12px' }}
                   />
                   <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-                  <Bar dataKey="adoption_rate_pct" name="Adoption Rate (%)" fill="#1d70b8" radius={[0, 3, 3, 0]} />
-                  <Bar dataKey="intense_use_pct" name="Intense Production Use (%)" fill="#0284c7" radius={[0, 3, 3, 0]} />
+                  <Bar dataKey="adoption_rate_pct" name="Adoption Rate (%)" fill="#0f172a" radius={[0, 2, 2, 0]} />
+                  <Bar dataKey="intense_use_pct" name="Intense Production Use (%)" fill="#64748b" radius={[0, 2, 2, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -203,9 +203,9 @@ export default function AdoptionPage() {
                   <YAxis unit="%" domain={[0, 70]} tick={{ fontSize: 11, fill: '#475569' }} />
                   <Tooltip
                     formatter={(value: any) => [`${value}%`, 'Adoption Rate']}
-                    contentStyle={{ backgroundColor: '#ffffff', borderColor: '#cbd5e1', borderRadius: '8px', fontSize: '12px' }}
+                    contentStyle={{ backgroundColor: '#ffffff', borderColor: '#cbd5e1', borderRadius: '6px', fontSize: '12px' }}
                   />
-                  <Bar dataKey="adoption_rate_pct" fill="#3b82f6" radius={[3, 3, 0, 0]} />
+                  <Bar dataKey="adoption_rate_pct" fill="#334155" radius={[2, 2, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

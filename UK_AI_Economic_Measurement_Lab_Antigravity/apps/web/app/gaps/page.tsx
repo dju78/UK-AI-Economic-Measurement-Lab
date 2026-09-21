@@ -123,9 +123,9 @@ export default function GapsPage() {
       <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-rose-100 text-rose-800">
-                RESEARCH AGENDA
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wide">
+                Research Agenda
               </span>
               <ProvenanceBadge
                 status="Published research/context source"
@@ -133,12 +133,12 @@ export default function GapsPage() {
                 onClick={() => setSelectedMeta(gapsProvenance)}
               />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <AlertCircle className="w-6 h-6 text-govuk-blue" />
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+              <AlertCircle className="w-5 h-5 text-slate-800 stroke-[1.75]" />
               Six Core AI Economic Measurement Challenges
             </h1>
           </div>
-          <span className="text-xs font-mono text-slate-500 bg-slate-100 px-3 py-1.5 rounded-md self-start">
+          <span className="text-xs font-mono text-slate-500 bg-slate-100 px-3 py-1.5 rounded border border-slate-200 self-start">
             Roadmap Horizon: 2026–2028
           </span>
         </div>
@@ -154,12 +154,12 @@ export default function GapsPage() {
         {MEASUREMENT_GAPS.map((gap) => (
           <div
             key={gap.id}
-            className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-govuk-blue transition-all"
+            className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-slate-400 transition-all"
           >
             <div className="space-y-4">
               <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-govuk-blue text-white font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-6 h-6 rounded-md bg-slate-900 text-white font-mono font-bold text-xs flex items-center justify-center shrink-0">
                     {gap.number}
                   </span>
                   <h2 className="font-bold text-base text-slate-900 leading-snug">
@@ -169,10 +169,10 @@ export default function GapsPage() {
                 <span
                   className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
                     gap.severity === 'Critical'
-                      ? 'bg-rose-100 text-rose-800 border border-rose-200'
+                      ? 'bg-rose-50 text-rose-800 border border-rose-200'
                       : gap.severity === 'High'
-                      ? 'bg-amber-100 text-amber-800 border border-amber-200'
-                      : 'bg-blue-100 text-blue-800 border border-blue-200'
+                      ? 'bg-amber-50 text-amber-900 border border-amber-200'
+                      : 'bg-slate-100 text-slate-700 border border-slate-200'
                   }`}
                 >
                   {gap.severity}

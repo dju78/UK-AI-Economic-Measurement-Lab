@@ -1,39 +1,63 @@
-# Changelog — UK AI Economic Measurement Lab
+# Changelog
 
-All notable changes to this project are documented in this file in accordance with Keep a Changelog.
+All notable changes to the **UK AI Economic Measurement Lab** are documented in this file.
+
+The project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [0.2.0-experimental] — 2026-09-21
+## [0.2.1] - 2026-09-21
+
+### Visual Identity & Interface Refinement (Human-Designed Research Product Standard)
+- **Brand Identity & Iconography**:
+  - Replaced decorative chip/neon/robot visual tropes with a calm, institutional `UK / LAB` typographic monogram mark (`app/icon.tsx`).
+  - Standardized Open Graph and Twitter Card social preview images on a deep institutional slate (`#090d16`), fine structured borders (`#0f172a`), and clear author attribution (`app/opengraph-image.tsx`, `app/twitter-image.tsx`).
+  - Streamlined Header and Footer navigation with muted borders, restrained badges, and generous whitespace.
+- **Component Polish**:
+  - `ProvenanceBadge`: Refined to subtle, non-distracting neutral badges with line icons (`ShieldCheck`, `BookOpen`, `Layers`) at 1.5 stroke width.
+  - `CaveatBanner`: Standardized on clean 3px left border accents with quiet typography and no loud gradient backgrounds.
+  - `StatCard`: Removed bouncy hover translateY/shadow animations; replaced with clean monospace figures, subtle borders, and generous padding (`p-6`).
+- **Research Explorers & Labs**:
+  - **Homepage (`/`)**: Expanded vertical spacing (`space-y-16 sm:space-y-20`), simplified feature cards to an understated research module directory indexed `01`–`06`.
+  - **AI Stack Explorer (`/stack`)**: Replaced `Cpu` silicon icon with clean line icons, refined active layer tabs with neutral slate styling.
+  - **Classifier Lab (`/classifier`)**: Streamlined test harness, model engine selector, and review audit trail.
+  - **Supply & Use (`/supply-use`)**: Muted bar chart palette to deep slate (`#0f172a`) and neutral slate (`#64748b`); cleaned matrix table.
+  - **Disaggregation Lab (`/disaggregation`)**: Streamlined sliders with `accent-slate-900`, neutral metric cards, and clean typography.
+  - **SNA Decision Wizard (`/sna-decision`)**: Refined decision step cards, corporate case study selector, and double-entry accounting ledger panel.
+  - **Adoption Context (`/adoption`)**: Standardized industry bar charts and adoption trajectory charts on muted slate tones.
+  - **Measurement Gaps (`/gaps`)**: Refined gap priority cards, severity badges, and monospace ONS milestone tags.
+  - **Methodology Cards (`/methodology`)**: Cleaned mathematical formula code blocks with dark slate backgrounds, structured parameter tables, and calm assumption/limitation callouts.
+  - **QA & Data Lineage (`/quality`)**: Structured layered pipeline graph and cryptographic SHA-256 manifest table.
+  - **Data Source Register (`/sources`)**: Understated search and filter controls, structured bibliography table, and clean external links.
+- **Accessibility & Validation**:
+  - Preserved all WCAG 2.2 AA accessibility features (keyboard focus rings, table alternatives for all charts, color-independent encoding).
+  - All 20 Next.js routes built statically with zero errors.
+  - All 38 automated Python statistical and reconciliation tests passing.
+
+---
+
+## [0.2.0] - 2026-09-21
 
 ### Added
-- **AI Production Stack Explorer (`/stack`):** Interactive conceptual map from infrastructure to applications with National Accounts boundaries and trade flow notes.
-- **Supply & Use Explorer (`/supply-use`):** Complete matrix of the 23 ONS AI-relevant CPA product groups (2020–2023) with domestic output, imports, intermediate consumption, GFCF, and exports.
-- **AI/Non-AI Disaggregation Lab (`/disaggregation`):** Four disaggregation engines (Survey-residual, Bottom-up, Compute-constrained, Revenue-share) with parameter sliders, sensitivity charts, and JSON/CSV scenario exports.
-- **AI Business Classification Lab (`/classifier`):** Multi-label classifier (13 ONS Table 3 categories) with dual rule-based and calibrated TF-IDF logistic baselines, feature explainability, confusion matrix evaluation dashboard, and interactive human review workflow.
-- **Expanded Benchmark Corpus (DS05):** 60 curated UK business profiles across dedicated AI, diversified software, hard negatives, and traditional non-AI sectors.
-- **SNA Decision Engine (`/sna-decision`):** Deterministic National Accounts decision tree with 6 pre-loaded UK corporate case studies and double-entry ledger impact analysis.
-- **AI Adoption Context (`/adoption`):** ONS BICS and DBT 2024 survey visualization and pedagogical "Adoption $\neq$ Value" guidance.
-- **Measurement Gaps & Agenda (`/gaps`):** Structured register of 10 core ONS measurement challenges.
-- **Methodology & Reproducibility Centre (`/methodology`, `/quality`, `/sources`):** 10 mathematical method cards with KaTeX formulas, cryptographic SHA-256 data manifest, automated test audit logs, and complete source bibliography (S1–S13).
-- **Expanded Automated Test Suite:** 38 unit and statistical tests in `tests/` verifying data integrity, mathematical identities ($V_{\text{AI}} + V_{\text{Non-AI}} \equiv V_{\text{Broad}}$), classifier metrics, SNA decision paths, and cross-language parity.
-- **Dual-Language Analytical Parity:** Native Python and TypeScript implementations with 100% verified parity across all 60 DS05 benchmark records and edge cases.
-- **SEO & Canonical Domain Integration:** Configured `https://ai-measurement.jomovate.com`, dynamic XML sitemap, Open Graph / Twitter previews, robots.txt, and Schema.org JSON-LD structured data.
-
-### Refined & Polished (UI & Visual Identity)
-- **Restrained Editorial Aesthetic:** Refined visual presentation to a clean, typographic, and whitespace-heavy research standard suitable for national statistical and economic researchers.
-- **Iconography Audit & De-cluttering:** Removed all decorative, synthetic, and AI-trope icons (`Sparkles`, pastel multicolour card icon boxes, redundant navigation tab icons).
-- **Clean Typographic Mark:** Replaced styled logo boxes with an understated dark-slate typographic mark (`AI`).
-- **Minimalist Social Previews:** Replaced decorative elements with a clean, high-contrast editorial Open Graph and Twitter card layout.
-- **Favicon Polish:** Implemented a crisp, high-contrast 32×32 typographic icon.
-
-### Fixed & Hardened
-- **Classifier Production Parity:** Resolved missing payload field alias `body.description` in `/api/classify/route.ts` and added plural/hyphen inflections across technical terms in both Python and TypeScript.
-- **AI Producer vs AI User Distinction:** Hardened negative patterns to filter pure AI adopters without suppressing core AI model developers.
-- **Cross-Language Golden Test Suite:** Added automated node subprocess execution in `tests/test_classifier.py` guaranteeing Python and TypeScript parity cannot silently diverge.
-- **Verified Production Deployment:** Deployed to production at `https://ai-measurement.jomovate.com` with all 11 routes, sitemap, and 4 APIs verified.
+- Complete implementation of the 5 core analytical engines:
+  - 5-Layer AI Economic Production Stack Explorer (`/stack`)
+  - 23-Product Supply & Use Table Explorer with 2020–2023 time-series (`/supply-use`)
+  - AI/Non-AI Disaggregation Laboratory with 4 estimation methods (`/disaggregation`)
+  - Multi-Label Business Classifier with TF-IDF Logistic Regression and 5-Fold Cross-Validation (`/classifier`)
+  - System of National Accounts (SNA 2008 / ESA 2010) Asset Boundary Decision Engine (`/sna-decision`)
+- Supporting research modules:
+  - AI Adoption in UK Businesses (`/adoption`) based on ONS BICS and DBT studies
+  - 10 ONS Measurement Gaps & Strategic Research Agenda (`/gaps`)
+  - Methodological Registry with 10 versioned method cards (`/methodology`)
+  - QA, Data Lineage & Reproducibility Centre (`/quality`)
+  - Authoritative Data Sources Register (`/sources`)
+- Comprehensive automated test suite with 38 unit, data reconciliation, and regression tests.
+- Cryptographically hashed dataset manifest (`data/manifest.json`) verifying all 5 raw source files.
 
 ---
 
-## [0.1.0] — 2026-09-21
-- Initial planning documentation, Master Blueprint, charter, and specifications.
+## [0.1.0] - 2026-09-21
+
+### Initial Release
+- Initial statistical measurement framework and project architecture.
+- Schema definitions and baseline Supply & Use dataset compilation.

@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import {
-  Cpu,
+  FileText,
   CheckCircle2,
   XCircle,
   AlertTriangle,
@@ -126,9 +126,9 @@ export default function ClassifierPage() {
       <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-purple-100 text-purple-800">
-                POPULATION IDENTIFICATION
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wide">
+                Population Identification
               </span>
               <ProvenanceBadge
                 status="Prototype output"
@@ -136,18 +136,18 @@ export default function ClassifierPage() {
                 onClick={() => setSelectedMeta(classifierProvenance)}
               />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <Cpu className="w-6 h-6 text-govuk-blue" />
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+              <FileText className="w-5 h-5 text-slate-800 stroke-[1.75]" />
               AI Business Classification & Validation Lab
             </h1>
           </div>
 
           <div className="flex items-center gap-2 self-start">
-            <span className="text-xs font-semibold text-slate-600">Model Engine:</span>
+            <span className="text-xs font-medium text-slate-600">Model Engine:</span>
             <select
               value={modelType}
               onChange={(e) => setModelType(e.target.value as any)}
-              className="py-1.5 px-2.5 bg-slate-50 border border-slate-200 rounded-md text-xs font-semibold text-govuk-blue focus:ring-2 focus:ring-govuk-blue"
+              className="py-1.5 px-2.5 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-900 focus:ring-2 focus:ring-slate-900"
             >
               <option value="tfidf_logistic">TF-IDF + Calibrated Logistic Regression</option>
               <option value="rule_baseline">Rule-Based Dictionary Baseline</option>

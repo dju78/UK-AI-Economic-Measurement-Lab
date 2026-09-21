@@ -89,9 +89,9 @@ export default function SupplyUsePage() {
       <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 text-emerald-800">
-                OFFICIAL SOURCE DATA
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wide">
+                Official Source Data
               </span>
               <ProvenanceBadge
                 status="Published official-statistics source"
@@ -99,12 +99,12 @@ export default function SupplyUsePage() {
                 onClick={() => setSelectedMeta(sutProvenance)}
               />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <TableIcon className="w-6 h-6 text-govuk-blue" />
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+              <TableIcon className="w-5 h-5 text-slate-800 stroke-[1.75]" />
               Supply & Use Tables: 23 AI-Relevant CPA Product Groups
             </h1>
           </div>
-          <span className="text-xs font-mono text-slate-500 bg-slate-100 px-3 py-1.5 rounded-md self-start">
+          <span className="text-xs font-mono text-slate-500 bg-slate-100 px-3 py-1.5 rounded border border-slate-200 self-start">
             Reference Period: 2020–2023
           </span>
         </div>
@@ -112,19 +112,19 @@ export default function SupplyUsePage() {
         <CaveatBanner type="broad_warning">
           <strong>Official National Accounts Rule:</strong> The figures below represent published broad product category totals from the ONS Supply and Use Tables.
           They are <strong>not AI output estimates</strong>. Broad categories contain both standard non-AI activity and emerging AI activity.
-          Use the <Link href="/disaggregation" className="font-bold underline text-amber-900">Disaggregation Lab</Link> to test experimental AI-share scenarios.
+          Use the <Link href="/disaggregation" className="font-bold underline text-amber-950">Disaggregation Lab</Link> to test experimental AI-share scenarios.
         </CaveatBanner>
 
         {/* Filter and search bar */}
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 mt-6 pt-4 border-t border-slate-100">
           <div className="sm:col-span-6 relative">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3 stroke-[1.75]" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by CPA code, product name, or value chain layer..."
-              className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-govuk-blue focus:bg-white"
+              className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white"
               aria-label="Search CPA products"
             />
           </div>
@@ -133,7 +133,7 @@ export default function SupplyUsePage() {
             <select
               value={selectedGroup}
               onChange={(e) => setSelectedGroup(e.target.value)}
-              className="w-full py-2 px-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-govuk-blue font-medium"
+              className="w-full py-2 px-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 font-medium"
               aria-label="Filter by ONS thematic group"
             >
               <option value="all">All ONS Thematic Groups (23)</option>
@@ -147,7 +147,7 @@ export default function SupplyUsePage() {
             <select
               value={selectedYear}
               onChange={(e) => setSelectedYear(e.target.value)}
-              className="w-full py-2 px-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-govuk-blue font-mono font-semibold"
+              className="w-full py-2 px-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 font-mono font-semibold"
               aria-label="Select reference year"
             >
               <option value="2023">Year: 2023</option>
@@ -188,11 +188,11 @@ export default function SupplyUsePage() {
               <Tooltip
                 formatter={(value: any) => [`£${Number(value).toLocaleString()}m`, '']}
                 labelFormatter={(label) => `CPA ${label}`}
-                contentStyle={{ backgroundColor: '#ffffff', borderColor: '#cbd5e1', borderRadius: '8px', fontSize: '12px' }}
+                contentStyle={{ backgroundColor: '#ffffff', borderColor: '#cbd5e1', borderRadius: '6px', fontSize: '12px' }}
               />
               <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-              <Bar dataKey="domestic_output" name="Domestic Output (Basic Prices)" fill="#1d70b8" radius={[3, 3, 0, 0]} />
-              <Bar dataKey="imports" name="Imports (Goods & Services)" fill="#0284c7" radius={[3, 3, 0, 0]} />
+              <Bar dataKey="domestic_output" name="Domestic Output (Basic Prices)" fill="#0f172a" radius={[2, 2, 0, 0]} />
+              <Bar dataKey="imports" name="Imports (Goods & Services)" fill="#64748b" radius={[2, 2, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -232,10 +232,10 @@ export default function SupplyUsePage() {
                       key={p.product_code}
                       onClick={() => setActiveProduct(p)}
                       className={`cursor-pointer transition-colors ${
-                        isSelected ? 'bg-blue-50/80 font-semibold' : 'hover:bg-slate-50/80'
+                        isSelected ? 'bg-slate-100/90 font-semibold' : 'hover:bg-slate-50/80'
                       }`}
                     >
-                      <td className="p-3 font-bold text-govuk-blue">
+                      <td className="p-3 font-bold text-slate-900">
                         {p.product_code.replace('CPA_', '')}
                       </td>
                       <td className="p-3 font-sans font-medium text-slate-900 max-w-[200px] truncate" title={p.product_name}>
@@ -270,7 +270,7 @@ export default function SupplyUsePage() {
             <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs sticky top-24 space-y-5">
               <div className="pb-3 border-b border-slate-100">
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-blue-100 text-govuk-blue">
+                  <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-slate-100 text-slate-900 border border-slate-200">
                     {activeProduct.product_code}
                   </span>
                   <span className="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
@@ -316,9 +316,9 @@ export default function SupplyUsePage() {
               <div className="pt-3 border-t border-slate-100 space-y-2">
                 <Link
                   href={`/disaggregation?product=${activeProduct.product_code}`}
-                  className="w-full py-2.5 bg-govuk-blue text-white rounded-lg text-xs font-semibold hover:bg-govuk-darkBlue transition-colors flex items-center justify-center gap-2 shadow-xs"
+                  className="w-full py-2.5 bg-slate-900 text-white rounded-lg text-xs font-semibold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 shadow-xs"
                 >
-                  <Sliders className="w-4 h-4" /> Disaggregate this Product in Lab
+                  <Sliders className="w-4 h-4 stroke-[1.75]" /> Disaggregate this Product in Lab
                 </Link>
 
                 <button
@@ -326,7 +326,7 @@ export default function SupplyUsePage() {
                   onClick={() => setSelectedMeta(sutProvenance)}
                   className="w-full py-2 bg-slate-100 text-slate-700 rounded-lg text-xs font-semibold hover:bg-slate-200 transition-colors flex items-center justify-center gap-1.5"
                 >
-                  <Database className="w-3.5 h-3.5" /> View Source Provenance
+                  <Database className="w-3.5 h-3.5 stroke-[1.75]" /> View Source Provenance
                 </button>
               </div>
             </div>

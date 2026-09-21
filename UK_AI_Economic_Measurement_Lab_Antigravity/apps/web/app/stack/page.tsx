@@ -5,17 +5,15 @@ import Link from 'next/link';
 import {
   Layers,
   Server,
-  Cpu,
   Cloud,
-  Wrench,
+  Sliders,
   Boxes,
-  AppWindow,
+  FileCode,
   Database,
   Building2,
   ExternalLink,
   ChevronRight,
   ShieldAlert,
-  ArrowDownUp,
   Globe2,
   Info
 } from 'lucide-react';
@@ -115,7 +113,7 @@ const STACK_LAYERS: Array<{
         name: 'Enterprise AI Applications & Vertical SaaS',
         layerIndex: 5,
         layerName: 'AI Applications',
-        icon: AppWindow,
+        icon: FileCode,
         summary: 'Commercial AI software for contract analysis, radiology diagnostics, fraud detection, code synthesis, and marketing copy.',
         cpaMappings: ['CPA_J582 (Software publishing)', 'CPA_J62 (Computer programming)'],
         sicMappings: ['SIC 58.29 (Software publishing)', 'SIC 62.01 (Programming)'],
@@ -171,7 +169,7 @@ const STACK_LAYERS: Array<{
         name: 'MLOps, AI Tooling & Frameworks',
         layerIndex: 3,
         layerName: 'MLOps & Tooling',
-        icon: Wrench,
+        icon: Sliders,
         summary: 'Developer frameworks (PyTorch, LangChain), vector search engines, model evaluation, safety benchmarks, and deployment tooling.',
         cpaMappings: ['CPA_J62 (Consultancy & programming)', 'CPA_M712 (Testing & analysis)'],
         sicMappings: ['SIC 62.02 (Consultancy)', 'SIC 71.20 (Technical testing)'],
@@ -227,7 +225,7 @@ const STACK_LAYERS: Array<{
         name: 'AI Silicon, Accelerators & Server Hardware',
         layerIndex: 1,
         layerName: 'Semiconductors & Hardware',
-        icon: Cpu,
+        icon: Layers,
         summary: 'Specialized silicon architectures (GPU, TPU, NPU), wafer fabrication, high-bandwidth memory (HBM), and assembled server nodes.',
         cpaMappings: ['CPA_C261 (Electronic components)', 'CPA_C262 (Computers & peripherals)', 'CPA_C263 (Communication equip)'],
         sicMappings: ['SIC 26.11 (Electronic components)', 'SIC 26.20 (Computers)'],
@@ -245,6 +243,7 @@ const STACK_LAYERS: Array<{
       }
     ]
   },
+
   {
     index: 0,
     name: 'Layer 0 · Energy, Data Centre Structures & Physical Facilities',
@@ -300,9 +299,9 @@ export default function StackPage() {
       <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-100 text-blue-800">
-                CONCEPTUAL FRAMEWORK
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wide">
+                Conceptual Framework
               </span>
               <ProvenanceBadge
                 status="Published research/context source"
@@ -310,17 +309,17 @@ export default function StackPage() {
                 onClick={() => setSelectedMeta(nodeProvenance)}
               />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <Layers className="w-6 h-6 text-govuk-blue" />
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+              <Layers className="w-5 h-5 text-slate-800 stroke-[1.75]" />
               AI Economic Production Stack Explorer
             </h1>
           </div>
           <Link
             href="/supply-use"
-            className="px-3.5 py-2 bg-govuk-blue text-white rounded text-xs font-semibold hover:bg-govuk-darkBlue transition-colors flex items-center gap-1.5 self-start"
+            className="px-3.5 py-2 bg-slate-900 text-white rounded text-xs font-semibold hover:bg-slate-800 transition-colors flex items-center gap-1.5 self-start shadow-xs"
           >
             <span>Trace to Supply & Use Tables</span>
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -335,7 +334,7 @@ export default function StackPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left column: 8-Layer Stack Navigator */}
         <div className="lg:col-span-7 space-y-3">
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-500 uppercase tracking-wider px-1">
+          <div className="flex items-center justify-between text-[11px] font-semibold text-slate-500 uppercase tracking-wider px-1">
             <span>Value Chain Hierarchy</span>
             <span>Downstream (Top) to Upstream (Base)</span>
           </div>
@@ -351,42 +350,42 @@ export default function StackPage() {
                   key={layer.index}
                   type="button"
                   onClick={() => setSelectedNode(node)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-govuk-blue ${
+                  className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-900 ${
                     isSelected
-                      ? 'bg-slate-900 text-white border-slate-900 shadow-md scale-[1.01]'
-                      : 'bg-white text-slate-800 border-slate-200 hover:border-govuk-blue hover:bg-slate-50'
+                      ? 'bg-slate-900 text-white border-slate-900 shadow-sm'
+                      : 'bg-white text-slate-800 border-slate-200 hover:border-slate-400 hover:bg-slate-50/70'
                   }`}
                   aria-pressed={isSelected}
                 >
                   <div
                     className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
                       isSelected
-                        ? 'bg-govuk-blue text-white'
+                        ? 'bg-slate-800 text-white border border-slate-700'
                         : 'bg-slate-100 text-slate-700'
                     }`}
                   >
-                    <Icon className="w-5 h-5" aria-hidden="true" />
+                    <Icon className="w-4 h-4 stroke-[1.75]" aria-hidden="true" />
                   </div>
 
                   <div className="grow min-w-0">
                     <div className="flex items-center justify-between gap-2">
                       <span
                         className={`text-[11px] font-bold uppercase tracking-wider ${
-                          isSelected ? 'text-blue-300' : 'text-govuk-blue'
+                          isSelected ? 'text-slate-300' : 'text-slate-700'
                         }`}
                       >
                         Layer {layer.index}
                       </span>
                       <span
                         className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
-                          isSelected ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-600'
+                          isSelected ? 'bg-slate-800 text-slate-300 border border-slate-700' : 'bg-slate-100 text-slate-600'
                         }`}
                       >
                         {node.cpaMappings[0]?.split(' ')[0]}
                       </span>
                     </div>
 
-                    <h3 className="font-bold text-sm leading-snug mt-0.5">
+                    <h3 className="font-bold text-sm leading-snug mt-1">
                       {node.name}
                     </h3>
                     <p
@@ -399,8 +398,8 @@ export default function StackPage() {
                   </div>
 
                   <ChevronRight
-                    className={`w-5 h-5 shrink-0 mt-2 transition-transform ${
-                      isSelected ? 'text-amber-400 translate-x-1' : 'text-slate-400'
+                    className={`w-4 h-4 shrink-0 mt-2.5 transition-transform ${
+                      isSelected ? 'text-amber-300 translate-x-0.5' : 'text-slate-400'
                     }`}
                   />
                 </button>
@@ -414,12 +413,12 @@ export default function StackPage() {
           <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs sticky top-24 space-y-6">
             <div className="pb-4 border-b border-slate-100">
               <div className="flex items-center justify-between gap-2 mb-1.5">
-                <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-govuk-blue text-white uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-slate-900 text-white uppercase tracking-wider">
                   {selectedNode.layerName}
                 </span>
                 <span className="text-xs text-slate-500 font-mono">Layer {selectedNode.layerIndex}</span>
               </div>
-              <h2 className="text-xl font-extrabold text-slate-900 leading-tight">
+              <h2 className="text-xl font-bold text-slate-900 leading-tight">
                 {selectedNode.name}
               </h2>
               <p className="text-xs text-slate-600 mt-2 leading-relaxed">
@@ -430,7 +429,7 @@ export default function StackPage() {
             {/* National Accounts Treatment */}
             <div className="space-y-3 bg-slate-50 p-4 rounded-lg border border-slate-200">
               <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-                <Globe2 className="w-4 h-4 text-govuk-blue" />
+                <Globe2 className="w-3.5 h-3.5 text-slate-700 stroke-[1.75]" />
                 National Accounts (SNA/ESA) Treatment
               </h3>
 
@@ -468,7 +467,7 @@ export default function StackPage() {
                     {selectedNode.cpaMappings.map((cpa) => (
                       <span
                         key={cpa}
-                        className="px-2 py-0.5 rounded bg-blue-50 text-govuk-blue border border-blue-200 font-mono text-[11px]"
+                        className="px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-200 font-mono text-[11px]"
                       >
                         {cpa}
                       </span>
@@ -495,13 +494,13 @@ export default function StackPage() {
             {/* Measurement Challenges */}
             <div className="space-y-2">
               <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-                <ShieldAlert className="w-4 h-4 text-amber-600" />
+                <ShieldAlert className="w-3.5 h-3.5 text-amber-700 stroke-[1.75]" />
                 Key Measurement Challenges
               </h3>
               <ul className="space-y-1.5 text-xs text-slate-600">
                 {selectedNode.measurementChallenges.map((ch, idx) => (
                   <li key={idx} className="flex items-start gap-1.5">
-                    <span className="text-amber-500 font-bold shrink-0">•</span>
+                    <span className="text-amber-700 font-bold shrink-0">•</span>
                     <span>{ch}</span>
                   </li>
                 ))}
@@ -512,7 +511,7 @@ export default function StackPage() {
               <span className="text-slate-500 font-medium">Citation: {selectedNode.onsCitation}</span>
               <Link
                 href={`/disaggregation`}
-                className="text-govuk-blue font-semibold hover:underline flex items-center gap-1"
+                className="text-slate-900 font-semibold hover:underline flex items-center gap-1"
               >
                 Test Disaggregation <ChevronRight className="w-3.5 h-3.5" />
               </Link>

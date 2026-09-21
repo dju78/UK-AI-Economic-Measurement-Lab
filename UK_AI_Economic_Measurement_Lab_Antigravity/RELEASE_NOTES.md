@@ -1,13 +1,13 @@
-# Release Notes — UK AI Economic Measurement Lab (v0.2.0)
+# Release Notes — UK AI Economic Measurement Lab (v0.2.1)
 
 **Release Date:** 21 September 2026  
-**Release Version:** `v0.2.0-experimental`  
+**Release Version:** `v0.2.1-launch-standard`  
 **Canonical Production URL:** [https://ai-measurement.jomovate.com](https://ai-measurement.jomovate.com)  
 **Secondary / Host URL:** [https://uk-ai-economic-measurement-lab.vercel.app/](https://uk-ai-economic-measurement-lab.vercel.app/)  
 **Deployment Platform:** Vercel  
 **GitHub Repository:** [https://github.com/dju78/UK-AI-Economic-Measurement-Lab](https://github.com/dju78/UK-AI-Economic-Measurement-Lab)  
-**Author:** Daramola Omoyele  
-**Product Status:** **LIVE IN PRODUCTION — READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH**
+**Lead Methodologist & Author:** Daramola Omoyele  
+**Product Status:** **LIVE IN PRODUCTION — VERIFIED FOR OFFICIAL STATISTICAL & ECONOMIC AUDIENCES**
 
 ---
 
@@ -19,7 +19,23 @@ It turns the public research challenges articulated in the ONS AI Thematic Accou
 
 ---
 
-## Key Features in this Release
+## Visual Refinement & Institutional Standard (v0.2.1)
+
+In preparation for presentation to professional statisticians, economists, national accounts methodologists, and analytical employers, the user interface has undergone a comprehensive refinement to remove all synthetic or decorative visual signals:
+
+1. **Restrained Brand Mark & Favicon**: Replaced generic "AI" badge with a crisp typographic monogram mark (`UK / LAB` in `apps/web/app/icon.tsx`).
+2. **Institutional Social Sharing Cards**: Standardized Open Graph and Twitter Card preview images on an institutional deep slate (`#090d16`), fine structured borders (`#0f172a`), and clear author attribution (`app/opengraph-image.tsx`, `app/twitter-image.tsx`).
+3. **Calm Navigation & Hierarchy**: Muted header navigation, expanded layout whitespace (`space-y-16 sm:space-y-20`), quiet active states, and understated footer.
+4. **Typographic & Data Clarity**:
+   - Monospace numeric indexing (`01`–`06`) for research modules.
+   - Clean tabular layouts with high-contrast, readable typography.
+   - Replaced multi-colored chart palettes with restrained slate tones (`#0f172a`, `#64748b`, `#334155`).
+   - Removed aggressive hover elevation transforms in favor of subtle border transitions.
+5. **Standardized Provenance Badging**: Neutral badge backgrounds with 1.5 stroke line icons (`ShieldCheck`, `BookOpen`, `Layers`) clearly distinguishing *Published official-statistics sources*, *Published research/context sources*, and *Prototype outputs*.
+
+---
+
+## Key Features & Research Modules
 
 ### 1. AI Production Stack Explorer (`/stack`)
 - Interactive 5-layer map tracing the AI economic value chain from data centre physical infrastructure, silicon, and hyperscale compute to foundation model APIs and enterprise applications.
@@ -54,23 +70,16 @@ It turns the public research challenges articulated in the ONS AI Thematic Accou
 - Detailed catalogue of the 10 core ONS measurement challenges with severity ratings, evidence gaps, and proposed empirical tests.
 
 ### 8. Methodology & Reproducibility Centre (`/methodology`, `/quality`, `/sources`)
-- 10 versioned method cards with KaTeX formulas, cryptographic SHA-256 data manifest, automated test audit logs, and complete source bibliography (S1–S13).
-
-### 9. Public Launch Metadata & Discoverability Polish
-- Canonical base URL set to `https://ai-measurement.jomovate.com`.
-- Dynamic Open Graph and Twitter Card preview images generated via `@vercel/og` with UK government palette.
-- Complete Next.js XML sitemap (`/sitemap.xml`) covering all 11 routes.
-- Semantic JSON-LD `SoftwareApplication` structured data embedded into page metadata.
+- 5 versioned method cards with KaTeX formulas, cryptographic SHA-256 data manifest, automated test audit logs, and complete source bibliography (S1–S11).
 
 ---
 
-## Live Smoke Test Summary
+## Verification & Quality Gate Summary
 
-| Target | Test Result |
+| Metric | Result |
 | :--- | :---: |
-| **All 11 Public Page Routes** | 200 OK (100% Pass) |
-| **All 4 REST API Endpoints** | 200 OK (100% Pass) |
-| **Automated Test Suite** | 38 / 38 Tests Passing |
-| **Independence Disclaimers** | Verified across all pages |
-| **Critical Defects** | 0 |
-| **High Defects** | 0 |
+| **Static Route Generation** | 20 / 20 routes generated (100% Pass) |
+| **Python Statistical & Reconciliation Tests** | 38 / 38 Tests Passing (100% Pass) |
+| **Accessibility Standard** | WCAG 2.2 AA compliant (Keyboard navigable, table fallbacks, visible focus) |
+| **Independence Disclaimers** | Prominently displayed across Header, Footer, and Caveat Banners |
+| **Critical / High Defects** | 0 |

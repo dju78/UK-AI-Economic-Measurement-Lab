@@ -3,18 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  FileCode2,
+  FileText,
   CheckCircle2,
-  Layers,
-  Sliders,
-  Scale,
-  Cpu,
   ChevronRight,
-  ExternalLink,
-  BookOpen,
-  Info
+  ExternalLink
 } from 'lucide-react';
-import { CaveatBanner } from '@/components/provenance/CaveatBanner';
 import { ProvenanceBadge } from '@/components/provenance/ProvenanceBadge';
 import { ProvenanceDrawer } from '@/components/provenance/ProvenanceDrawer';
 import { ProvenanceMeta } from '@packages/schemas';
@@ -157,13 +150,13 @@ export default function MethodologyPage() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       {/* Header */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+      <div className="bg-white border border-slate-200/90 rounded-xl p-6 sm:p-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-100 text-blue-800">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-slate-100 text-slate-700">
                 METHODOLOGY SPECIFICATION
               </span>
               <ProvenanceBadge
@@ -172,36 +165,35 @@ export default function MethodologyPage() {
                 onClick={() => setSelectedMeta(methProvenance)}
               />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <FileCode2 className="w-6 h-6 text-govuk-blue" />
+            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Methodology Cards & Mathematical Specifications
             </h1>
           </div>
-          <span className="text-xs font-mono text-slate-500 bg-slate-100 px-3 py-1.5 rounded-md self-start">
-            5 Versioned Method Engines
+          <span className="text-xs font-mono text-slate-600 bg-slate-100 px-3 py-1.5 rounded self-start">
+            5 Versioned Engines
           </span>
         </div>
 
-        <p className="text-sm text-slate-600 mt-3 leading-relaxed max-w-4xl">
+        <p className="text-sm text-slate-600 mt-4 leading-relaxed max-w-4xl">
           In accordance with the project’s statistical transparency rules, every calculation and decomposition model is documented below with its exact mathematical formula, parameter definitions, core accounting assumptions, limitations, and validation status.
         </p>
       </div>
 
       {/* Method Cards List */}
-      <div className="space-y-6">
+      <div className="space-y-8">
         {METHOD_CARDS.map((card) => (
           <div
             key={card.id}
             id={card.id}
-            className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs space-y-5"
+            className="bg-white rounded-xl border border-slate-200/90 p-6 sm:p-7 space-y-6"
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 gap-2">
               <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-slate-100 text-slate-800">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-100 text-slate-800">
                     {card.id}
                   </span>
-                  <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-50 text-govuk-blue border border-blue-200">
+                  <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700">
                     {card.methodFamily}
                   </span>
                 </div>
@@ -215,39 +207,39 @@ export default function MethodologyPage() {
             </div>
 
             {/* Formula Block */}
-            <div className="bg-slate-900 text-amber-300 rounded-lg p-4 font-mono text-sm overflow-x-auto shadow-inner">
-              <span className="text-[10px] text-slate-400 font-sans uppercase tracking-wider block mb-1">
+            <div className="bg-slate-950 text-slate-100 rounded-lg p-4 font-mono text-xs overflow-x-auto border border-slate-800">
+              <span className="text-[10px] text-slate-400 font-sans uppercase tracking-wider block mb-1.5">
                 Mathematical Specification:
               </span>
-              <code>{card.formulaLatex}</code>
+              <code className="text-slate-200">{card.formulaLatex}</code>
             </div>
 
-            <p className="text-xs text-slate-700 leading-relaxed">
+            <p className="text-xs text-slate-600 leading-relaxed">
               {card.description}
             </p>
 
             {/* Parameters Table */}
-            <div className="space-y-2">
-              <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+            <div className="space-y-2.5">
+              <h3 className="text-xs font-semibold text-slate-900 uppercase tracking-wider">
                 Parameter Definitions
               </h3>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto border border-slate-200 rounded-lg">
                 <table className="w-full text-left text-xs text-slate-700 border-collapse">
                   <thead>
                     <tr className="bg-slate-50 border-b border-slate-200 text-slate-900 font-semibold">
-                      <th className="p-2">Parameter</th>
-                      <th className="p-2">Symbol</th>
-                      <th className="p-2">Description</th>
-                      <th className="p-2">Documented Default</th>
+                      <th className="p-3">Parameter</th>
+                      <th className="p-3">Symbol</th>
+                      <th className="p-3">Description</th>
+                      <th className="p-3">Documented Default</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
                     {card.parameters.map((param, pIdx) => (
-                      <tr key={pIdx}>
-                        <td className="p-2 font-medium text-slate-900">{param.name}</td>
-                        <td className="p-2 font-mono text-govuk-blue">{param.symbol}</td>
-                        <td className="p-2 text-slate-600">{param.description}</td>
-                        <td className="p-2 font-mono text-slate-800">{param.defaultVal}</td>
+                      <tr key={pIdx} className="hover:bg-slate-50/50">
+                        <td className="p-3 font-medium text-slate-900">{param.name}</td>
+                        <td className="p-3 font-mono text-slate-700">{param.symbol}</td>
+                        <td className="p-3 text-slate-600">{param.description}</td>
+                        <td className="p-3 font-mono text-slate-800">{param.defaultVal}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -256,22 +248,22 @@ export default function MethodologyPage() {
             </div>
 
             {/* Assumptions & Limitations Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-2">
-              <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200 space-y-1.5">
-                <span className="font-bold text-slate-900 block">Core Methodological Assumptions:</span>
-                <ul className="space-y-1 text-slate-600">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-1">
+              <div className="bg-slate-50/60 p-4 rounded-lg border border-slate-200/80 space-y-2">
+                <span className="font-semibold text-slate-900 block">Core Methodological Assumptions:</span>
+                <ul className="space-y-1.5 text-slate-600">
                   {card.assumptions.map((asmp, aIdx) => (
                     <li key={aIdx} className="flex items-start gap-1.5">
-                      <span className="text-govuk-blue font-bold">•</span>
+                      <span className="text-slate-400 font-bold">•</span>
                       <span>{asmp}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="bg-amber-50/60 p-3.5 rounded-lg border border-amber-200 space-y-1.5">
-                <span className="font-bold text-amber-950 block">Known Limitations & Caveats:</span>
-                <ul className="space-y-1 text-amber-900">
+              <div className="bg-amber-50/40 p-4 rounded-lg border border-amber-200/70 space-y-2">
+                <span className="font-semibold text-amber-950 block">Known Limitations & Caveats:</span>
+                <ul className="space-y-1.5 text-amber-900">
                   {card.limitations.map((lim, lIdx) => (
                     <li key={lIdx} className="flex items-start gap-1.5">
                       <span className="text-amber-600 font-bold">•</span>
@@ -283,14 +275,14 @@ export default function MethodologyPage() {
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span className="flex items-center gap-1.5 text-emerald-700 font-medium">
-                <CheckCircle2 className="w-4 h-4" /> {card.validationStatus}
+              <span className="flex items-center gap-1.5 text-emerald-800 font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> {card.validationStatus}
               </span>
               <Link
                 href="/disaggregation"
-                className="text-govuk-blue font-semibold hover:underline flex items-center gap-1"
+                className="text-slate-900 font-medium hover:underline flex items-center gap-1"
               >
-                Execute in Disaggregation Lab <ChevronRight className="w-3.5 h-3.5" />
+                Execute in Disaggregation Lab <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
               </Link>
             </div>
           </div>
@@ -305,3 +297,4 @@ export default function MethodologyPage() {
     </div>
   );
 }
+
