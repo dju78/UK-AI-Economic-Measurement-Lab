@@ -1,19 +1,21 @@
 # UK AI Economic Measurement Lab
-## Production Deployment & Final Live Verification Report
+## Production Deployment & Release Status Report
 
 **Product:** UK AI Economic Measurement Lab  
 **Owner / Author:** Daramola Omoyele  
 **Version:** `v0.2.0-experimental`  
 **Git Tag:** `v0.2.0`  
-**Verified Commit SHA:** `1a423e9`  
+**Repository:** [https://github.com/dju78/UK-AI-Economic-Measurement-Lab](https://github.com/dju78/UK-AI-Economic-Measurement-Lab)  
+**Production Branch:** `main` (tracked with `origin/main` and `origin/master`)  
+**Verified Commit SHA:** `8d4fc54`  
 **Date:** 2026-09-21  
-**Status:** **READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH**
+**Status:** **READY FOR DEPLOYMENT — NOT YET PUBLICLY LAUNCHED**
 
 ---
 
 ### Executive Summary
 
-The **UK AI Economic Measurement Lab** has successfully completed all development, statistical hardening, automated testing, dual-evaluation classifier calibration, production building, and local live smoke testing.
+The **UK AI Economic Measurement Lab** has successfully completed all development, statistical hardening, automated testing, dual-evaluation classifier calibration, production building, and local live smoke testing. The complete verified codebase and release artifacts are published to GitHub.
 
 The application strictly adheres to the core principles defined in `AGENTS.md` and the statistical measurement framework:
 1. **Independent Research Status:** It is clearly marked on all screens and headers as an independent research prototype by Daramola Omoyele, not an Office for National Statistics (ONS) product, and not producing official statistics.
@@ -22,7 +24,7 @@ The application strictly adheres to the core principles defined in `AGENTS.md` a
 4. **Benchmark Transparency:** DS05 is rigorously described across the UI and API as:
    > *"Curated experimental benchmark dataset — not official statistics and not a representative sample of UK businesses."*
 5. **Rigorous Classifier Validation:** Reported with dual evaluation metrics (In-sample: 98.3% accuracy, 100% precision, 97.5% recall, 98.7% F1; Stratified 5-Fold Cross-Validation: 98.3% mean accuracy, 100% precision, 97.5% recall, 98.7% F1, $N=60$), accompanied by explicit disclosures regarding curated keyword sensitivity and small sample limitations.
-6. **Codebase Hygiene:** Zero hardcoded local machine paths (`C:\Users\`, `Inspiron`, `OneDrive`, `localhost`, `127.0.0.1`) exist in runtime production code.
+6. **Codebase Hygiene:** Zero hardcoded local machine paths exist in runtime production code.
 
 ---
 
@@ -30,18 +32,20 @@ The application strictly adheres to the core principles defined in `AGENTS.md` a
 
 | Verification Item | Specification / Value | Status | Notes |
 | :--- | :--- | :---: | :--- |
-| **Git Working Tree** | Clean (`master` branch) | **PASS** | No uncommitted changes or untracked artifacts |
+| **GitHub Repository** | `dju78/UK-AI-Economic-Measurement-Lab` | **PASS** | Synchronized with remotes |
+| **Production Branch** | `main` | **PASS** | Canonical production branch |
+| **Git Working Tree** | Clean (`main` branch) | **PASS** | No uncommitted changes or untracked artifacts |
 | **Git Tag** | `v0.2.0` | **PASS** | Associated with release commit |
-| **Release Commit SHA** | `1a423e9` | **PASS** | Verified release candidate HEAD |
+| **Release Commit SHA** | `8d4fc54` | **PASS** | Verified release candidate HEAD |
 | **Automated Test Suite** | 34 / 34 Tests Passing | **PASS** | `python -m unittest discover tests` (0 failures, 0 errors, 0.040s) |
 | **Next.js Production Build** | Static & Dynamic Generation | **PASS** | `✓ Generating static pages (18/18)` with 0 TypeScript/ESLint errors |
 | **Bundle Size Optimization** | First Load JS Shared: 87.4 kB | **PASS** | All route page chunks between 1.5 kB and 15.5 kB |
 
 ---
 
-### 2. Route-by-Route Smoke Test & Verification
+### 2. Verified Routes & API Endpoints
 
-All 11 user-facing routes and 4 JSON API endpoints were verified on the local production server:
+All 11 user-facing routes and 4 JSON API endpoints have been smoke-tested with 200 OK responses on the verified production build:
 
 | Route Path | Route Type | Status | Features & Interactions Verified |
 | :--- | :--- | :---: | :--- |
@@ -88,73 +92,36 @@ All 11 user-facing routes and 4 JSON API endpoints were verified on the local pr
 
 ### 5. Production Environment & Runtime Sanitization
 
-- **Hardcoded Path Audit:** Complete search across `apps/web/` verified **zero** instances of:
-  - `C:\Users\`
-  - `Inspiron`
-  - `OneDrive`
-  - `localhost`
-  - `127.0.0.1`
-- **Dynamic Base URL Resolution:** All internal API fetch calls utilise relative paths (e.g. `/api/sut`, `/api/classify`) or dynamically resolve `window.location.origin` / `process.env.NEXT_PUBLIC_SITE_URL`.
+- **Hardcoded Path Audit:** Complete search across `apps/web/` verified **zero** instances of machine-specific paths or hardcoded hosts.
+- **Dynamic Base URL Resolution:** All internal API fetch calls utilise relative paths (e.g. `/api/sut`, `/api/classify`) or dynamically resolve `window.location.origin`.
 - **Security Headers:** Configured standard HTTP security headers (CSP, X-Content-Type-Options: `nosniff`, X-Frame-Options: `DENY`, Strict-Transport-Security, Referrer-Policy: `strict-origin-when-cross-origin`).
 
 ---
 
-### 6. Remote Deployment Instructions
+### 6. Production Deployment Instructions
 
-The application is structured as a standalone Next.js web application within `apps/web`. It can be deployed immediately to **Vercel**, **GitHub Pages / Actions**, or any **Docker / Node.js container environment**.
+To complete the public deployment to Vercel:
 
-#### Option A: Direct Vercel Deployment (Recommended)
-1. **Using Vercel CLI:**
-   ```bash
-   cd apps/web
-   npx vercel --prod
-   ```
-2. **Using Vercel Web Dashboard:**
-   - Import the GitHub repository: `UK-AI-Economic-Measurement-Lab`.
-   - Set **Root Directory** to: `apps/web`.
-   - Framework Preset: `Next.js`.
-   - Build Command: `npm run build`.
-   - Output Directory: `.next`.
-   - Environment Variables (Optional):
-     - `NEXT_PUBLIC_SITE_URL`: `https://ai-economy.lab.org.uk` (or custom domain).
-
-#### Option B: GitHub Repository Creation & Sync
-1. **Authenticate and Push:**
-   ```bash
-   # From the application root (UK_AI_Economic_Measurement_Lab_Antigravity):
-   git remote add origin https://github.com/<username>/UK-AI-Economic-Measurement-Lab.git
-   git branch -M master
-   git push -u origin master --tags
-   ```
-
-#### Option C: Container / Docker Deployment
-1. **Build and Run Container:**
-   ```bash
-   docker build -t uk-ai-measurement-lab -f apps/web/Dockerfile .
-   docker run -d -p 3000:3000 --name ai-lab uk-ai-measurement-lab
-   ```
+#### 1-Click Vercel Dashboard Deployment
+1. Log in to [vercel.com](https://vercel.com).
+2. Click **"Add New..."** → **"Project"**.
+3. Select the repository: **`dju78/UK-AI-Economic-Measurement-Lab`**.
+4. Configure the project settings:
+   - **Framework Preset:** `Next.js`
+   - **Root Directory:** `UK_AI_Economic_Measurement_Lab_Antigravity/apps/web`
+   - **Build Command:** `npm run build`
+   - **Output Directory:** Default (`.next`)
+5. Click **Deploy**. Vercel will build and assign an official public `.vercel.app` HTTPS domain.
 
 ---
 
-### 7. Custom Domain & DNS Configuration
-
-To configure a custom domain (e.g. `ai-measurement.org.uk` or `lab.example.org`):
-
-| Record Type | Host / Name | Target / Value | TTL | Purpose |
-| :--- | :--- | :--- | :--- | :--- |
-| **A Record** | `@` (Apex) | `76.76.21.21` (Vercel Anycast IP) | 300 / Auto | Directs apex domain to edge network |
-| **CNAME Record** | `www` or `lab` | `cname.vercel-dns.com.` | 300 / Auto | Directs subdomain to edge network |
-| **CAA Record** | `@` | `0 issue "letsencrypt.org"` | 3600 | Authorises automatic SSL/TLS certificate generation |
-
----
-
-### 8. Final Release Determination
+### 7. Final Release Determination
 
 ```
 ================================================================================
 FINAL VERIFICATION DETERMINATION:
-READY FOR PUBLIC RESEARCH PROTOTYPE LAUNCH
+READY FOR DEPLOYMENT — NOT YET PUBLICLY LAUNCHED
 ================================================================================
 ```
 
-All acceptance criteria, statistical guardrails, unit/calculation tests, and release smoke tests are 100% satisfied. The release candidate (`v0.2.0-experimental`, commit `1a423e9`) is fully verified and packaged for public hosting.
+All acceptance criteria, statistical guardrails, unit/calculation tests, and release smoke tests are 100% satisfied. The repository is published to GitHub (`main` branch, commit `8d4fc54`) awaiting final 1-click Vercel project import or CLI token authentication.
