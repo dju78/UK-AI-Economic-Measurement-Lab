@@ -33,7 +33,7 @@ export default function QualityPage() {
     { title: 'Mathematical Identity Reconciliation', desc: 'Strict constraint AI + NonAI == Broad Total verified within ±0.01 rounding tolerance across all methods.', status: 'PASSED' },
     { title: 'Time Series Continuity', desc: 'Annual supply and demand vectors validated for 2020, 2021, 2022, 2023 with non-negative constraints.', status: 'PASSED' },
     { title: 'Raw Dataset SHA-256 Verification', desc: 'Immutable raw data files cryptographically hashed and verified against data/manifest.json.', status: 'PASSED (5/5 files)' },
-    { title: 'WCAG 2.2 AA Accessibility', desc: 'Semantic headings, visible keyboard focus rings, color-independent encoding, and table fallbacks for charts.', status: 'PASSED' },
+    { title: 'Accessibility Principles (WCAG 2.2 AA)', desc: 'Designed and tested against WCAG 2.2 AA principles: semantic headings, visible keyboard focus rings, color-independent encoding, and table fallbacks for charts.', status: 'PASSED' },
     { title: 'Deterministic Reproducibility', desc: 'Clean build and tests execute idempotently with zero external network dependencies for calculations.', status: 'PASSED' }
   ];
 
@@ -61,7 +61,7 @@ export default function QualityPage() {
         </div>
 
         <p className="text-sm text-slate-600 mt-3 leading-relaxed max-w-4xl">
-          Statistical credibility requires complete transparency of the data lineage, automated verification checks,
+          Statistical credibility requires complete transparency of data lineage, automated verification checks,
           cryptographic snapshot hashes, and exact command sequences needed to reproduce all analytical outputs from a clean repository clone.
         </p>
       </div>
@@ -109,7 +109,7 @@ export default function QualityPage() {
             <div className="font-bold text-govuk-blue uppercase tracking-wider text-[10px]">5. Presentation</div>
             <div className="font-semibold text-slate-900">apps/web/</div>
             <p className="text-slate-600 leading-relaxed text-[11px]">
-              WCAG 2.2 AA accessible web application with provenance badges.
+              Designed and tested against WCAG 2.2 AA accessibility principles with provenance badges.
             </p>
           </div>
         </div>

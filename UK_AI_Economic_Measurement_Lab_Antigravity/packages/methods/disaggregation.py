@@ -2,7 +2,7 @@
 Python Disaggregation Engine for UK AI Economic Measurement Lab
 """
 from typing import Dict, Any
-from datetime import datetime
+from datetime import datetime, timezone
 from packages.schemas.types import CPAProduct, DisaggregationParams, DisaggregationResult
 
 def run_disaggregation(product: CPAProduct, params: DisaggregationParams) -> DisaggregationResult:
@@ -59,7 +59,12 @@ def run_disaggregation(product: CPAProduct, params: DisaggregationParams) -> Dis
     estimated_ai_base = max(0.0, min(broad_total, estimated_ai_base))
     estimated_ai_low = max(0.0, min(estimated_ai_base, estimated_ai_low))
     estimated_ai_high = max(estimated_ai_base, min(broad_total, estimated_ai_high))
-    estimated_non_ai_base = broad_total - estimated_ai_base
+
+    rounded_broad = round(broad_total, 1)
+    rounded_ai_base = round(estimated_ai_base, 1)
+    rounded_ai_low = round(estimated_ai_low, 1)
+    rounded_ai_high = round(estimated_ai_high, 1)
+    rounded_non_ai_base = round(rounded_broad - rounded_ai_base, 1)
 
     return DisaggregationResult(
         scenario_id=f"SCN-{params.product_code}-{params.method}",
@@ -67,16 +72,16 @@ def run_disaggregation(product: CPAProduct, params: DisaggregationParams) -> Dis
         product_name=product.product_name,
         reference_year=params.reference_year,
         target_variable=params.target_variable,
-        broad_total_value=round(broad_total, 1),
+        broad_total_value=rounded_broad,
         method=params.method,
         method_version=f"{params.method}-py-v1.0",
-        estimated_ai_base=round(estimated_ai_base, 1),
-        estimated_ai_low=round(estimated_ai_low, 1),
-        estimated_ai_high=round(estimated_ai_high, 1),
-        estimated_non_ai_base=round(estimated_non_ai_base, 1),
-        implied_ai_share_base_pct=round((estimated_ai_base / broad_total) * 100, 1) if broad_total > 0 else 0.0,
-        implied_ai_share_low_pct=round((estimated_ai_low / broad_total) * 100, 1) if broad_total > 0 else 0.0,
-        implied_ai_share_high_pct=round((estimated_ai_high / broad_total) * 100, 1) if broad_total > 0 else 0.0,
+        estimated_ai_base=rounded_ai_base,
+        estimated_ai_low=rounded_ai_low,
+        estimated_ai_high=rounded_ai_high,
+        estimated_non_ai_base=rounded_non_ai_base,
+        implied_ai_share_base_pct=round((rounded_ai_base / rounded_broad) * 100, 1) if rounded_broad > 0 else 0.0,
+        implied_ai_share_low_pct=round((rounded_ai_low / rounded_broad) * 100, 1) if rounded_broad > 0 else 0.0,
+        implied_ai_share_high_pct=round((rounded_ai_high / rounded_broad) * 100, 1) if rounded_broad > 0 else 0.0,
         formula_latex=formula_latex,
-        created_at=datetime.utcnow().isoformat() + "Z"
+        created_at=datetime.now(timezone.utc).isoformat()
     )

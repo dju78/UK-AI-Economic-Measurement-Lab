@@ -1,7 +1,7 @@
 """
 Python schemas and data structures for UK AI Economic Measurement Lab
 """
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from typing import Dict, List, Optional, Any
 
 @dataclass
@@ -62,3 +62,64 @@ class DisaggregationResult:
     implied_ai_share_high_pct: float
     formula_latex: str
     created_at: str
+
+    def dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+@dataclass
+class CompanyClassificationRecord:
+    business_id: str
+    company_name: str
+    sic_code: Optional[str] = None
+    sic_description: Optional[str] = None
+    text: str = ""
+    ground_truth_labels: Optional[List[str]] = None
+    ground_truth_ai_relevant: Optional[bool] = None
+    ground_truth_dedicated: Optional[bool] = None
+    is_hard_negative: Optional[bool] = None
+
+@dataclass
+class PredictionFeatureWeight:
+    term: str
+    weight: float
+    direction: str
+
+@dataclass
+class ClassificationPrediction:
+    business_id: str
+    company_name: str
+    model_type: str
+    model_version: str
+    is_ai_relevant: bool
+    ai_probability: float
+    predicted_labels: List[str]
+    is_dedicated: bool
+    confidence_score: float
+    feature_contributions: List[PredictionFeatureWeight]
+    highlighted_terms: List[str]
+    review_status: str
+
+@dataclass
+class ClassifierEvaluationMetrics:
+    total_samples: int
+    accuracy: float
+    precision: float
+    recall: float
+    f1_score: float
+    roc_auc: float
+    true_positives: int
+    false_positives: int
+    true_negatives: int
+    false_negatives: int
+    confusion_matrix: Dict[str, int]
+    per_label_metrics: Dict[str, Dict[str, Any]]
+
+@dataclass
+class SNACaseStudy:
+    id: str
+    title: str
+    firm_type: str
+    activity_summary: str
+    initial_answers: Dict[str, str]
+    expected_treatment: str
+    key_national_accounts_insight: str

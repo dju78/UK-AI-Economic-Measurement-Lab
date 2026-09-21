@@ -13,80 +13,84 @@ export const TAXONOMY_RULES: Record<
 > = {
   ai_platforms_models: {
     label: 'AI Platforms, Foundation Models & Data Infra',
-    keywords: ['foundation model', 'large language model', 'llm', 'deep learning', 'transformer', 'rag', 'vector database', 'neural network', 'diffusion model'],
-    regex: /\b(foundation model|large language model|llm|deep learning|transformer|vector database|diffusion model|neural network|rag)\b/i
+    keywords: ['foundation model', 'foundational model', 'large language model', 'llm', 'deep learning', 'transformer', 'rag', 'vector database', 'neural network', 'diffusion model', 'embeddings', 'gpu cluster'],
+    regex: /\b(foundation(al)? model|large language model|llm|deep learning|transformer|vector database|diffusion model|neural network|rag|embeddings|gpu cluster|open-weight)\b/i
   },
   healthcare_life_sciences: {
     label: 'Healthcare & Life Sciences AI',
-    keywords: ['protein folding', 'drug discovery', 'clinical', 'medical imaging', 'biotech', 'pathology', 'genomics'],
-    regex: /\b(protein folding|drug discovery|clinical diagnostic|medical imaging|biotechnology|genomics|pathology)\b/i
+    keywords: ['protein folding', 'drug discovery', 'clinical', 'medical imaging', 'biotech', 'pathology', 'genomics', 'arrhythmia', 'radiology'],
+    regex: /\b(protein folding|drug discovery|clinical|medical imaging|biotechnology|biotech|genomics|pathology|arrhythmia|radiology|mammography|transcriptomics)\b/i
   },
   robotics_autonomous_systems: {
     label: 'Robotics & Autonomous Systems',
-    keywords: ['autonomous', 'robotics', 'amr', 'slam', 'drone', 'uav', 'reinforcement learning', 'autopilot'],
-    regex: /\b(autonomous|robotics|amr|slam|drone|uav|reinforcement learning|autopilot|vtol)\b/i
+    keywords: ['autonomous', 'robotics', 'amr', 'slam', 'drone', 'uav', 'reinforcement learning', 'autopilot', 'bin-picking'],
+    regex: /\b(autonomous|robotics|amr|slam|drone|uav|reinforcement learning|autopilot|vtol|bin-picking|surface vessel)\b/i
   },
   finance_fintech_compliance: {
     label: 'Finance, FinTech & Compliance',
-    keywords: ['fraud detection', 'aml', 'algorithmic trading', 'credit scoring', 'quantitative', 'anomaly detection'],
-    regex: /\b(fraud detection|aml|algorithmic trading|credit scoring|quantitative fund|anomaly detection|fintech)\b/i
+    keywords: ['fraud detection', 'aml', 'algorithmic trading', 'credit scoring', 'quantitative', 'anomaly detection', 'credit risk', 'audit copilot'],
+    regex: /\b(fraud detection|aml|algorithmic trading|credit scoring|quantitative fund|anomaly detection|fintech|credit risk|audit copilot|vat fraud)\b/i
   },
   computer_vision_speech: {
     label: 'Computer Vision & Speech/Audio',
-    keywords: ['computer vision', 'object tracking', 'lidar', 'speech synthesis', 'tts', 'voice cloning', 'transcription', 'nlp'],
-    regex: /\b(computer vision|object tracking|lidar|speech synthesis|text-to-speech|tts|voice cloning|transcription|nlp|natural language processing)\b/i
+    keywords: ['computer vision', 'object tracking', 'lidar', 'speech synthesis', 'tts', 'voice cloning', 'transcription', 'nlp', 'voicebot'],
+    regex: /\b(computer vision|object tracking|lidar|speech synthesis|text-to-speech|tts|voice cloning|transcription|nlp|natural language processing|voicebot|emotion recognition|machine vision)\b/i
   },
   cybersecurity_safety_governance: {
     label: 'Cybersecurity, AI Safety & Governance',
-    keywords: ['threat hunting', 'malware detection', 'ai safety', 'soc', 'red-teaming', 'governance', 'bias auditing'],
-    regex: /\b(threat hunting|zero-day|malware detection|ai safety|soc triage|red-teaming|ai governance|bias auditing)\b/i
+    keywords: ['threat hunting', 'malware detection', 'ai safety', 'soc', 'red-teaming', 'governance', 'bias auditing', 'prompt injection'],
+    regex: /\b(threat hunting|zero-day|malware detection|ai safety|soc triage|red-teaming|ai governance|bias auditing|bias testing|prompt injection|penetration testing)\b/i
   },
   workflow_document_automation: {
     label: 'Workflow & Document Automation',
-    keywords: ['contract lifecycle', 'document extraction', 'red-lining', 'process automation', 'erp', 'ocr'],
-    regex: /\b(contract lifecycle|document extraction|red-lining|process automation|ocr|workflow automation)\b/i
+    keywords: ['contract lifecycle', 'document extraction', 'red-lining', 'process automation', 'erp', 'ocr', 'intelligent document', 'unstructured tables'],
+    regex: /\b(contract lifecycle|document extraction|red-lining|process automation|ocr|workflow automation|intelligent document|unstructured tables|case law)\b/i
   },
   customer_engagement_sales_marketing: {
     label: 'Customer Engagement & Conversational AI',
-    keywords: ['conversational agent', 'customer support', 'call-centre', 'virtual assistant', 'chatbot'],
-    regex: /\b(conversational agent|customer support|call-centre|virtual assistant|chatbot|customer engagement)\b/i
+    keywords: ['conversational agent', 'customer support', 'call-centre', 'virtual assistant', 'chatbot', 'voicebot'],
+    regex: /\b(conversational agent|customer support|call-centre|virtual assistant|chatbot|customer engagement|voicebot|conversational ai)\b/i
   },
   generative_ai_synthetic_content: {
     label: 'Generative AI & Synthetic Media',
-    keywords: ['generative marketing', 'synthetic media', 'synthetic content', 'creative ai', 'image generation'],
-    regex: /\b(generative marketing|synthetic media|synthetic content|creative ai|image generation|multi-modal)\b/i
+    keywords: ['generative marketing', 'synthetic media', 'synthetic content', 'creative ai', 'image generation', 'synthetic video'],
+    regex: /\b(generative marketing|synthetic media|synthetic content|creative ai|image generation|multi-modal|synthetic video|digital avatars)\b/i
   },
   energy_environment_infrastructure: {
     label: 'Energy, Environment & Infrastructure',
-    keywords: ['grid load balancing', 'battery storage', 'bess', 'spatio-temporal', 'renewable energy forecasting'],
-    regex: /\b(grid load balancing|battery storage|bess|renewable energy forecasting|smart grid)\b/i
+    keywords: ['grid load balancing', 'battery storage', 'bess', 'spatio-temporal', 'renewable energy forecasting', 'flood risk'],
+    regex: /\b(grid load balancing|battery storage|bess|renewable energy forecasting|smart grid|flood risk|catchment runoff|power grid)\b/i
   },
   education_hr_workforce: {
     label: 'Education, HR & Recruitment Tech',
-    keywords: ['recruitment matching', 'resume screening', 'interview transcription', 'skills gap'],
-    regex: /\b(recruitment matching|resume screening|interview transcription|skills gap|hr tech)\b/i
+    keywords: ['recruitment matching', 'resume screening', 'interview transcription', 'skills gap', 'reskilling', 'adaptive learning'],
+    regex: /\b(recruitment matching|resume screening|interview transcription|skills gap|hr tech|reskilling|employee mobility|adaptive learning|stem curricula)\b/i
   },
   data_analytics_forecasting: {
     label: 'Data Analytics & Predictive Forecasting',
-    keywords: ['predictive analytics', 'machine learning algorithms', 'forecasting', 'graph neural network'],
-    regex: /\b(predictive analytics|machine learning|forecasting|graph neural network|ensemble)\b/i
+    keywords: ['predictive analytics', 'machine learning algorithms', 'forecasting', 'graph neural network', 'prediction algorithms'],
+    regex: /\b(predictive analytics|machine learning|forecasting|graph neural network|ensemble|prediction algorithms|arrhythmia prediction)\b/i
   },
   ai_consulting_adoption: {
     label: 'AI Consulting & Strategy',
-    keywords: ['strategy consultancy', 'vendor selection', 'operating model', 'advisory'],
-    regex: /\b(strategy consultancy|vendor selection|operating model|ai advisory|transformation)\b/i
+    keywords: ['strategy consultancy', 'vendor selection', 'operating model', 'advisory', 'ai advisory', 'eu ai act'],
+    regex: /\b(strategy consultancy|vendor selection|operating model|ai advisory|transformation|ai roadmaps|eu ai act)\b/i
   }
 };
 
 // Hard negative terms (buzzwords that indicate non-core AI activity when no engineering terms are present)
 const HARD_NEGATIVE_PATTERNS = [
-    /\b(office 365|printer maintenance|managed services|residential real estate|stone ovens|wood-fired|sourdough|baking|cleaning detergents|general cleaning|haulage|refrigerated)\b/i
+  /\b(office 365|printer maintenance|managed services|residential real estate|stone ovens|wood-fired|sourdough|baking|cleaning detergents|general cleaning|haulage|refrigerated|stone masonry|lithographic offset|fuse board|cask ales|builders' carpentry|timber staircases|keyholding response)\b/i
 ];
 
 // Calibrated TF-IDF feature weights for statistical baseline
 const TFIDF_LOGISTIC_WEIGHTS: Record<string, number> = {
+  // Positive AI engineering features
   'deep learning': 2.85,
   'foundation model': 3.10,
+  'foundational': 2.50,
+  'large language model': 3.10,
+  'llm': 2.80,
   'transformer': 2.75,
   'neural network': 2.65,
   'autonomous': 2.45,
@@ -101,20 +105,53 @@ const TFIDF_LOGISTIC_WEIGHTS: Record<string, number> = {
   'drug discovery': 2.55,
   'vector database': 2.60,
   'rag': 2.40,
+  'diffusion model': 2.60,
+  'ai safety': 2.30,
+  'red-teaming': 2.30,
+  'ai advisory': 1.80,
+  'conversational ai': 2.20,
+  'conversational agent': 2.20,
+  'intelligent document': 2.20,
+  'voicebot': 2.20,
+  'robotics': 2.40,
+  'drone': 1.80,
+  'genomics': 2.10,
+  'biotechnology': 1.80,
+  'biotech': 1.80,
+  'prediction algorithms': 2.10,
+  'reskilling': 1.90,
+  'gpu cluster': 2.40,
   'real-time': 0.85,
   'consultancy': 0.40,
   'cloud': 0.35,
+
+  // Negative non-AI features
   'consultation': -0.45,
   'managed services': -2.10,
   'office 365': -2.80,
   'printer': -3.20,
   'bakery': -4.50,
+  'sourdough': -4.00,
   'cleaning': -3.80,
   'haulage': -3.90,
-  'residential': -2.20
+  'residential': -2.20,
+  'masonry': -4.00,
+  'lithographic': -3.50,
+  'electrical contractors': -3.50,
+  'headhunting': -2.50,
+  'plumbing': -3.50,
+  'spring water': -3.50,
+  'coach hire': -3.50,
+  'conveyancing': -3.50,
+  'gastropubs': -4.00,
+  'office furniture': -3.50,
+  'bookkeeping': -3.50,
+  'guarding': -3.50,
+  'joinery': -3.50,
+  'helpdesk': -3.20
 };
 
-const LOGISTIC_BIAS = -0.65;
+const LOGISTIC_BIAS = -1.25;
 
 export function classifyBusinessText(
   record: CompanyClassificationRecord,
@@ -154,7 +191,7 @@ export function classifyBusinessText(
   if (modelType === 'rule_baseline') {
     // Rule baseline logic: Needs >= 1 taxonomy match and NOT dominated by hard negative buzzwords without core deep tech
     const coreTechMatches = predictedLabels.filter(
-      (l) => l === 'ai_platforms_models' || l === 'robotics_autonomous_systems' || l === 'healthcare_life_sciences' || l === 'computer_vision_speech'
+      (l) => l === 'ai_platforms_models' || l === 'robotics_autonomous_systems' || l === 'healthcare_life_sciences' || l === 'computer_vision_speech' || l === 'cybersecurity_safety_governance'
     );
     if (hasHardNegativeIndicator && coreTechMatches.length === 0) {
       isAIRelevant = false;
@@ -169,9 +206,11 @@ export function classifyBusinessText(
   } else {
     // TF-IDF + Calibrated Logistic Regression scoring
     let logit = LOGISTIC_BIAS;
+    let matchedPosTerms = 0;
     for (const [term, weight] of Object.entries(TFIDF_LOGISTIC_WEIGHTS)) {
       if (lowerText.includes(term)) {
         logit += weight;
+        if (weight > 0) matchedPosTerms++;
         featureContributions.push({
           term,
           weight: Math.round(weight * 100) / 100,
@@ -181,6 +220,10 @@ export function classifyBusinessText(
           highlightedTerms.push(term);
         }
       }
+    }
+
+    if (predictedLabels.length > 0 && matchedPosTerms === 0 && !hasHardNegativeIndicator) {
+      logit += 1.80;
     }
 
     // Sigmoid function

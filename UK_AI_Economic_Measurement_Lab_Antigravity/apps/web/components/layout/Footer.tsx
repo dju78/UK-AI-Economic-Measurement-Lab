@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} UK AI Economic Measurement Lab. Published under Open Government Licence v3.0 / MIT.
           </div>
           <div className="flex items-center gap-4">
-            <span>WCAG 2.2 AA Standard</span>
+            <span>Designed against WCAG 2.2 AA principles</span>
             <span>Deterministic Pipelines</span>
             <span>Version 0.2.0</span>
           </div>

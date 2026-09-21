@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0.0",
-  "updated_at": "2026-09-21T11:32:35.439045Z",
+  "updated_at": "2026-09-21T11:52:41.011513+00:00",
   "project": "UK AI Economic Measurement Lab",
   "datasets": [
     {
@@ -47,8 +47,8 @@
       "source_id": "DS05",
       "title": "UK AI Business Classification Benchmark Corpus",
       "relative_path": "data/raw/ds05_uk_ai_business_corpus.json",
-      "sha256": "360c3f41fe53a8bbc6baa32ca0621150a398397d757d29a32d6c16906f25db8b",
-      "size_bytes": 12624,
+      "sha256": "4a746cc1fb6acfddff6ad31c919a4f9053e588e860262557bd39f99c684740ed",
+      "size_bytes": 34896,
       "format": "JSON",
       "licence": "Open Government Licence v3.0",
       "verified": true

@@ -7,7 +7,7 @@
   "retrieved_at": "2026-09-21T12:00:00Z",
   "licence": "Open Government Licence v3.0 / Research Use",
   "statistical_status": "Curated benchmark dataset with hard negatives and ground truth annotations",
-  "sample_size": 20,
+  "sample_size": 60,
   "data": [
     {
       "business_id": "UK-AI-001",
@@ -39,19 +39,6 @@
     },
     {
       "business_id": "UK-AI-003",
-      "company_name": "Apex Cloud & IT Solutions Ltd",
-      "sic_code": "62.02",
-      "sic_description": "Computer consultancy activities",
-      "text": "Apex provides standard IT managed services, Office 365 migrations, network firewall configuration, and printer maintenance. We offer AI-ready cloud hosting consultations.",
-      "ground_truth_labels": [
-        "ai_consulting_adoption"
-      ],
-      "ground_truth_ai_relevant": false,
-      "ground_truth_dedicated": false,
-      "is_hard_negative": true
-    },
-    {
-      "business_id": "UK-AI-004",
       "company_name": "Visionary Robotics UK Ltd",
       "sic_code": "28.99",
       "sic_description": "Manufacture of other special-purpose machinery n.e.c.",
@@ -65,7 +52,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-005",
+      "business_id": "UK-AI-004",
       "company_name": "OmniFin Fraud Intelligence Ltd",
       "sic_code": "63.11",
       "sic_description": "Data processing, hosting and related activities",
@@ -79,7 +66,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-006",
+      "business_id": "UK-AI-005",
       "company_name": "GreenGrid Predictive Energy Ltd",
       "sic_code": "71.12",
       "sic_description": "Engineering activities and related technical consultancy",
@@ -93,7 +80,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-007",
+      "business_id": "UK-AI-006",
       "company_name": "Hyperion Management Consultants LLP",
       "sic_code": "70.22",
       "sic_description": "Business and other management consultancy activities",
@@ -107,18 +94,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-008",
-      "company_name": "Kensington Smart Estate Agents Ltd",
-      "sic_code": "68.31",
-      "sic_description": "Real estate agencies",
-      "text": "Premier residential real estate agency in Central London. Powered by next-generation AI property valuation algorithms and 3D virtual tour technology.",
-      "ground_truth_labels": [],
-      "ground_truth_ai_relevant": false,
-      "ground_truth_dedicated": false,
-      "is_hard_negative": true
-    },
-    {
-      "business_id": "UK-AI-009",
+      "business_id": "UK-AI-007",
       "company_name": "LexiDoc Legal Automation Ltd",
       "sic_code": "69.10",
       "sic_description": "Legal activities",
@@ -132,7 +108,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-0010",
+      "business_id": "UK-AI-008",
       "company_name": "NeuralVoice Synthesis Ltd",
       "sic_code": "58.29",
       "sic_description": "Other software publishing",
@@ -146,7 +122,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-0011",
+      "business_id": "UK-AI-009",
       "company_name": "TalentMatch AI Recruitment Ltd",
       "sic_code": "78.10",
       "sic_description": "Activities of employment placement agencies",
@@ -160,7 +136,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-0012",
+      "business_id": "UK-AI-010",
       "company_name": "CyberShield DeepDefend Ltd",
       "sic_code": "62.09",
       "sic_description": "Other information technology and computer service activities",
@@ -174,18 +150,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-0013",
-      "company_name": "NorthStar Logistics & Haulage Ltd",
-      "sic_code": "49.41",
-      "sic_description": "Freight transport by road",
-      "text": "National road freight, warehousing, and refrigerated logistics across the UK. We operate an modern fleet of Euro 6 trucks with GPS telematics tracking.",
-      "ground_truth_labels": [],
-      "ground_truth_ai_relevant": false,
-      "ground_truth_dedicated": false,
-      "is_hard_negative": false
-    },
-    {
-      "business_id": "UK-AI-0014",
+      "business_id": "UK-AI-011",
       "company_name": "AdGenius Creative AI Ltd",
       "sic_code": "73.11",
       "sic_description": "Advertising agencies",
@@ -199,7 +164,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-0015",
+      "business_id": "UK-AI-012",
       "company_name": "AeroDynamics Autonomous Systems Ltd",
       "sic_code": "30.30",
       "sic_description": "Manufacture of air and spacecraft and related machinery",
@@ -213,18 +178,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-0016",
-      "company_name": "Tavistock Traditional Bakery Ltd",
-      "sic_code": "10.71",
-      "sic_description": "Manufacture of bread; manufacture of fresh pastry goods and cakes",
-      "text": "Artisan bakery producing sourdough loaves, pastries, and wedding cakes using traditional wood-fired stone ovens and locally sourced organic flour.",
-      "ground_truth_labels": [],
-      "ground_truth_ai_relevant": false,
-      "ground_truth_dedicated": false,
-      "is_hard_negative": false
-    },
-    {
-      "business_id": "UK-AI-0017",
+      "business_id": "UK-AI-013",
       "company_name": "QuantEdge Market Signals Ltd",
       "sic_code": "66.19",
       "sic_description": "Activities auxiliary to financial intermediation n.e.c.",
@@ -238,7 +192,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-0018",
+      "business_id": "UK-AI-014",
       "company_name": "DataPipeline Operations Ltd",
       "sic_code": "63.11",
       "sic_description": "Data processing, hosting and related activities",
@@ -252,18 +206,7 @@
       "is_hard_negative": false
     },
     {
-      "business_id": "UK-AI-0019",
-      "company_name": "BrightSpark Cleaners Ltd",
-      "sic_code": "81.21",
-      "sic_description": "General cleaning of buildings",
-      "text": "Commercial cleaning services for offices, hospitals, and educational facilities. Using eco-friendly cleaning detergents and AI-powered scheduling dispatch.",
-      "ground_truth_labels": [],
-      "ground_truth_ai_relevant": false,
-      "ground_truth_dedicated": false,
-      "is_hard_negative": true
-    },
-    {
-      "business_id": "UK-AI-0020",
+      "business_id": "UK-AI-015",
       "company_name": "CognitiveCX Customer Service AI Ltd",
       "sic_code": "62.01",
       "sic_description": "Computer programming activities",
@@ -275,6 +218,569 @@
       "ground_truth_ai_relevant": true,
       "ground_truth_dedicated": true,
       "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-016",
+      "company_name": "AuraMed Radiology AI Ltd",
+      "sic_code": "86.22",
+      "sic_description": "Specialists medical practice activities",
+      "text": "Clinical diagnostic decision support system using deep convolutional neural networks for automated lung nodule detection and mammography density scoring.",
+      "ground_truth_labels": [
+        "healthcare_life_sciences",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-017",
+      "company_name": "TerraCrop AgriVision Ltd",
+      "sic_code": "01.61",
+      "sic_description": "Support activities for crop production",
+      "text": "Precision agriculture drone analytics using multispectral computer vision and deep learning classifiers to detect weed infestations and optimize fertilizer application.",
+      "ground_truth_labels": [
+        "robotics_autonomous_systems",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-018",
+      "company_name": "TrustModel Safety Labs Ltd",
+      "sic_code": "71.20",
+      "sic_description": "Technical testing and analysis",
+      "text": "Independent AI safety auditing, red-teaming, and algorithmic bias testing for government and enterprise large language model deployments.",
+      "ground_truth_labels": [
+        "cybersecurity_safety_governance"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-019",
+      "company_name": "EpiSim Genomics AI Ltd",
+      "sic_code": "72.11",
+      "sic_description": "Research and experimental development on biotechnology",
+      "text": "AI drug discovery software applying graph neural networks to cellular transcriptomics and pathogenic variant classification.",
+      "ground_truth_labels": [
+        "healthcare_life_sciences",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-020",
+      "company_name": "IntelliProcure Supply Chain AI Ltd",
+      "sic_code": "62.01",
+      "sic_description": "Computer programming activities",
+      "text": "Global supply chain disruption forecasting and automated purchase order generation using recurrent neural network predictive analytics.",
+      "ground_truth_labels": [
+        "data_analytics_forecasting",
+        "workflow_document_automation"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-021",
+      "company_name": "Kinetics Autowork Robotics Ltd",
+      "sic_code": "28.99",
+      "sic_description": "Manufacture of other special-purpose machinery n.e.c.",
+      "text": "Heavy industrial robotics combining reinforcement learning with stereoscopic machine vision for high-speed bin-picking in automotive manufacturing.",
+      "ground_truth_labels": [
+        "robotics_autonomous_systems",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-022",
+      "company_name": "Veritas Synthetic Media Ltd",
+      "sic_code": "59.12",
+      "sic_description": "Motion picture, video and television programme post-production activities",
+      "text": "Generative synthetic video engine providing automated lip-sync dubbing, digital avatars, and virtual cinematography using diffusion models.",
+      "ground_truth_labels": [
+        "generative_ai_synthetic_content",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-023",
+      "company_name": "DeepAudit Financial Systems Ltd",
+      "sic_code": "69.20",
+      "sic_description": "Accounting, bookkeeping and auditing activities",
+      "text": "AI audit copilot identifying anomalous general ledger journal entries and cross-entity VAT fraud using ensemble machine learning classifiers.",
+      "ground_truth_labels": [
+        "finance_fintech_compliance",
+        "workflow_document_automation"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-024",
+      "company_name": "SmartGrid Dynamics Ltd",
+      "sic_code": "35.13",
+      "sic_description": "Distribution of electricity",
+      "text": "District network operator load forecasting and EV smart charging optimization using spatio-temporal deep learning neural networks.",
+      "ground_truth_labels": [
+        "energy_environment_infrastructure",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-025",
+      "company_name": "EduLearn Adaptive AI Ltd",
+      "sic_code": "85.59",
+      "sic_description": "Other education n.e.c.",
+      "text": "Adaptive learning platform for secondary education utilizing Bayesian knowledge tracing and transformer models to personalize STEM curricula.",
+      "ground_truth_labels": [
+        "education_hr_workforce"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-026",
+      "company_name": "NaviFlow Autonomous Marine Ltd",
+      "sic_code": "30.11",
+      "sic_description": "Building of ships and floating structures",
+      "text": "Autonomous surface vessel (ASV) navigation systems incorporating radar/LiDAR sensor fusion and reinforcement learning for collision avoidance.",
+      "ground_truth_labels": [
+        "robotics_autonomous_systems",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-027",
+      "company_name": "Synapse BioEngineering Ltd",
+      "sic_code": "72.11",
+      "sic_description": "Research and experimental development on biotechnology",
+      "text": "In-silico molecular modeling and peptide design using generative sequence transformers for autoimmune disease therapeutics.",
+      "ground_truth_labels": [
+        "healthcare_life_sciences",
+        "ai_platforms_models"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-028",
+      "company_name": "Vektor Search Technologies Ltd",
+      "sic_code": "62.01",
+      "sic_description": "Computer programming activities",
+      "text": "Ultra-low latency vector database engine and neural embeddings indexer built specifically for high-throughput enterprise RAG applications.",
+      "ground_truth_labels": [
+        "ai_platforms_models"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-029",
+      "company_name": "Frontier AI Advisory LLP",
+      "sic_code": "70.22",
+      "sic_description": "Business and other management consultancy activities",
+      "text": "Boutique AI advisory firm specializing in board-level AI roadmaps, compute infrastructure budgeting, and compliance with the EU AI Act.",
+      "ground_truth_labels": [
+        "ai_consulting_adoption",
+        "cybersecurity_safety_governance"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-030",
+      "company_name": "PulseAnalytics Health Ltd",
+      "sic_code": "62.01",
+      "sic_description": "Computer programming activities",
+      "text": "Remote patient monitoring and cardiac arrhythmia prediction algorithms trained on photoplethysmography (PPG) wearable sensor data.",
+      "ground_truth_labels": [
+        "healthcare_life_sciences",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-031",
+      "company_name": "DocuParse Enterprise NLP Ltd",
+      "sic_code": "62.02",
+      "sic_description": "Computer consultancy activities",
+      "text": "Intelligent document processing suite extracting complex unstructured tables from financial invoices, bills of lading, and insurance claims.",
+      "ground_truth_labels": [
+        "workflow_document_automation"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-032",
+      "company_name": "BrandSynth Creative Labs Ltd",
+      "sic_code": "73.11",
+      "sic_description": "Advertising agencies",
+      "text": "Automated ad copywriting and commercial storyboarding powered by custom multi-modal generative neural networks.",
+      "ground_truth_labels": [
+        "customer_engagement_sales_marketing",
+        "generative_ai_synthetic_content"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-033",
+      "company_name": "AcuRate Credit Intelligence Ltd",
+      "sic_code": "64.99",
+      "sic_description": "Other financial service activities",
+      "text": "Non-linear credit risk scoring and SME loan default probability modelling using gradient boosted decision trees and deep learning.",
+      "ground_truth_labels": [
+        "finance_fintech_compliance",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-034",
+      "company_name": "SafeNet AI Red-Team Ltd",
+      "sic_code": "62.09",
+      "sic_description": "Other information technology and computer service activities",
+      "text": "Automated penetration testing and LLM prompt injection vulnerability assessment tools for secure cloud deployment.",
+      "ground_truth_labels": [
+        "cybersecurity_safety_governance"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-035",
+      "company_name": "HydroForecast Weather Intelligence Ltd",
+      "sic_code": "71.12",
+      "sic_description": "Engineering activities and related technical consultancy",
+      "text": "Real-time flood risk mapping and urban catchment runoff forecasting utilizing physics-informed neural network simulations.",
+      "ground_truth_labels": [
+        "energy_environment_infrastructure",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-036",
+      "company_name": "SkyWatch Drone Analytics Ltd",
+      "sic_code": "71.20",
+      "sic_description": "Technical testing and analysis",
+      "text": "Automated railway line and power grid defect detection from aerial drone video streams using real-time computer vision classifiers.",
+      "ground_truth_labels": [
+        "computer_vision_speech",
+        "energy_environment_infrastructure"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-037",
+      "company_name": "TalkFlow Virtual Agents Ltd",
+      "sic_code": "62.01",
+      "sic_description": "Computer programming activities",
+      "text": "Omnichannel conversational AI voicebots for telecom and banking customer support operations with emotion recognition capabilities.",
+      "ground_truth_labels": [
+        "customer_engagement_sales_marketing",
+        "computer_vision_speech"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-038",
+      "company_name": "SkillPath Workforce AI Ltd",
+      "sic_code": "78.30",
+      "sic_description": "Other human resources provision",
+      "text": "Internal employee mobility and automated reskilling recommendations based on enterprise skills ontology graph embeddings.",
+      "ground_truth_labels": [
+        "education_hr_workforce"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-039",
+      "company_name": "Apex Model Foundry Ltd",
+      "sic_code": "62.01",
+      "sic_description": "Computer programming activities",
+      "text": "Open-weight foundational model pre-training infrastructure and distributed GPU cluster orchestration software for UK deep tech startups.",
+      "ground_truth_labels": [
+        "ai_platforms_models"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-040",
+      "company_name": "Cognitive Legal Intelligence Ltd",
+      "sic_code": "69.10",
+      "sic_description": "Legal activities",
+      "text": "Automated legal case law search and litigation outcome prediction algorithms powered by dense retrieval and transformer language models.",
+      "ground_truth_labels": [
+        "workflow_document_automation",
+        "data_analytics_forecasting"
+      ],
+      "ground_truth_ai_relevant": true,
+      "ground_truth_dedicated": true,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-041",
+      "company_name": "Apex Cloud & IT Solutions Ltd",
+      "sic_code": "62.02",
+      "sic_description": "Computer consultancy activities",
+      "text": "Apex provides standard IT managed services, Office 365 migrations, network firewall configuration, and printer maintenance. We offer AI-ready cloud hosting consultations.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": true
+    },
+    {
+      "business_id": "UK-AI-042",
+      "company_name": "Kensington Smart Estate Agents Ltd",
+      "sic_code": "68.31",
+      "sic_description": "Real estate agencies",
+      "text": "Premier residential real estate agency in Central London. Powered by next-generation AI property valuation algorithms and 3D virtual tour technology.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": true
+    },
+    {
+      "business_id": "UK-AI-043",
+      "company_name": "NorthStar Logistics & Haulage Ltd",
+      "sic_code": "49.41",
+      "sic_description": "Freight transport by road",
+      "text": "National road freight, warehousing, and refrigerated logistics across the UK. We operate a modern fleet of Euro 6 trucks with GPS telematics tracking.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-044",
+      "company_name": "Tavistock Traditional Bakery Ltd",
+      "sic_code": "10.71",
+      "sic_description": "Manufacture of bread; manufacture of fresh pastry goods and cakes",
+      "text": "Artisan bakery producing sourdough loaves, pastries, and wedding cakes using traditional wood-fired stone ovens and locally sourced organic flour.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-045",
+      "company_name": "BrightSpark Commercial Cleaners Ltd",
+      "sic_code": "81.21",
+      "sic_description": "General cleaning of buildings",
+      "text": "Commercial cleaning services for offices, hospitals, and educational facilities. Using eco-friendly cleaning detergents and AI-powered scheduling dispatch.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": true
+    },
+    {
+      "business_id": "UK-AI-046",
+      "company_name": "Mayfair High-End Residential Property Ltd",
+      "sic_code": "68.20",
+      "sic_description": "Renting and operating of own or leased real estate",
+      "text": "Letting and luxury management of residential prime real estate penthouses in Mayfair and Belgravia. High-touch concierge services for international tenants.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-047",
+      "company_name": "Cotswold Traditional Stone Masonry Ltd",
+      "sic_code": "23.70",
+      "sic_description": "Cutting, shaping and finishing of stone",
+      "text": "Restoration of historic churches, heritage buildings, and country manors with bespoke hand-carved limestone and traditional lime mortars.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-048",
+      "company_name": "Express Print & Direct Mail Ltd",
+      "sic_code": "18.12",
+      "sic_description": "Other printing",
+      "text": "High volume lithographic offset printing for corporate brochures, exhibition popups, business cards, and direct mail leaflets with fast delivery.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-049",
+      "company_name": "City Electrical Contractors Ltd",
+      "sic_code": "43.21",
+      "sic_description": "Electrical installation",
+      "text": "Commercial electrical fit-outs, periodic PAT inspection, fuse board replacement, emergency lighting compliance, and industrial cable tray installations.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-050",
+      "company_name": "Crown Premier Executive Recruitment Ltd",
+      "sic_code": "78.10",
+      "sic_description": "Activities of employment placement agencies",
+      "text": "Traditional executive headhunting and confidential boardroom search for FTSE 250 non-executive directors using experienced senior recruitment consultants.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-051",
+      "company_name": "Apex Hardware Supplies & Plumbing Ltd",
+      "sic_code": "47.52",
+      "sic_description": "Retail sale of hardware, paints and glass in specialised stores",
+      "text": "Trade merchant supplier stocking copper pipes, brass compression fittings, bathroom taps, power drills, and construction adhesives for local plumbers.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-052",
+      "company_name": "Highland Pure Spring Bottling Ltd",
+      "sic_code": "11.07",
+      "sic_description": "Manufacture of soft drinks; production of mineral waters and other bottled waters",
+      "text": "Sustainable bottling of organic natural spring water sourced from Scottish Highland aquifers into recyclable glass bottles and aluminium cans.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-053",
+      "company_name": "SilverLine Coach & Bus Hire Ltd",
+      "sic_code": "49.39",
+      "sic_description": "Other passenger land transport",
+      "text": "Private luxury coach hire for school trips, airport transfers, corporate hospitality events, and nationwide guided sightseeing tours.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-054",
+      "company_name": "Thameside Residential Conveyancing Ltd",
+      "sic_code": "69.10",
+      "sic_description": "Legal activities",
+      "text": "Specialist solicitors handling residential property conveyancing, freehold purchases, lease extensions, and mortgage re-financing throughout England and Wales.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-055",
+      "company_name": "Heritage Pubs & Hospitality Group Ltd",
+      "sic_code": "56.10",
+      "sic_description": "Restaurants and mobile food service activities",
+      "text": "Operator of gastropubs and boutique historic coaching inns across the South East offering traditional cask ales and locally sourced seasonal gastro menus.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-056",
+      "company_name": "Elite Office Furniture Installations Ltd",
+      "sic_code": "31.01",
+      "sic_description": "Manufacture of office and shop furniture",
+      "text": "Design and installation of ergonomic office desks, conference tables, acoustic privacy pods, and breakout seating for modern commercial workspace refurbishments.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-057",
+      "company_name": "Westminster Accounting & Bookkeeping Services Ltd",
+      "sic_code": "69.20",
+      "sic_description": "Accounting, bookkeeping and auditing activities",
+      "text": "Small business bookkeeping, quarterly VAT returns, PAYE payroll processing, and statutory annual accounts preparation for sole traders and contractors.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-058",
+      "company_name": "Summit Security Guarding & Keyholding Ltd",
+      "sic_code": "80.10",
+      "sic_description": "Private security activities",
+      "text": "SIA-licensed security officers providing physical site guarding, mobile patrol inspections, 24/7 keyholding response, and event crowd management.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-059",
+      "company_name": "Redwood Precision Joinery Ltd",
+      "sic_code": "16.23",
+      "sic_description": "Manufacture of other builders' carpentry and joinery",
+      "text": "Custom bespoke hardwood timber staircases, sash windows, panelled timber doors, and architect-designed architectural joinery handcrafted in our workshop.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": false
+    },
+    {
+      "business_id": "UK-AI-060",
+      "company_name": "Vanguard IT Helpdesk Support Ltd",
+      "sic_code": "62.02",
+      "sic_description": "Computer consultancy activities",
+      "text": "Outsourced 1st and 2nd line desktop IT support, laptop imaging, antivirus installations, printer maintenance, and password reset helpdesk services.",
+      "ground_truth_labels": [],
+      "ground_truth_ai_relevant": false,
+      "ground_truth_dedicated": false,
+      "is_hard_negative": true
     }
   ]
 }
